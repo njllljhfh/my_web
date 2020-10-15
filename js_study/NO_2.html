@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 使用</title>
+  <script>
+    function myFunction() {
+      document.getElementById("demo_1").innerHTML = "段落已被更改。";
+    }
+  </script>
+</head>
+<body>
+
+  <!--<script> 标签-->
+  <!--在 HTML 中，JavaScript 代码必须位于 <script> 与 </script> 标签之间。-->
+  <h2>Body 中的 JavaScript</h2>
+  <p id="demo_0"></p>
+  <script>
+    document.getElementById("demo_0").innerHTML = "我的第一段 JavaScript";
+  </script>
+  <!--【注释】：旧的 JavaScript 例子也许会使用 type 属性：<script type="text/javascript">。-->
+  <!--【注释】：type 属性不是必需的。JavaScript 是 HTML 中的默认脚本语言。-->
+  <hr>
+
+
+  <p>JavaScript 函数和事件</p>
+  <p>JavaScript 函数是一种 JavaScript 代码块，它可以在调用时被执行。</p>
+  <p>例如，当发生事件时调用函数，比如当用户点击按钮时。</p>
+  <p>提示：您将在稍后的章节学到更多有关函数和事件的知识。</p>
+  <hr>
+
+
+  <div>
+    <h2>&lt;head&gt; 或 &lt;body&gt; 中的 JavaScript</h2>
+    <p>您能够在 HTML 文档中放置任意数量的脚本。</p>
+    <p>脚本可被放置与 HTML 页面的 &lt;body&gt; 或 &lt;head&gt; 部分中，或兼而有之。</p>
+  </div>
+  <hr>
+
+
+  <h2>Head 中的 JavaScript</h2>
+  <!--在本例中，JavaScript 函数被放置于 HTML 页面的 <head> 部分。-->
+  <!--该函数会在按钮被点击时调用：-->
+  <p id="demo_1">一个段落。</p>
+  <button type="button" onclick="myFunction()">试一试</button>
+  <hr>
+
+
+  <h2>Body 中的 JavaScript</h2>
+  <!--在本例中，JavaScript 函数被放置于 HTML 页面的 <body> 部分。-->
+  <!--该函数会在按钮被点击时调用：-->
+  <p id="demo_2">一个段落。</p>
+  <button type="button" onclick="myFunction_2()">试一试</button>
+  <script>
+    function myFunction_2() {
+      document.getElementById("demo_2").innerHTML = "段落已被更改_2。";
+    }
+  </script>
+  <!--提示：把脚本置于 <body> 元素的底部，可改善显示速度，因为脚本编译会拖慢显示。-->
+  <hr>
+
+
+  <h2>外部 JavaScript</h2>
+  <p id="demo_3">一个段落。</p>
+  <button type="button" onclick="myFunction_3()">试一试</button>
+  <p>（myFunction 存储在名为 "myScript.js" 的外部文件中。）</p>
+  <script src="./demo/myScript.js"></script>
+  <!--脚本可放置于外部文件中：-->
+  <!--外部脚本很实用，如果相同的脚本被用于许多不同的网页。-->
+  <!--JavaScript 文件的文件扩展名是 .js。-->
+  <!--如需使用外部脚本，请在 <script> 标签的 src (source) 属性中设置脚本的名称：-->
+  <!--您可以在 <head> 或 <body> 中放置外部脚本引用。-->
+  <!--该脚本的表现与它被置于 <script> 标签中是一样的。-->
+  <!--【注释】：外部脚本不能包含 <script> 标签。-->
+
+  <!--外部 JavaScript 的优势-->
+  <!--在外部文件中放置脚本有如下优势：-->
+  <!--1.分离了 HTML 和代码-->
+  <!--2.使 HTML 和 JavaScript 更易于阅读和维护-->
+  <!--3.已缓存的 JavaScript 文件可加速页面加载-->
+
+  <!--如需向一张页面添加多个脚本文件 - 请使用多个 script 标签：-->
+  <!--<script src="myScript1.js"></script>-->
+  <!--<script src="myScript2.js"></script>-->
+  <hr>
+
+
+  <h1>外部 JavaScript</h1>
+  <!--外部引用-->
+  <!--可通过完整的 URL 或相对于当前网页的路径引用外部脚本：-->
+  <!--本例使用完整的 URL 来链接至脚本：-->
+  <p id="demo">一个段落。</p>
+  <button type="button" onclick="myFunction()">试一试</button>
+  <p>（myFunction 存储在名为 "myScript.js" 的外部文件中。）</p>
+  <script src="https://www.w3school.com.cn/demo/myScript.js"></script>
+</body>
+</html>
