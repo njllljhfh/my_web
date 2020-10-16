@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4ba4c9c-40a8-41ff-80cf-6f9b1e4d5881" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/my_web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/NO_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/NO_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/NO_3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/demo/myScript.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/images/eg_bulboff.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/images/eg_bulbon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/NO_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/NO_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/NO_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/NO_7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/NO_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/NO_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/NO_3.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,51 +23,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_1.html">
+        <entry file="file://$PROJECT_DIR$/js_study/NO_6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#6;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-              <folding>
-                <element signature="e#648#652#0" expanded="true" />
-                <element signature="e#656#660#0" expanded="true" />
-                <element signature="e#663#667#0" expanded="true" />
-                <element signature="e#671#675#0" expanded="true" />
-                <element signature="e#782#786#0" expanded="true" />
-                <element signature="e#790#794#0" expanded="true" />
-                <element signature="e#830#834#0" expanded="true" />
-                <element signature="e#838#842#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="363">
+              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_3.html">
+        <entry file="file://$PROJECT_DIR$/js_study/NO_7.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="451">
+              <caret line="217" column="19" selection-start-line="217" selection-start-column="19" selection-end-line="217" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -98,9 +63,13 @@
       <list>
         <option value="$PROJECT_DIR$/js_study/NO-2.html" />
         <option value="$PROJECT_DIR$/js_study/demo/myScript.js" />
-        <option value="$PROJECT_DIR$/js_study/NO_2.html" />
         <option value="$PROJECT_DIR$/js_study/NO_1.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_4.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_5.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_2.html" />
         <option value="$PROJECT_DIR$/js_study/NO_3.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_6.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_7.html" />
       </list>
     </option>
   </component>
@@ -125,6 +94,12 @@
               <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_web" type="462c0819:PsiDirectoryNode" />
               <item name="js_study" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_web" type="462c0819:PsiDirectoryNode" />
+              <item name="js_study" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -177,15 +152,15 @@
       <option name="presentableId" value="Default" />
       <updated>1601344095816</updated>
       <workItem from="1601344097281" duration="658000" />
-      <workItem from="1602760460928" duration="5667000" />
+      <workItem from="1602760460928" duration="15844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6325000" />
+    <option name="totallyTimeSpent" value="16502000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="980" extended-state="6" />
+    <frame x="-1" y="23" width="1680" height="980" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
@@ -228,34 +203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#6;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-          <folding>
-            <element signature="e#648#652#0" expanded="true" />
-            <element signature="e#656#660#0" expanded="true" />
-            <element signature="e#663#667#0" expanded="true" />
-            <element signature="e#671#675#0" expanded="true" />
-            <element signature="e#782#786#0" expanded="true" />
-            <element signature="e#790#794#0" expanded="true" />
-            <element signature="e#830#834#0" expanded="true" />
-            <element signature="e#838#842#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -265,8 +212,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js_study/NO_3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+        <state relative-caret-position="220">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/NO_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/NO_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/NO_5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/NO_4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/NO_6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/NO_7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="217" column="19" selection-start-line="217" selection-start-column="19" selection-end-line="217" selection-end-column="19" />
         </state>
       </provider>
     </entry>

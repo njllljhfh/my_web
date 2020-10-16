@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 语法</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_syntax.asp">JavaScript 语法</a>
+  <hr>
+
+
+  <!--JavaScript 语法是一套规则，它定义了 JavaScript 的语言结构。-->
+  <script>
+    var x, y;	// 如何声明变量
+    x = 7;
+    y = 8;	// 如何赋值
+    z = x + y;	// 如何计算值
+  </script>
+  <br>
+
+  <!--JavaScript 值-->
+  <!--JavaScript 语句定义两种类型的值：混合值 和 变量值。-->
+  <!--混合值被称为字面量（literal）。变量值被称为变量。-->
+  <br>
+
+
+  <!--JavaScript 字面量-->
+  <!--书写混合值最重要的规则是：-->
+  <!--写数值有无小数点均可：-->
+  <h2>JavaScript 数值</h2>
+  <p>写数值有无小数点均可。</p>
+  <p id="demo_0"></p>
+  <script>
+    document.getElementById("demo_0").innerHTML = 15.90;
+  </script>
+  <hr>
+
+
+  <!--字符串是文本，由双引号或单引号包围：-->
+  <h2>JavaScript 字符串</h2>
+  <p>字符串可由 双引号 或 单引号 包围。</p>
+  <p id="demo_1"></p>
+  <script>
+    document.getElementById("demo_1").innerHTML = 'Bill Gates';
+  </script>
+  <hr>
+
+
+  <!--JavaScript 变量-->
+  <!--在编程语言中，变量用于存储数据值。-->
+  <!--JavaScript 使用 var 关键词来声明变量。-->
+  <!--= 号用于为变量赋值。-->
+  <!--在本例中，x 被定义为变量。然后，x 被赋的值是 18：-->
+  <h2>JavaScript 变量</h2>
+  <p>在本例中，x 被定义为变量。然后 x 被赋值 18：</p>
+  <p id="demo_2"></p>
+  <script>
+    var x;
+    x = 18;
+    document.getElementById("demo_2").innerHTML = x;
+  </script>
+  <hr>
+
+
+  <!--JavaScript 运算符-->
+  <!--JavaScript 使用算数运算符（+ - * /）来计算值：-->
+  <h2>JavaScript 运算符</h2>
+  <p>JavaScript 使用算数运算符来计算值（类似代数）。</p>
+  <p id="demo_3"></p>
+  <script>
+    document.getElementById("demo_3").innerHTML = (7 + 8) * 10;
+  </script>
+  <hr>
+
+
+  <!--JavaScript 使用赋值运算符（=）向变量赋值：-->
+  <h2>JavaScript 赋值</h2>
+  <p>在 JavaScript 中，= 运算符用于向变量赋值。</p>
+  <p id="demo_4"></p>
+  <script>
+    var x, y;
+    x = 7;
+    y = 8;
+    document.getElementById("demo_4").innerHTML = x + y;
+  </script>
+  <hr>
+
+
+  <!--JavaScript 表达式-->
+  <!--表达式是 值、变量和运算符 的组合，计算结果是值。-->
+  <h2>JavaScript 表达式</h2>
+  <p>表达式计算的结果 为 值。</p>
+  <p id="demo_5"></p>
+  <script>
+    document.getElementById("demo_5").innerHTML = 6 * 10;
+  </script>
+  <hr>
+
+
+  <!--表达式也可包含变量值：-->
+  <h2>JavaScript 表达式</h2>
+  <p>表达式计算为值。</p>
+  <p id="demo_6"></p>
+  <script>
+    var x;
+    x = 9;
+    document.getElementById("demo_6").innerHTML = x * 10;
+  </script>
+  <hr>
+
+
+  <!--值可以是多种类型，比如数值和字符串。-->
+  <!--例如，"Bill" + " " + "Gates"，计算为 "Bill Gates"：-->
+  <h2>JavaScript 表达式</h2>
+  <p>表达式计算为值。</p>
+  <p id="demo_7"></p>
+  <script>
+    document.getElementById("demo_7").innerHTML = "Bill" + " " + "Gates";
+  </script>
+  <hr>
+
+
+  <!--JavaScript 关键词-->
+  <!--JavaScript 关键词用于标识被执行的动作。-->
+  <!--var 关键词告知浏览器创建新的变量：-->
+  <h2>var 关键词创建变量</h2>
+  <p id="demo_8"></p>
+  <script>
+    var x, y;
+    x = 7 + 8;
+    y = x * 10;
+    document.getElementById("demo_8").innerHTML = y;
+  </script>
+  <hr>
+
+
+  <!--JavaScript 注释-->
+  <!--并非所有 JavaScript 语句都被“执行”。-->
+  <!--双斜杠 // 或 /* 与 */ 之间的代码被视为注释。-->
+  <!--注释会被忽略，不会被执行：-->
+  <h2>JavaScript 注释<b>不会</b>被执行。</h2>
+  <p id="demo_9"></p>
+  <script>
+    var x;
+    x = 7;
+    // x = 8; 我不会被执行
+    document.getElementById("demo_9").innerHTML = x;
+  </script>
+  <hr>
+
+
+  <!--JavaScript 标识符-->
+  <!--标识符是名称。-->
+  <!--在 JavaScript 中，标识符用于命名变量（以及关键词、函数和标签）。-->
+  <!--在大多数编程语言中，合法名称的规则大多相同。-->
+  <!--在 JavaScript 中，首字符必须是字母、下划线（-）或美元符号（$）。-->
+  <!--连串的字符可以是字母、数字、下划线或美元符号。-->
+  <!--【提示】：数值不可以作为首字符。这样，JavaScript 就能轻松区分标识符和数值。-->
+  <br>
+
+
+  <!--JavaScript 对大小写敏感-->
+  <!--所有 JavaScript 标识符对大小写敏感。-->
+  <!--变量 lastName 和 lastname，是两个不同的变量。-->
+  <h2>JavaScript 对大小写敏感</h2>
+  <p>请试着把 lastName 改为 lastname。</p>
+  <p id="demo_10"></p>
+  <script>
+    var lastname, lastName;
+    lastName = "Gates";
+    lastname = "Jobs";
+    document.getElementById("demo_10").innerHTML = lastName;
+  </script>
+  <!--JavaScript 不会把 VAR 或 Var 译作关键词 var。-->
+  <hr>
+
+
+  <script>
+    /*
+      JavaScript 与驼峰式大小写
+      历史上，程序员曾使用三种把多个单词连接为一个变量名的方法：
+
+      连字符：
+      first-name, last-name, master-card, inter-city.
+      【注释】：JavaScript 中不能使用连字符。它是为减法预留的。
+
+      下划线：
+      first_name, last_name, master_card, inter_city.
+
+      驼峰式大小写（Camel Case）：
+      FirstName, LastName, MasterCard, InterCity.
+
+      JavaScript 程序员倾向于使用以小写字母开头的驼峰大小写：
+      firstName, lastName, masterCard, interCity
+    */
+  </script>
+  <br>
+
+
+  <!--JavaScript 字符集-->
+  <!--JavaScript 使用 Unicode 字符集。-->
+  <!--Unicode 覆盖世界上几乎所有的字符、标点和符号。-->
+  <br>
+
+</body>
+</html>

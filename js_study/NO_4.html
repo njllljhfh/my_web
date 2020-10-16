@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 语句</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_statements.asp">JavaScript 语句</a>
+  <hr>
+
+
+  <h2>在 HTML 中，JavaScript 语句是由 web 浏览器“执行”的“指令”。</h2>
+  <hr>
+
+
+  <h2>JavaScript 语句</h2>
+  <p><b>JavaScript 程序</b> 是一系列由计算机执行的 <b>语句</b>。</p>
+  <p id="demo_0"></p>
+  <script>
+    var x, y, z;  // 语句 1
+    x = 22;        // 语句 2
+    y = 11;        // 语句 3
+    z = x + y;    // 语句 4
+    document.getElementById("demo_0").innerHTML =
+      "z 的值是" + z + "。";
+  </script>
+  <hr>
+
+
+  <!--JavaScript 程序-->
+  <!--计算机程序是由计算机“执行”的一系列“指令”。-->
+  <!--在编程语言中，这些编程指令被称为语句。-->
+  <!--JavaScript 程序就是一系列的编程语句。-->
+  <!--【注释】：在 HTML 中，JavaScript 程序由 web 浏览器执行。-->
+  <br>
+
+  <!--JavaScript 语句-->
+  <!--JavaScript 语句由以下构成：-->
+  <!--值、运算符、表达式、关键词和注释。-->
+  <!--这条语句告诉浏览器在 id="demo" 的 HTML 元素中输出 "Hello Kitty."：-->
+  <h2>JavaScript 语句</h2>
+  <p>在 HTML 中，JavaScript 语句由浏览器执行。</p>
+  <p id="demo_1"></p>
+  <script>
+    document.getElementById("demo_1").innerHTML = "Hello Kitty.";
+  </script>
+  <!--大多数 JavaScript 程序都包含许多 JavaScript 语句。-->
+  <!--这些语句会按照它们被编写的顺序逐一执行。-->
+  <!--注释：JavaScript 程序（以及 JavaScript 语句）常被称为 JavaScript 代码。-->
+  <hr>
+
+
+  <!--分号 ;-->
+  <!--分号分隔 JavaScript 语句。-->
+  <!--请在每条可执行的语句之后添加分号：-->
+  <h2>JavaScript 语句</h2>
+  <p>JavaScript 语句被分号分隔。</p>
+  <p id="demo_2"></p>
+  <script>
+    var a, b, c;
+    a = 5;
+    b = 6;
+    c = a + b;
+    document.getElementById("demo_2").innerHTML = c;
+  </script>
+  <hr>
+
+
+  <!--如果有分号分隔，允许在同一行写多条语句：-->
+  <h2>JavaScript 语句</h2>
+  <p>一行允许多条语句。</p>
+  <p id="demo_3"></p>
+  <script>
+    var a, b, c;
+    a = 5;
+    b = 6;
+    c = a + b;
+    document.getElementById("demo_3").innerHTML = c;
+  </script>
+  <!--您可能在网上看到不带分号的例子。-->
+  <!--【提示】：以分号结束语句不是必需的，但我们仍然强烈建议您这么做。-->
+  <hr>
+
+
+  <!--JavaScript 空白字符-->
+  <!--JavaScript 会忽略多个空格。您可以向脚本添加空格，以增强可读性。-->
+  <!--下面这两行是相等的：-->
+  <!--var person = "Bill";-->
+  <!--var person="Bill";-->
+
+  <!--在运算符旁边（ = + - * / ）添加空格是个好习惯：-->
+  <!--var x = y + z;-->
+  <br>
+
+
+  <!--JavaScript 行长度和折行-->
+  <!--为了达到最佳的可读性，程序员们常常喜欢把代码行控制在 80 个字符以内。-->
+  <!--如果 JavaScript 语句太长，对其进行折行的最佳位置是某个运算符：-->
+  <script>
+    document.getElementById("demo_xxx").innerHTML =
+      "Hello Kitty xxx.";
+  </script>
+  <br>
+
+
+  <!--JavaScript 代码块-->
+  <!--JavaScript 语句可以用花括号（{...}）组合在代码块中。-->
+  <!--代码块的作用是定义一同执行的语句。-->
+  <!--您会在 JavaScript 中看到成块组合在一起的语句：-->
+  <h2>JavaScript 语句</h2>
+  <p>JavaScript 代码块在 { 与 } 之间编写。</p>
+  <button type="button" onclick="myFunction()">点击我！</button>
+  <p id="demo_4"></p>
+  <p id="demo_5"></p>
+  <script>
+    function myFunction() {
+      document.getElementById("demo_4").innerHTML = "Hello Kitty.";
+      document.getElementById("demo_5").innerHTML = "How are you?";
+    }
+  </script>
+  <!--【提示】：您将稍后在本教程中学到更多有关函数的内容。-->
+  <hr>
+
+
+  <div>
+    <h2>JavaScript 关键词</h2>
+    <p>JavaScript 语句常常通过某个关键词来标识需要执行的 JavaScript 动作。</p>
+    <p>下面的表格列出了一部分将在教程中学到的关键词：</p>
+
+    <table class="dataintable">
+      <tr>
+        <th>关键词</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>break</td>
+        <td>终止 switch 或循环。</td>
+      </tr>
+
+      <tr>
+        <td>continue</td>
+        <td>跳出循环并在顶端开始。</td>
+      </tr>
+
+      <tr>
+        <td>debugger</td>
+        <td>停止执行 JavaScript，并调用调试函数（如果可用）。</td>
+      </tr>
+
+      <tr>
+        <td>do ... while</td>
+        <td>执行语句块，并在条件为真时重复代码块。</td>
+      </tr>
+
+      <tr>
+        <td>for</td>
+        <td>标记需被执行的语句块，只要条件为真。</td>
+      </tr>
+
+      <tr>
+        <td>function</td>
+        <td>声明函数。</td>
+      </tr>
+
+      <tr>
+        <td>if ... else</td>
+        <td>标记需被执行的语句块，根据某个条件。</td>
+      </tr>
+
+      <tr>
+        <td>return</td>
+        <td>退出函数。</td>
+      </tr>
+
+      <tr>
+        <td>switch</td>
+        <td>标记需被执行的语句块，根据不同的情况。</td>
+      </tr>
+
+      <tr>
+        <td>try ... catch</td>
+        <td>对语句块实现错误处理。</td>
+      </tr>
+
+      <tr>
+        <td>var</td>
+        <td>声明变量。</td>
+      </tr>
+    </table>
+
+    <p class="note"><span>注释：</span>JavaScript 关键词指的是保留的单词。保留词无法用作变量名。</p>
+
+  </div>
+</body>
+</html>
