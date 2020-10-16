@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4ba4c9c-40a8-41ff-80cf-6f9b1e4d5881" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js_study/NO9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/NO_10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/NO_8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/NO_9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c4ba4c9c-40a8-41ff-80cf-6f9b1e4d5881" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -67,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js_study/NO_10.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="333" column="30" selection-start-line="333" selection-start-column="30" selection-end-line="333" selection-end-column="30" />
+            <state relative-caret-position="435">
+              <caret line="343" column="7" selection-start-line="343" selection-start-column="7" selection-end-line="343" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -127,11 +121,6 @@
               <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_web" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_web" type="462c0819:PsiDirectoryNode" />
-              <item name="js_study" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -152,7 +141,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -183,16 +172,15 @@
       <option name="presentableId" value="Default" />
       <updated>1601344095816</updated>
       <workItem from="1601344097281" duration="658000" />
-      <workItem from="1602760460928" duration="21126000" />
+      <workItem from="1602760460928" duration="21895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21784000" />
+    <option name="totallyTimeSpent" value="22553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1680" height="980" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -317,8 +305,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js_study/NO_10.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="333" column="30" selection-start-line="333" selection-start-column="30" selection-end-line="333" selection-end-column="30" />
+        <state relative-caret-position="435">
+          <caret line="343" column="7" selection-start-line="343" selection-start-column="7" selection-end-line="343" selection-end-column="7" />
         </state>
       </provider>
     </entry>
