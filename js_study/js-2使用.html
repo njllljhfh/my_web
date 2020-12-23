@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>JavaScript 使用</title>
   <script>
-    function myFunction() {
-      document.getElementById("demo_1").innerHTML = "段落已被更改。";
+    function myFunction_1() {
+      document.getElementById("demo_1").innerHTML = "段落已被更改_1。";
     }
   </script>
 </head>
@@ -16,7 +16,7 @@
 
   <!--<script> 标签-->
   <!--在 HTML 中，JavaScript 代码必须位于 <script> 与 </script> 标签之间。-->
-  <h2>Body 中的 JavaScript</h2>
+  <h2>1.Body 中的 JavaScript</h2>
   <p id="demo_0"></p>
   <script>
     document.getElementById("demo_0").innerHTML = "我的第一段 JavaScript";
@@ -36,20 +36,20 @@
   <div>
     <h2>&lt;head&gt; 或 &lt;body&gt; 中的 JavaScript</h2>
     <p>您能够在 HTML 文档中放置任意数量的脚本。</p>
-    <p>脚本可被放置与 HTML 页面的 &lt;body&gt; 或 &lt;head&gt; 部分中，或兼而有之。</p>
+    <p>脚本可被放置于 HTML 页面的 &lt;body&gt; 或 &lt;head&gt; 部分中，或兼而有之。</p>
   </div>
   <hr>
 
 
-  <h2>Head 中的 JavaScript</h2>
+  <h2>2.Head 中的 JavaScript</h2>
   <!--在本例中，JavaScript 函数被放置于 HTML 页面的 <head> 部分。-->
   <!--该函数会在按钮被点击时调用：-->
   <p id="demo_1">一个段落。</p>
-  <button type="button" onclick="myFunction()">试一试</button>
+  <button type="button" onclick="myFunction_1()">试一试</button>
   <hr>
 
 
-  <h2>Body 中的 JavaScript</h2>
+  <h2>3.Body 中的 JavaScript</h2>
   <!--在本例中，JavaScript 函数被放置于 HTML 页面的 <body> 部分。-->
   <!--该函数会在按钮被点击时调用：-->
   <p id="demo_2">一个段落。</p>
@@ -63,7 +63,7 @@
   <hr>
 
 
-  <h2>外部 JavaScript</h2>
+  <h2>4.外部 JavaScript</h2>
   <p id="demo_3">一个段落。</p>
   <button type="button" onclick="myFunction_3()">试一试</button>
   <p>（myFunction 存储在名为 "myScript.js" 的外部文件中。）</p>
@@ -88,7 +88,7 @@
   <hr>
 
 
-  <h1>外部 JavaScript</h1>
+  <h1>5.外部 JavaScript</h1>
   <!--外部引用-->
   <!--可通过完整的 URL 或 相对于当前网页的路径引用外部脚本：-->
   <!--本例使用完整的 URL 来链接至脚本：-->

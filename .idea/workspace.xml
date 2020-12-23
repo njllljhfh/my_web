@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4ba4c9c-40a8-41ff-80cf-6f9b1e4d5881" name="Default Changelist" comment="" />
+    <list default="true" id="c4ba4c9c-40a8-41ff-80cf-6f9b1e4d5881" name="Default Changelist" comment="_1">
+      <change afterPath="$PROJECT_DIR$/js_study/js-12函数.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-13对象.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-14事件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-15字符串.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-16字符串方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-17数字.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-18数字方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-19数组.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO9.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-9算术.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-1简介.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-11数据类型.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-2使用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-3输出.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-4语句.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-5语法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-6注释.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-7变量.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-8运算符.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/NO_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-10赋值.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,55 +35,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_6.html">
+        <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_7.html">
+        <entry file="file://$PROJECT_DIR$/js_study/js-16字符串方法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10186">
+              <caret line="463" column="10" selection-start-line="463" selection-start-column="10" selection-end-line="463" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-17数字.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
-              <caret line="181" column="9" selection-start-line="181" selection-start-column="9" selection-end-line="181" selection-end-column="9" />
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_8.html">
+        <entry file="file://$PROJECT_DIR$/js_study/js-18数字方法.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO9.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_9.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="n#style#0;n#b#0;n#p#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#em#1;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#4949#4967#0" expanded="true" />
+                <element signature="e#5333#5339#0" expanded="true" />
+                <element signature="e#5351#5357#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js_study/NO_10.html">
+        <entry file="file://$PROJECT_DIR$/js_study/js-19数组.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="343" column="7" selection-start-line="343" selection-start-column="7" selection-end-line="343" selection-end-column="7" />
+            <state relative-caret-position="797">
+              <caret line="394" column="2" selection-start-line="394" selection-start-column="2" selection-end-line="394" selection-end-column="2" />
+              <folding>
+                <element signature="e#556#562#0" expanded="true" />
+                <element signature="e#566#572#0" expanded="true" />
+                <element signature="e#585#591#0" expanded="true" />
+                <element signature="e#596#602#0" expanded="true" />
+                <element signature="e#615#621#0" expanded="true" />
+                <element signature="e#624#630#0" expanded="true" />
+                <element signature="e#4182#4201#0" expanded="true" />
+                <element signature="e#5887#5905#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,6 +110,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>注释</find>
+      <find>【</find>
+      <find>myFunction</find>
+      <find>txt_14</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,17 +127,38 @@
         <option value="$PROJECT_DIR$/js_study/NO_4.html" />
         <option value="$PROJECT_DIR$/js_study/NO_5.html" />
         <option value="$PROJECT_DIR$/js_study/NO_2.html" />
-        <option value="$PROJECT_DIR$/js_study/NO_3.html" />
         <option value="$PROJECT_DIR$/js_study/NO_6.html" />
         <option value="$PROJECT_DIR$/js_study/NO_7.html" />
         <option value="$PROJECT_DIR$/js_study/NON_8.html" />
         <option value="$PROJECT_DIR$/js_study/NO9.html" />
         <option value="$PROJECT_DIR$/js_study/NO_9.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/js_study/NO_10.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_11.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_12.html" />
+        <option value="$PROJECT_DIR$/js_study/JavaScript-事件.html" />
+        <option value="$PROJECT_DIR$/js_study/NO_3.html" />
+        <option value="$PROJECT_DIR$/js_study/js-2使用.html" />
+        <option value="$PROJECT_DIR$/js_study/js-3输出.html" />
+        <option value="$PROJECT_DIR$/js_study/js-1简介.html" />
+        <option value="$PROJECT_DIR$/js_study/js-4语句.html" />
+        <option value="$PROJECT_DIR$/js_study/js-5语法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-6注释.html" />
+        <option value="$PROJECT_DIR$/js_study/js-7变量.html" />
+        <option value="$PROJECT_DIR$/js_study/js-9算术.html" />
+        <option value="$PROJECT_DIR$/js_study/js-11数据类型.html" />
+        <option value="$PROJECT_DIR$/js_study/js-12函数.html" />
+        <option value="$PROJECT_DIR$/js_study/js-13对象.html" />
+        <option value="$PROJECT_DIR$/js_study/js-14事件.html" />
+        <option value="$PROJECT_DIR$/js_study/js-15字符串.html" />
+        <option value="$PROJECT_DIR$/js_study/js-16字符串方法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-17数字.html" />
+        <option value="$PROJECT_DIR$/js_study/js-18数字方法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-19数组.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="980" />
@@ -114,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,11 +176,27 @@
               <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="my_web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_web" type="462c0819:PsiDirectoryNode" />
+              <item name="js_study" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_web" type="462c0819:PsiDirectoryNode" />
+              <item name="js_study" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my_web" type="462c0819:PsiDirectoryNode" />
+              <item name="js_study" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,15 +243,20 @@
       <option name="presentableId" value="Default" />
       <updated>1601344095816</updated>
       <workItem from="1601344097281" duration="658000" />
-      <workItem from="1602760460928" duration="21895000" />
+      <workItem from="1602760460928" duration="38504000" />
+      <workItem from="1606479429697" duration="384000" />
+      <workItem from="1606486549068" duration="365000" />
+      <workItem from="1607693781020" duration="861000" />
+      <workItem from="1608627943649" duration="20724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22553000" />
+    <option name="totallyTimeSpent" value="61496000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1680" height="980" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="980" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -194,7 +270,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30743244" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.30743244" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -222,31 +298,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="22">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_3.html">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="196">
+          <caret line="517" column="4" selection-start-line="517" selection-start-column="4" selection-end-line="517" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_2.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-6注释.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="476">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_1.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-5语法.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="601">
+          <caret line="200" column="30" selection-start-line="200" selection-start-column="30" selection-end-line="200" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-7变量.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-8运算符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-9算术.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-10赋值.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-11数据类型.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="346" column="20" lean-forward="true" selection-start-line="346" selection-start-column="20" selection-end-line="346" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-12函数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-13对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-2使用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="97" column="21" lean-forward="true" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-1简介.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="97" selection-start-line="15" selection-start-column="97" selection-end-line="15" selection-end-column="97" />
           <folding>
             <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#6;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -254,59 +393,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_5.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-4语句.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="-399">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_4.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-14事件.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="179">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_6.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-15字符串.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+        <state relative-caret-position="438">
+          <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+          <folding>
+            <element signature="e#3282#3301#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_7.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-3输出.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-16字符串方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10186">
+          <caret line="463" column="10" selection-start-line="463" selection-start-column="10" selection-end-line="463" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-17数字.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
-          <caret line="181" column="9" selection-start-line="181" selection-start-column="9" selection-end-line="181" selection-end-column="9" />
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_8.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-18数字方法.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="n#style#0;n#b#0;n#p#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#1;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4949#4967#0" expanded="true" />
+            <element signature="e#5333#5339#0" expanded="true" />
+            <element signature="e#5351#5357#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_9.html">
+    <entry file="file://$PROJECT_DIR$/js_study/js-19数组.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO9.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/NO_10.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="343" column="7" selection-start-line="343" selection-start-column="7" selection-end-line="343" selection-end-column="7" />
+        <state relative-caret-position="797">
+          <caret line="394" column="2" selection-start-line="394" selection-start-column="2" selection-end-line="394" selection-end-column="2" />
+          <folding>
+            <element signature="e#556#562#0" expanded="true" />
+            <element signature="e#566#572#0" expanded="true" />
+            <element signature="e#585#591#0" expanded="true" />
+            <element signature="e#596#602#0" expanded="true" />
+            <element signature="e#615#621#0" expanded="true" />
+            <element signature="e#624#630#0" expanded="true" />
+            <element signature="e#4182#4201#0" expanded="true" />
+            <element signature="e#5887#5905#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

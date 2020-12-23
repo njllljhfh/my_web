@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 数字</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_numbers.asp">JavaScript 数字</a>
+  <hr>
+
+  <p>JavaScript 只有一种数值类型。</p>
+  <p>书写数值时带不带小数点均可。 </p>
+  <hr>
+
+
+  <h1>1.JavaScript 数字</h1>
+  <p>书写 JavaScript 数值既可以带小数点，也可以不带：</p>
+  <p id="demo_1"></p>
+  <script>
+    var x = 3.14;
+    var y = 3;
+    document.getElementById("demo_1").innerHTML = x + "<br>" + y;
+  </script>
+  <hr>
+
+
+  <h1>2.JavaScript 数字</h1>
+  <p>超大或超小的数可通过科学（指数）计数法来写：</p>
+  <p id="demo_2"></p>
+  <script>
+    var x = 123e5;
+    var y = 123e-5;
+    document.getElementById("demo_2").innerHTML = x + "<br>" + y;
+  </script>
+  <hr>
+
+
+  <!--JavaScript 数值始终是 64 位的浮点数-->
+  <!--与许多其他编程语言不同，JavaScript 不会定义不同类型的数，比如整数、短的、长的、浮点的等等。-->
+  <!--JavaScript 数值始终以双精度浮点数来存储，根据国际 IEEE 754 标准。-->
+  <!--此格式用 64 位存储数值，其中 0 到 51 存储数字（片段），52 到 62 存储指数，63 位存储符号：-->
+  <br>
+
+
+  <h1>3.JavaScript 数字</h1>
+  <p>整数（不使用指数或科学计数法）会被精确到 15 位：</p>
+  <p id="demo_3"></p>
+  <script>
+    var x = 999999999999999;
+    var y = 9999999999999999;  // 输出：10000000000000000
+    document.getElementById("demo_3").innerHTML = x + "<br>" + y;
+  </script>
+  <hr>
+
+
+  <!--小数的最大数是 17 位，但是浮点的算数并不总是 100% 精准：-->
+  <h1>4.JavaScript 数字</h1>
+  <p>浮点的算数并不总是 100% 精准：</p>
+  <p id="demo_4"></p>
+  <script>
+    var x = 0.2 + 0.1;
+    document.getElementById("demo_4").innerHTML = "0.2 + 0.1 = " + x;
+  </script>
+  <hr>
+
+
+  <!--使用乘除法有助于解决上面的问题：-->
+  <h1>5.JavaScript 数字</h1>
+  <p>浮点的算数并不总是 100% 精准：</p>
+  <p id="demo1"></p>
+  <p>但是乘法和除法是有用的：</p>
+  <p id="demo2"></p>
+  <script>
+    var x = 0.2 + 0.1;
+    document.getElementById("demo1").innerHTML = "0.2 + 0.1 = " + x;
+    var y = (0.2 * 10 + 0.1 * 10) / 10;
+    document.getElementById("demo2").innerHTML = "0.2 + 0.1 = " + y;
+  </script>
+  <hr>
+
+
+  <!--数字和字符串相加-->
+  <!--警告！！-->
+  <!--JavaScript 的加法和级联（concatenation）都使用 + 运算符。-->
+  <!--数字用加法。字符串用级联。-->
+  <!--如果您对两个数相加，结果将是一个数：-->
+  <h1>6.JavaScript 数字</h1>
+  <p>如果您对两个数相加，结果将是一个数：</p>
+  <p id="demo_6"></p>
+  <script>
+    var x = 10;
+    var y = 20;
+    var z = x + y;
+    document.getElementById("demo_6").innerHTML = z;
+  </script>
+  <hr>
+
+
+  <h1>7.JavaScript 数字</h1>
+  <p>如果添加两个数字字符串，结果将是级联字符串：</p>
+  <p id="demo_7"></p>
+  <script>
+    var x = "10";
+    var y = "20";
+    var z = x + y;
+    document.getElementById("demo_7").innerHTML = z;
+  </script>
+  <hr>
+
+
+  <h1>8.JavaScript 数字</h1>
+  <p>如果数字和数字字符串相加，结果将是级联字符串：</p>
+  <p id="demo_8"></p>
+  <script>
+    var x = 10;
+    var y = "20";
+    var z = x + y;
+    document.getElementById("demo_8").innerHTML = z;
+  </script>
+  <hr>
+
+
+  <h1>9.JavaScript 数字</h1>
+  <p>如果数字字符串和数字相加，结果将是级联字符串：</p>
+  <p id="demo_9"></p>
+  <script>
+    var x = "10";
+    var y = 20;
+    document.getElementById("demo_9").innerHTML = "结果是：" + x + y;
+  </script>
+  <hr>
+
+
+  <h1>10.JavaScript 数字</h1>
+  <p>一个常见的错误是期望这个结果为 30：</p>
+  <p id="demo_10"></p>
+  <script>
+    var x = 10;
+    var y = 20;
+    document.getElementById("demo_10").innerHTML = "结果是：" + x + y;
+  </script>
+  <hr>
+
+
+  <h1>11.JavaScript 数字</h1>
+  <p>一个常见的错误是期望这个结果是 102030：</p>
+  <p id="demo_11"></p>
+  <script>
+    /*
+    JavaScript 从左向右进行编译。
+    因为 x 和 y 都是数，10 + 20 将被相加。
+    因为 z 是字符串，30 + "30" 被级联。
+    */
+    var x = 10;
+    var y = 20;
+    var z = "30";
+    var result = x + y + z;
+    document.getElementById("demo_11").innerHTML = result;
+  </script>
+  <hr>
+
+
+  <!--数字字符串-->
+  <!--JavaScript 字符串可以拥有数字内容：-->
+  <!--var x = 100;         // x 是数字-->
+  <!--var y = "100";       // y 是字符串-->
+  <!---->
+  <!--在所有数字运算中，JavaScript 会尝试将字符串转换为数字：-->
+  <!--该例如此运行：-->
+  <h1>12.JavaScript 数字</h1>
+  <p>在相除时，JavaScript 会尝试把字符串转换为数字：</p>
+  <p id="demo_12"></p>
+  <script>
+    var x = "100";
+    var y = "10";
+    var z = x / y;
+    document.getElementById("demo_12").innerHTML = z;
+  </script>
+  <br>
+
+
+  <h1>13.JavaScript 数字</h1>
+  <p>在相乘时，JavaScript 会尝试把字符串转换为数字：</p>
+  <p id="demo_13"></p>
+  <script>
+    var x = "100";
+    var y = "10";
+    var z = x * y;
+    document.getElementById("demo_13").innerHTML = z;
+  </script>
+  <br>
+
+
+  <h1>14.JavaScript 数字</h1>
+  <p>在相减时，JavaScript 会尝试把字符串转换为数字：</p>
+  <p id="demo_14"></p>
+  <script>
+    var x = "100";
+    var y = "10";
+    var z = x - y;
+    document.getElementById("demo_14").innerHTML = z;
+  </script>
+  <br>
+
+
+  <h1>15.JavaScript 数字</h1>
+  <p>在相加时，JavaScript 不会把字符串转换为数字：</p>
+  <p id="demo_15"></p>
+  <script>
+    var x = "100";
+    var y = "10";
+    var z = x + y;
+    document.getElementById("demo_15").innerHTML = z;
+    // 例子中，JavaScript 用 + 运算符对字符串进行了级联。
+  </script>
+  <hr>
+
+
+  <!--NaN - 非数值-->
+  <!--NaN 属于 JavaScript 保留词，指示某个数不是合法数。-->
+  <!--尝试用一个非数字字符串进行除法会得到 NaN（Not a Number）：-->
+  <h1>16.JavaScript 数字</h1>
+  <p>用非数字字符串进行除法会得到 NaN（Not a Number）：</p>
+  <p id="demo_16"></p>
+  <script>
+    document.getElementById("demo_16").innerHTML = 100 / "Apple";
+  </script>
+  <br>
+
+
+  <!--不过，假如字符串包含数值，则结果将是数：-->
+  <h1>17.JavaScript 数字</h1>
+  <p>数字除以数字字符串将是数字：</p>
+  <p id="demo_17"></p>
+  <script>
+    document.getElementById("demo_17").innerHTML = 100 / "10";
+  </script>
+  <br>
+
+
+  <h1>18.JavaScript 数字</h1>
+  <p>您可使用全局 JavaScript 函数 isNaN() 来确定某个值是否是数：</p>
+  <p id="demo_18"></p>
+  <script>
+    var x = 100 / "Apple";
+    document.getElementById("demo_18").innerHTML = isNaN(x);
+  </script>
+  <!--NaN的类型（typeof NaN）是 number-->
+  <br>
+
+
+  <!--要小心 NaN。假如您在数学运算中使用了 NaN，则结果也将是 NaN：-->
+  <h1>19.JavaScript 数字</h1>
+  <p>假如您在数学运算中使用了 NaN，则结果也将是 NaN：</p>
+  <p id="demo_19"></p>
+  <script>
+    var x = NaN;
+    var y = 5;
+    document.getElementById("demo_19").innerHTML = x + y;
+  </script>
+  <br>
+
+
+  <!--结果也许是串连接：-->
+  <h1>20.JavaScript 数字</h1>
+  <p>假如您在数学运算中使用了 NaN，则结果可能是级联：</p>
+  <p id="demo_20"></p>
+  <script>
+    var x = NaN;
+    var y = "5";
+    document.getElementById("demo_20").innerHTML = x + y;
+  </script>
+  <br>
+
+
+  <!--NaN 是数，typeof NaN 返回 number：-->
+  <h1>21.JavaScript 数字</h1>
+  <p>NaN 是数，typeof NaN 返回 number：</p>
+  <p id="demo_21"></p>
+  <script>
+    var x = NaN;
+    document.getElementById("demo_21").innerHTML = typeof x;
+  </script>
+  <hr>
+
+
+</body>
+</html>

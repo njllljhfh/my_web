@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 函数</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_functions.asp">JavaScript 函数</a>
+  <hr>
+
+
+  <!--JavaScript 函数是被设计为执行特定任务的代码块。-->
+  <!--JavaScript 函数会在某代码调用它时被执行。-->
+  <h2>1.JavaScript 函数</h2>
+  <p>本例调用了一个执行计算的函数，然后返回结果：</p>
+  <p id="demo_0"></p>
+  <script>
+    function myFunction(p1, p2) {
+      return p1 * p2;
+    }
+
+    document.getElementById("demo_0").innerHTML = myFunction(7, 8);
+  </script>
+  <hr>
+
+
+  <!--为何使用函数？-->
+  <!--您能够对代码进行复用：只要定义一次代码，就可以多次使用它。-->
+  <!--您能够多次向同一函数传递不同的参数，以产生不同的结果。-->
+  <h2>2.JavaScript 函数</h2>
+  <p>本例调用函数把华氏度转换为摄氏度：</p>
+  <p id="demo_1"></p>
+  <script>
+    function toCelsius(f) {
+      return (5 / 9) * (f - 32);
+    }
+
+    document.getElementById("demo_1").innerHTML = toCelsius(86);
+  </script>
+  <hr>
+
+
+  <!--() 运算符调用函数-->
+  <!--使用上面的例子，toCelsius 引用的是函数对象，而 toCelsius() 引用的是函数结果。-->
+  <h2>3.JavaScript 函数</h2>
+  <p>不使用 () 访问函数将返回函数声明而不是函数结果：</p>
+  <p id="demo_2"></p>
+  <script>
+    function toCelsius(f) {
+      return (5 / 9) * (f - 32);
+    }
+
+    document.getElementById("demo_2").innerHTML = toCelsius;
+  </script>
+  <hr>
+
+
+  <!--用作变量值的函数-->
+  <!--函数的使用方法与变量一致，在所有类型的公式、赋值和计算中。-->
+  <h2>4.JavaScript 函数</h2>
+  <p id="demo_3"></p>
+  <script>
+    document.getElementById("demo_3").innerHTML =
+      "温度是：" + toCelsius(86) + " 摄氏度。";
+
+    function toCelsius(fahrenheit) {
+      return (5 / 9) * (fahrenheit - 32);
+    }
+  </script>
+  <hr>
+
+
+  <!--局部变量-->
+  <!--在 JavaScript 函数中声明的变量，会成为函数的局部变量。-->
+  <!--局部变量只能在函数内访问。-->
+  <h2>5.JavaScript 函数</h2>
+  <p>myFunction() 之外的 carName 未定义。</p>
+  <p id="demo_4"></p>
+  <p id="demo_5"></p>
+  <script>
+    myFunction();
+
+    function myFunction() {
+      var carName = "Volvo";
+      document.getElementById("demo_4").innerHTML =
+        typeof carName + " " + carName;
+    }
+
+    document.getElementById("demo_5").innerHTML =
+      typeof carName;
+    <!--由于局部变量只能被其函数识别，因此可以在不同函数中使用相同名称的变量。-->
+    <!--局部变量在函数开始时创建，在函数完成时被删除。-->
+  </script>
+  <hr>
+
+
+</body>
+</html>

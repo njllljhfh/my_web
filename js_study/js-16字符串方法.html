@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 字符串方法</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_string_methods.asp">JavaScript 字符串方法</a>
+  <p>字符串方法帮助您处理字符串。</p>
+  <hr>
+
+
+  <div>
+    <h2>1.字符串方法和属性</h2>
+    <p>原始值，比如“Bill Gates”，无法拥有属性和方法（因为它们不是对象）。</p>
+    <p>但是通过 JavaScript，方法和属性也可用于原始值，因为在执行方法和属性时 JavaScript 将原始值视为对象。</p>
+  </div>
+  <hr>
+
+
+  <!--字符串长度-->
+  <!--length 属性返回字符串的长度：-->
+  <h1>2.JavaScript 字符串属性</h1>
+  <p>length 属性返回字符串的长度：</p>
+  <p id="demo_0"></p>
+  <script>
+    var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.getElementById("demo_0").innerHTML = txt.length;
+  </script>
+  <hr>
+
+
+  <h1>3.JavaScript 字符串方法</h1>
+  <p>indexOf() 方法返回指定文本首次出现的位置：</p>
+  <p id="demo_1"></p>
+  <script>
+    var str = "The full name of China is the People's Republic of China.";
+    var pos = str.indexOf("China");
+    document.getElementById("demo_1").innerHTML = pos;
+  </script>
+  <br>
+
+
+  <!--JavaScript 从零计算位置。-->
+  <!--0 是字符串中的第一个位置，1 是第二个，2 是第三个 ...-->
+  <!--lastIndexOf() 方法返回指定文本在字符串中最后一次出现的索引：-->
+  <h1>4.JavaScript 字符串方法</h1>
+  <p>lastIndexOf() 返回指定文本最后出现的位置：</p>
+  <p id="demo_2"></p>
+  <script>
+    var str = "The full name of China is the People's Republic of China.";
+    var pos = str.lastIndexOf("China");
+    document.getElementById("demo_2").innerHTML = pos;
+  </script>
+  <br>
+
+
+  <h1>5.JavaScript 字符串方法</h1>
+  <p>如果未找到文本，则 indexOf() 和 lastIndexOf() 都返回 -1：</p>
+  <p id="demo_5"></p>
+  <script>
+    var str = "The full name of China is the People's Republic of China.";
+    var pos = str.indexOf("USA");
+    document.getElementById("demo_5").innerHTML = pos;
+  </script>
+  <br>
+
+
+  <h1>6.JavaScript 字符串方法</h1>
+  <p>indexOf() 方法接受第二个参数作为搜索的起始位置：</p>
+  <p id="demo_3"></p>
+  <script>
+    var str = "The full name of China is the People's Republic of China.";
+    var pos = str.indexOf("China", 18);
+    document.getElementById("demo_3").innerHTML = pos;
+  </script>
+  <br>
+
+
+  <!--lastIndexOf() 方法向后进行检索（从尾到头），这意味着：假如第二个参数是 50，则从位置 50 开始检索，直到字符串的起点。-->
+  <h1>7.JavaScript 字符串方法</h1>
+  <p>lastIndexOf() 方法接受第二个参数作为搜索的起始位置：</p>
+  <p>请记住，lastIndexOf（）方法向后搜索，因此位置 50 表示在第 50 位开始搜索，并搜索到开头。</p>
+  <p>位置 50 指的是从开头算起的位置 50。</p>
+  <p id="demo_4"></p>
+  <script>
+    var str = "The full name of China is the People's Republic of China.";
+    var pos = str.lastIndexOf("China", 50);
+    document.getElementById("demo_4").innerHTML = pos;
+  </script>
+  <hr>
+
+
+  <!--检索字符串中的字符串-->
+  <!--search() 方法搜索特定值的字符串，并返回匹配的位置：-->
+  <h1>8.JavaScript 字符串方法</h1>
+  <p>search() 方法返回字符串中指定文本第一次出现的位置：</p>
+  <p id="demo_6"></p>
+  <script>
+    var str = "The full name of China is the People's Republic of China.";
+    var pos = str.search("China");
+    document.getElementById("demo_6").innerHTML = pos;
+  </script>
+  <!--您注意到了吗？-->
+  <!--两种方法，indexOf() 与 search()，是相等的。-->
+  <!---->
+  <!--这两种方法是不相等的。区别在于：-->
+  <!---->
+  <!--search() 方法无法设置第二个开始位置参数。-->
+  <!--indexOf() 方法无法设置更强大的搜索值（正则表达式）。-->
+  <!--您将在正则表达式(https://www.w3school.com.cn/js/js_regexp.asp)的章节学习到这些更强大的检索值。-->
+  <hr>
+
+
+  <div>
+    <h2>提取部分字符串</h2>
+    <p>有三种提取部分字符串的方法：</p>
+    <ul>
+      <li>slice(<i>start</i>, <i>end</i>)</li>
+      <li>substring(<i>start</i>, <i>end</i>)</li>
+      <li>substr(<i>start</i>, <i>length</i>)</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <!--slice() 方法-->
+  <!--slice() 提取字符串的某个部分并在新字符串中返回被提取的部分。-->
+  <!--该方法设置两个参数：起始索引（开始位置），终止索引（结束位置）。-->
+  <h1>9.JavaScript 字符串方法</h1>
+  <p>slice() 提取字符串的某个部分，并在新字符串中返回被提取的部分。</p>
+  <p id="demo_7"></p>
+  <script>
+    var str = "Apple, Banana, Mango";
+    // 这个例子裁剪字符串中位置 7 到位置 12 的片段：
+    var res = str.slice(7, 13); //不包括第13位
+    document.getElementById("demo_7").innerHTML = res;
+  </script>
+  <br>
+
+
+  <!--如果某个参数为负，则从字符串的结尾开始计数。-->
+  <!--这个例子裁剪字符串中位置 -13 到位置 -8 的片段：-->
+  <h1>10.JavaScript 字符串方法</h1>
+  <p>slice() 提取字符串的某个部分，并在新字符串中返回被提取的部分。</p>
+  <p id="demo_8"></p>
+  <script>
+    var str = "Apple, Banana, Mango";
+    var res = str.slice(-13, -7); //不包括第-7位
+    document.getElementById("demo_8").innerHTML = res;
+    //【提示】：负值位置不适用 Internet Explorer 8 及其更早版本。
+  </script>
+  <br>
+
+
+  <h1>11.JavaScript 字符串方法</h1>
+  <p>slice() 提取字符串的某个部分，并在新字符串中返回被提取的部分。</p>
+  <p id="demo_9"></p>
+  <script>
+    var str = "Apple, Banana, Mango";
+    // 如果省略第二个参数，则该方法将裁剪字符串的剩余部分：
+    var res = str.slice(7);
+    document.getElementById("demo_9").innerHTML = res;
+  </script>
+  <hr>
+
+
+  <!--substring() 方法-->
+  <!--substring() 类似于 slice()。-->
+  <!--不同之处在于 substring() 无法接受负的索引。-->
+  <h1>12.JavaScript 字符串方法</h1>
+  <p>substring() 提取字符串的某个部分，并在新字符串中返回被提取的部分。该方法无法接受负的索引。</p>
+  <p id="demo_10"></p>
+  <script>
+    var str = "Apple, Banana, Mango";
+    // 如果省略第二个参数，则该 substring() 将裁剪字符串的剩余部分。
+    var res = str.substring(7, 13);
+    document.getElementById("demo_10").innerHTML = res;
+  </script>
+  <hr>
+
+
+  <!--substr() 方法-->
+  <!--substr() 类似于 slice()。-->
+  <!--不同之处在于第二个参数规定被提取部分的长度。-->
+  <h1>13.JavaScript 字符串方法</h1>
+  <p>substr() 提取字符串的某个部分，并在新字符串中返回被提取的部分。该方法第二个参数规定被提取部分的长度。</p>
+  <p id="demo_11"></p>
+  <script>
+    var str = "Apple, Banana, Mango";
+    // 如果省略第二个参数，则该 substr() 将裁剪字符串的剩余部分。
+    var res = str.substr(7, 6);
+    document.getElementById("demo_11").innerHTML = res;
+  </script>
+  <br>
+
+
+  <h1>14.JavaScript 字符串方法</h1>
+  <p>substr() 提取字符串的某个部分，并在新字符串中返回被提取的部分。</p>
+  <p id="demo_12"></p>
+  <script>
+    var str = "Apple, Banana, Mango";
+    // 如果首个参数为负，则从字符串的结尾计算位置。
+    // 第二个参数不能为负，因为它定义的是长度。
+    var res = str.substr(-5);
+    document.getElementById("demo_12").innerHTML = res;
+  </script>
+  <hr>
+
+
+  <!--替换字符串内容-->
+  <!--replace() 方法用另一个值替换在字符串中指定的值：-->
+  <h1>15.JavaScript 字符串方法</h1>
+  <p>请把下面的段落中的“Microsoft”替换为“W3School”：</p>
+  <button onclick="myFunction()">试一试</button>
+  <p id="demo_13">请访问 Microsoft！</p>
+  <script>
+    function myFunction() {
+      var str = document.getElementById("demo_13").innerHTML;
+      var txt = str.replace("Microsoft", "W3School");
+      document.getElementById("demo_13").innerHTML = txt;
+    }
+  </script>
+  <br>
+
+  <!--replace() 方法不会改变调用它的字符串。它返回的是新字符串。-->
+  <!--默认地，replace() 只替换首个匹配：-->
+  <h1>16.JavaScript 字符串方法</h1>
+  <p>请把下面的段落中的“Microsoft”替换为“W3School”：</p>
+  <button onclick="myFunction_14()">试一试</button>
+  <p id="demo_14">请访问 Microsoft 和 Microsoft！</p>
+  <script>
+    function myFunction_14() {
+      var str_14 = document.getElementById("demo_14").innerHTML;
+      var txt_14 = str_14.replace("Microsoft", "W3School");
+      document.getElementById("demo_14").innerHTML = txt_14;
+    }
+  </script>
+  <br>
+
+
+  <!--默认地，replace() 对大小写敏感。因此不对匹配 MICROSOFT：-->
+  <h1>17.JavaScript 字符串方法</h1>
+  <p>请把下面的段落中的“Microsoft”替换为“W3School”：</p>
+  <button onclick="myFunction_15()">试一试</button>
+  <p id="demo_15">请访问 Microsoft！</p>
+  <script>
+    function myFunction_15() {
+      var str_15 = document.getElementById("demo_15").innerHTML;
+      var txt_15 = str_15.replace("MICROSOFT", "W3School");
+      document.getElementById("demo_15").innerHTML = txt_15;
+    }
+  </script>
+  <p>此例无效，因为 MICROSOFT 为大写。</p>
+  <br>
+
+
+  <!--如需执行大小写不敏感的替换，请使用正则表达式 /i（大小写不敏感）：-->
+  <h1>18.JavaScript 字符串方法</h1>
+  <p>请把下面的段落中的“Microsoft”替换为“W3School”：</p>
+  <button onclick="myFunction_16()">试一试</button>
+  <p id="demo_16">请访问 Microsoft！</p>
+  <script>
+    function myFunction_16() {
+      var str_16 = document.getElementById("demo_16").innerHTML;
+      var txt_16 = str_16.replace(/MICROSOFT/i, "W3School");
+      document.getElementById("demo_16").innerHTML = txt_16;
+    }
+  </script>
+  <br>
+
+
+  <!--请注意正则表达式不带引号。-->
+  <!--如需替换所有匹配，请使用正则表达式的 g 标志（用于全局搜索）：-->
+  <h1>19.JavaScript 字符串方法</h1>
+  <p>请把下面的段落中的“Microsoft”替换为“W3School”：</p>
+  <button onclick="myFunction_17()">试一试</button>
+  <p id="demo_17">请访问 Microsoft 和 Microsoft！</p>
+  <script>
+    function myFunction_17() {
+      var str_17 = document.getElementById("demo_17").innerHTML;
+      var txt_17 = str_17.replace(/Microsoft/g, "W3School");
+      document.getElementById("demo_17").innerHTML = txt_17;
+    }
+  </script>
+  <hr>
+
+
+  <!--转换为大写和小写-->
+  <!--通过 toUpperCase() 把字符串转换为大写：-->
+  <h1>20.JavaScript 字符串方法</h1>
+  <p>把字符串转换为大写：</p>
+  <button onclick="myFunction_18()">试一试</button>
+  <p id="demo_18">Hello World!</p>
+  <script>
+    function myFunction_18() {
+      var text_18 = document.getElementById("demo_18").innerHTML;
+      document.getElementById("demo_18").innerHTML = text_18.toUpperCase();
+    }
+  </script>
+  <br>
+
+
+  <!--通过 toLowerCase() 把字符串转换为小写：-->
+  <h1>21.JavaScript 字符串方法</h1>
+  <p>把字符串转换为小写：</p>
+  <button onclick="myFunction_19()">试一试</button>
+  <p id="demo_19">Hello World!</p>
+  <script>
+    function myFunction_19() {
+      var text_19 = document.getElementById("demo_19").innerHTML;
+      document.getElementById("demo_19").innerHTML = text_19.toLowerCase();
+    }
+  </script>
+  <hr>
+
+
+  <!--concat() 方法-->
+  <!--concat() 连接两个或多个字符串：-->
+  <h1>22.JavaScript 字符串方法</h1>
+  <p>concat() 方法连接两个或多个字符串：</p>
+  <p id="demo_20"></p>
+  <script>
+    var text1 = "Hello";
+    var text2 = "World!";
+    var text3 = text1.concat(" ", text2);
+    document.getElementById("demo_20").innerHTML = text3;
+  </script>
+  <!--concat() 方法可用于代替加运算符。下面两行是等效的：-->
+  <!--var text = "Hello" + " " + "World!";-->
+  <!--var text = "Hello".concat(" ","World!");-->
+  <!---->
+  <!--所有字符串方法都会返回新字符串。它们不会修改原始字符串。-->
+  <!--正式地说：字符串是不可变的：字符串不能更改，只能替换。-->
+  <hr>
+
+
+  <!--String.trim()-->
+  <!--trim() 方法删除字符串两端的空白符：-->
+  <!--【警告】：Internet Explorer 8 或更低版本不支持 trim() 方法。-->
+  <h1>23.JavaScript String.trim()</h1>
+  <p>点击这个按钮来输出已删除空白字符的字符串。</p>
+  <button onclick="myFunction_21()">试一试</button>
+  <p><strong>注释：</strong>Internet Explorer 8 或更低版本不支持 trim() 方法。</p>
+  <script>
+    function myFunction_21() {
+      var str = "     Hello World!     ";
+      alert(str.trim());
+    }
+  </script>
+  <br>
+
+
+  <!--如需支持 IE 8，您可搭配正则表达式使用 replace() 方法代替：-->
+  <h1>24.JavaScript String.trim()</h1>
+  <p>IE 8 不支持 String.trim()。您可搭配正则表达式使用 replace() 方法代替：</p>
+  <button onclick="myFunction_22()">试一试</button>
+  <script>
+    function myFunction_22() {
+      var str = "     Hello World!     ";
+      alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
+    }
+  </script>
+  <br>
+
+
+  <!--您还可以使用上面的 replace 方案把 trim 函数添加到 JavaScript String.prototype：-->
+  <h1>25.JavaScript String.trim()</h1>
+  <p>IE 8 不支持 String.trim()。您可以使用 replace 方案把 trim 函数添加到 JavaScript String.prototype：</p>
+  <button onclick="myFunction_23()">试一试</button>
+  <script>
+    if (!String.prototype.trim) {
+      String.prototype.trim = function () {
+        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+      };
+    }
+
+    function myFunction_23() {
+      var str = "     Hello World!    ";
+      alert(str.trim());
+    }
+  </script>
+  <hr>
+
+
+  <div>
+    <h2>提取字符串字符</h2>
+    <p>这是两个提取字符串字符的<em>安全</em>方法：</p>
+    <ul>
+      <li>charAt(<i>position</i>)</li>
+      <li>charCodeAt(<i>position</i>)</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <!--charAt() 方法-->
+  <!--charAt() 方法返回字符串中指定下标（位置）的字符串：-->
+  <h1>26.JavaScript 字符串方法</h1>
+  <p>charAt() 方法返回字符串中指定位置的字符串：</p>
+  <p id="demo_21"></p>
+  <script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo_21").innerHTML = str.charAt(0); // 返回 H
+  </script>
+  <br>
+
+
+  <!--charCodeAt() 方法-->
+  <!--charCodeAt() 方法返回字符串中指定索引的字符 unicode 编码：-->
+  <h1>27.JavaScript 字符串方法</h1>
+  <p>charCodeAt() 方法返回字符串中指定位置的字符 unicode 编码：</p>
+  <p id="demo_22"></p>
+  <script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo_22").innerHTML = str.charCodeAt(0); // 返回72
+  </script>
+  <hr>
+
+
+  <!--属性访问（Property Access）-->
+  <!--ECMAScript 5 (2009) 允许对字符串的属性访问 [ ]：-->
+  <h1>28.JavaScript 字符串方法</h1>
+  <p>ECMAScript 5 允许对字符串的属性访问 str[0]：</p>
+  <p id="demo_23"></p>
+  <script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo_23").innerHTML = str[0]; // 返回 H
+    /*
+    使用属性访问有点不太靠谱：
+    ● 不适用 Internet Explorer 7 或更早的版本
+    ● 它让字符串看起来像是数组（其实并不是）
+    ● 如果找不到字符，[ ] 返回 undefined，而 charAt() 返回空字符串。
+    ● 它是只读的。str[0] = "A" 不会产生错误（但也不会工作！）
+    */
+  </script>
+  <br>
+
+
+  <h1>29.JavaScript 字符串方法</h1>
+  <p>ECMAScript 5 允许对字符串的属性访问，不过是只读的：</p>
+  <p id="demo_24"></p>
+  <script>
+    var str = "HELLO WORLD";
+    str[0] = "A";  // 不产生错误，但不会工作
+    document.getElementById("demo_24").innerHTML = str[0];  // 返回 H
+    // 【提示】：如果您希望按照数组的方式处理字符串，可以先把它转换为数组。
+  </script>
+  <hr>
+
+
+  <!--把字符串转换为数组-->
+  <!--可以通过 split() 将字符串转换为数组：-->
+  <h1>30.JavaScript 字符串方法</h1>
+  <p>单击“试一试”以显示在字符串拆分后的第一个数组元素。</p>
+  <button onclick="myFunction_25()">试一试</button>
+  <p id="demo_25"></p>
+  <script>
+    function myFunction_25() {
+      var str_25 = "a,b,c,d,e,f";
+      var arr_25 = str_25.split(",");
+      document.getElementById("demo_25").innerHTML = arr_25[0];
+    }
+  </script>
+  <br>
+
+
+  <!--如果省略分隔符，被返回的数组中将只有一个元素，并在 index[0] 中包含整个字符串。-->
+  <h1>31.JavaScript 字符串方法（split()省略分隔符）</h1>
+  <p id="demo_26"></p>
+  <script>
+    var str = "Hello";   // 字符串
+    var arr = str.split();  // 分隔为字符
+    var text = "";
+    var i;
+    for (i = 0; i < arr.length; i++) {
+      text += arr[i] + "<br>"
+    }
+    document.getElementById("demo_26").innerHTML = text;
+  </script>
+  <br>
+
+  <!--如果分隔符是 ""，被返回的数组将是间隔单个字符的数组：-->
+  <h1>32.JavaScript 字符串方法（split()分隔符是 ""）</h1>
+  <p id="demo_27"></p>
+  <script>
+    var str = "Hello";   // 字符串
+    var arr = str.split("");  // 分隔为字符
+    var text = "";
+    var i;
+    for (i = 0; i < arr.length; i++) {
+      text += arr[i] + "<br>"
+    }
+    document.getElementById("demo_27").innerHTML = text;
+  </script>
+
+
+</body>
+</html>
