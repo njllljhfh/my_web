@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 设置日期方法</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_date_methods_set.asp">JavaScript 设置日期方法</a>
+  <hr>
+
+
+  <h1>使用“设置日期”方法可以设置日期对象的日期值（年、月、日、小时、分钟、秒、毫秒）。</h1>
+  <hr>
+
+
+  <div>
+    <h2>日期设置方法</h2>
+    <p>设置方法用于设置日期的某个部分。下面是最常用的方法（按照字母顺序排序）：</p>
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">方法</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>setDate()</td>
+        <td>以数值（1-31）设置日</td>
+      </tr>
+
+      <tr>
+        <td>setFullYear()</td>
+        <td>设置年（可选月和日）</td>
+      </tr>
+
+      <tr>
+        <td>setHours()</td>
+        <td>设置小时（0-23）</td>
+      </tr>
+
+      <tr>
+        <td>setMilliseconds()</td>
+        <td>设置毫秒（0-999）</td>
+      </tr>
+
+      <tr>
+        <td>setMinutes()</td>
+        <td>设置分（0-59）</td>
+      </tr>
+
+      <tr>
+        <td>setMonth()</td>
+        <td>设置月（0-11）</td>
+      </tr>
+
+      <tr>
+        <td>setSeconds()</td>
+        <td>设置秒（0-59）</td>
+      </tr>
+
+      <tr>
+        <td>setTime()</td>
+        <td>设置时间（从 1970 年 1 月 1 日至今的毫秒数）</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h2>1. setFullYear()</h2>
+    <p>setFullYear() 方法设置日期对象的年份。</p>
+    <p id="demo_1"></p>
+    <script>
+      var d_1 = new Date();
+      d_1.setFullYear(2018);
+      document.getElementById("demo_1").innerHTML = d_1;
+    </script>
+    <br>
+
+
+    <p>setFullYear() 方法可以选择设置月和日。</p>
+    <p>请注意，月份从 0 计数。十二月是 11：</p>
+    <p id="demo_2"></p>
+    <script>
+      var d_2 = new Date();
+      d_2.setFullYear(2018, 11, 3);
+      document.getElementById("demo_2").innerHTML = d_2;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>2. setMonth()</h2>
+    <p>setMonth() 方法设置日期对象的月份。</p>
+    <p>请注意，月份从 0 计数。十二月是 11：</p>
+    <p id="demo_3"></p>
+    <script>
+      var d_3 = new Date();
+      d_3.setMonth(11);
+      document.getElementById("demo_3").innerHTML = d_3;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>3. setDate()</h2>
+    <p>setDate() 方法设置日期对象的日：</p>
+    <p id="demo_4"></p>
+    <script>
+      var d_4 = new Date();
+      d_4.setDate(15);
+      document.getElementById("demo_4").innerHTML = d_4;
+    </script>
+    <br>
+
+
+    <p>setDate() 方法也可用于将天数添加到日期：</p>
+    <p id="demo_5"></p>
+    <script>
+      var d_5 = new Date();
+      d_5.setDate(d_5.getDate() + 50);
+      document.getElementById("demo_5").innerHTML = d_5;
+    </script>
+    <br>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>4. setHours()</h2>
+    <p>setHours() 方法设置日期对象的小时数：</p>
+    <p id="demo_6"></p>
+    <script>
+      var d_6 = new Date();
+      d_6.setHours(22);
+      document.getElementById("demo_6").innerHTML = d_6;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>5. setMinutes()</h2>
+    <p>setMinutes() 方法设置日期对象的分钟数（0-59）：</p>
+    <p id="demo_7"></p>
+    <script>
+      var d_7 = new Date();
+      d_7.setMinutes(30);
+      document.getElementById("demo_7").innerHTML = d_7;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>6. setSeconds()</h2>
+    <p>setSeconds() 方法设置日期对象的秒数（0-59）：</p>
+    <p id="demo_8"></p>
+    <script>
+      var d_8 = new Date();
+      d_8.setSeconds(30);
+      document.getElementById("demo_8").innerHTML = d_8;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>7. 比较日期</h2>
+    <p>日期可以很容易地进行比较。</p>
+    <p id="demo_9"></p>
+    <script>
+      var today, someday, text;
+      today = new Date();
+      someday = new Date();
+      someday.setFullYear(2100, 0, 15);
+
+      if (someday > today) {
+        text = "今天在 2100 年 1 月 15 日之前。";
+      } else {
+        text = "今天在 2100 年 1 月 15 日之后。";
+      }
+      document.getElementById("demo_9").innerHTML = text;
+    </script>
+  </dev>
+  <hr>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 数组排序</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_array_sort.asp">JavaScript 数组排序</a>
+  <hr>
+
+
+  <h1>sort() 方法是最强大的数组方法之一。</h1>
+
+
+  <dev>
+    <p>1. sort() 方法<b style="color:red;">按字母顺序</b>对数组进行排序。</p>
+    <p id="demo_1"></p>
+    <button onclick="myFunction_1()">试一试</button>
+    <script>
+      var fruits_1 = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo_1").innerHTML = fruits_1;
+
+      function myFunction_1() {
+        fruits_1.sort();
+        document.getElementById("demo_1").innerHTML = fruits_1;
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>2. reverse() 方法反转数组中的元素。</h1>
+    <p>通过组合 sort() 和 reverse()，您可以按降序对数组进行排序。</p>
+    <button onclick="myFunction_2()">试一试</button>
+    <p id="demo_2"></p>
+    <script>
+      // Create and display an array:
+      var fruits_2 = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo_2").innerHTML = fruits_2;
+
+      function myFunction_2() {
+        // First sort the array
+        fruits_2.sort();
+        // Then reverse it:
+        fruits_2.reverse();
+        document.getElementById("demo_2").innerHTML = fruits_2;
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>3.数组排序</h1>
+    <p>默认地，<span class="code_marked">sort()</span> 函数按照<em>字符串</em>顺序对值进行排序。</p>
+    <p>该函数很适合字符串（&quot;Apple&quot; 会排在 &quot;Banana&quot; 之前）。</p>
+    <p>不过，如果数字按照字符串来排序，则 &quot;25&quot; 大于 &quot;100&quot;，因为 &quot;2&quot; 大于 &quot;1&quot;。</p>
+    <p>正因如此，<span class="code_marked">sort()</span> 方法在对数值排序时会产生不正确的结果。</p>
+    <p>我们通过一个<em>比值函数</em>来修正此问题：</p>
+    <br>
+
+
+    <h1>按升序对数组进行排序。</h1>
+    <p id="demo_3"></p>
+    <button onclick="myFunction_3()">试一试</button>
+    <script>
+      var points_3 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_3").innerHTML = points_3;
+
+      function myFunction_3() {
+        points_3.sort(function (a, b) {
+          return a - b
+        });
+        document.getElementById("demo_3").innerHTML = points_3;
+      }
+    </script>
+    <br><br>
+
+
+    <h1>按降序对数组进行排序。</h1>
+    <p>使用相同的技巧对数组进行降序排序：</p>
+    <p id="demo_4"></p>
+    <button onclick="myFunction_4()">试一试</button>
+    <script>
+      var points_4 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_4").innerHTML = points_4;
+
+      function myFunction_4() {
+        points_4.sort(function (a, b) {
+          return b - a
+        });
+        document.getElementById("demo_4").innerHTML = points_4;
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <div>
+    <h1>4.比值函数</h1>
+    <p>比较函数的目的是定义另一种排序顺序。</p>
+    <p>比较函数应该返回<span style="color: red;">一个负，零或正值</span>，这取决于参数：</p>
+    <pre>function(a, b){return a-b}</pre>
+    <p>当 <span>sort()</span> 函数比较两个值时，会将值发送到比较函数，并根据所返回的值（负、零或正值）对这些值进行排序。</p>
+    <h3>实例：</h3>
+    <p>当比较 40 和 100 时，<span>sort()</span> 方法会调用比较函数 function(40,100)。</p>
+    <p>该函数计算 40-100，然后返回 -60（负值）。</p>
+    <p>排序函数将把 40 排序为比 100 更低的值。</p>
+    <br>
+
+
+    <p>您可以使用下面的代码片段来测试数值和字母排序。</p>
+    <p>单击按钮可按字母顺序或数字顺序对数组进行排序：</p>
+    <button onclick="myFunction_5()">按字母排序</button>
+    <button onclick="myFunction_6()">按数字排序</button>
+    <p id="demo_5"></p>
+    <script>
+      var points_5 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_5").innerHTML = points_5;
+
+      function myFunction_5() {
+        points_5.sort(); // 安字母排序
+        document.getElementById("demo_5").innerHTML = points_5;
+      }
+
+      function myFunction_6() {
+        points_5.sort(function (a, b) {
+          return a - b
+        });
+        document.getElementById("demo_5").innerHTML = points_5;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h1>5.以随机顺序排序数组</h1>
+    <p>请反复点击按钮，对数组进行随机排序。</p>
+    <button onclick="myFunction_7()">试一试</button>
+    <p id="demo_6"></p>
+    <script>
+      var points_6 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_6").innerHTML = points_6;
+
+      function myFunction_7() {
+        points_6.sort(function (a, b) {
+          return 0.5 - Math.random()
+        });
+        document.getElementById("demo_6").innerHTML = points_6;
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>6.查找最高（或最低）的数组值</h1>
+    <p>JavaScript 不提供查找数组中最大或最小数组值的内建函数。</p>
+    <p>不过，在对数组进行排序之后，您能够使用索引来获得最高或最低值。</p>
+    <p>升序排序：</p>
+    <p>最低值是：<span id="demo_7"></span></p>
+    <script>
+      var points_7 = [40, 100, 1, 5, 25, 10];
+      points_7.sort(function (a, b) {
+        return a - b
+      });
+      document.getElementById("demo_7").innerHTML = points_7[0];
+    </script>
+    <br>
+
+
+    <p>降序排序：</p>
+    <p>最高值是：<span id="demo_8"></span></p>
+    <script>
+      var points_8 = [40, 100, 1, 5, 25, 10];
+      points_8.sort(function (a, b) {
+        return b - a
+      });
+      document.getElementById("demo_8").innerHTML = points_8[0];
+    </script>
+    <p>注意：如果您仅仅需要找到最高或最低值，对整个数组进行排序是<span style="color:red;">效率极低的方法</span>。</p>
+    <br>
+
+
+    <h1>可以使用 Math.max.apply 来查找数组中的最高值：</h1>
+    <p>最高值是：<span id="demo_9"></span></p>
+    <script>
+      var points_9 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_9").innerHTML = myArrayMax(points_9);
+
+      function myArrayMax(arr) {
+        return Math.max.apply(null, arr);
+      }
+    </script>
+    <p>Math.max.apply([1, 2, 3]) 等于 Math.max(1, 2, 3)。</p>
+    <br>
+
+
+    <h1>可以使用 Math.min.apply 来查找数组中的最低值：</h1>
+    <p>最低值是：<span id="demo_10"></span></p>
+    <script>
+      var points_10 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_10").innerHTML = myArrayMin(points_10);
+
+      function myArrayMin(arr) {
+        return Math.min.apply(null, arr);
+      }
+    </script>
+    <p>Math.min.apply([1, 2, 3]) 等于 Math.min(1, 2, 3)。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>7.我的 Min / Max JavaScript 方法</h2>
+    <p>最快的解决方法是使用“自制”方法。</p>
+    <p>此函数遍历数组，用找到的最高值与每个值进行比较：</p>
+    <h3>实例（查找 Max）</h3>
+    <p>最高值是：<span id="demo_11"></span></p>
+    <script>
+      var points_11 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_11").innerHTML = myArrayMax_2(points_11);
+
+      function myArrayMax_2(arr) {
+        var len = arr.length;
+        var max = -Infinity;
+        while (len--) {
+          if (arr[len] > max) {
+            max = arr[len];
+          }
+        }
+        return max;
+      }
+    </script>
+    <br>
+
+
+    <p>此函数遍历数组，用找到的最低值与每个值进行比较：</p>
+    <h3>实例（查找 Min）</h3>
+    <p>最低值是：<span id="demo_12"></span></p>
+    <script>
+      var points_12 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo_12").innerHTML = myArrayMin_2(points_12);
+
+      function myArrayMin_2(arr) {
+        var len = arr.length;
+        var min = Infinity;
+        while (len--) {
+          if (arr[len] < min) {
+            min = arr[len];
+          }
+        }
+        return min;
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>8.排序对象数组</h1>
+    <p>JavaScript 数组经常会包含对象：</p>
+    <p>即使对象拥有不同数据类型的属性，sort() 方法仍可用于对数组进行排序。</p>
+    <p>解决方法是通过比较函数来对比属性值：</p>
+    <br>
+    <p>点击按钮按年份对汽车进行排序：</p>
+    <button onclick="myFunction_8()">排序</button>
+    <p id="demo_13"></p>
+    <script>
+      var cars_13 = [
+        {type: "BMW", year: 2017},
+        {type: "Audi", year: 2019},
+        {type: "porsche", year: 2018}
+      ];
+
+      displayCars_13();
+
+      function myFunction_8() {
+        cars_13.sort(function (a, b) {
+          return a.year - b.year
+        });
+        displayCars_13();
+      }
+
+      function displayCars_13() {
+        document.getElementById("demo_13").innerHTML =
+          cars_13[0].type + " " + cars_13[0].year + "<br>" +
+          cars_13[1].type + " " + cars_13[1].year + "<br>" +
+          cars_13[2].type + " " + cars_13[2].year;
+      }
+    </script>
+    <br>
+
+
+    <p>比较字符串属性会稍复杂：</p>
+    <p>点击按钮按车型对汽车进行排序：</p>
+    <button onclick="myFunction_9()">排序</button>
+    <p id="demo_14"></p>
+    <script>
+      var cars_14 = [
+        {type: "BMW", year: 2017},
+        {type: "Audi", year: 2019},
+        {type: "porsche", year: 2018}
+      ];
+
+      displayCars_14();
+
+      function myFunction_9() {
+        cars_14.sort(function (a, b) {
+          var x = a.type.toLowerCase();
+          var y = b.type.toLowerCase();
+          if (x < y) {
+            return -1;
+          }
+          if (x > y) {
+            return 1;
+          }
+          return 0;
+        });
+        displayCars_14();
+      }
+
+      function displayCars_14() {
+        document.getElementById("demo_14").innerHTML =
+          cars_14[0].type + " " + cars_14[0].year + "<br>" +
+          cars_14[1].type + " " + cars_14[1].year + "<br>" +
+          cars_14[2].type + " " + cars_14[2].year;
+      }
+    </script>
+  </dev>
+  <hr>
+
+</body>
+</html>

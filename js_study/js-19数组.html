@@ -12,14 +12,15 @@
   <hr>
 
 
-  <h1>1.数组</h1>
-  <p id="demo1"></p>
-  <script>
-    var cars = ["Audi", "BMW", "porsche"];
-    document.getElementById("demo1").innerHTML = cars;
-  </script>
+  <dev>
+    <h1>1.数组</h1>
+    <p id="demo1"></p>
+    <script>
+      var cars = ["Audi", "BMW", "porsche"];
+      document.getElementById("demo1").innerHTML = cars;
+    </script>
+  </dev>
   <hr>
-
 
   <div>
     <h2>什么是数组？</h2>
@@ -36,94 +37,104 @@
   </div>
   <hr>
 
-
-  <h1>2.创建数组</h1>
-  <p>使用数组文本是创建 JavaScript 数组最简单的方法。</p>
-  <p id="demo2"></p>
-  <script>
-    var cars = ["Audi", "BMW", "porsche"];
-    document.getElementById("demo2").innerHTML = cars;
-  </script>
-  <br>
-
-  <p>空格和折行并不重要。声明可横跨多行：</p>
-  <p id="demo3"></p>
-  <script>
-    var cars = [
-      "Audi",
-      "BMW",
-      "porsche"
-    ];
-    document.getElementById("demo3").innerHTML = cars;
-  </script>
-  <p>请不要在最后一个元素之后写逗号（比如 "porsche",）。</p>
-  <p>可能存在跨浏览器兼容性问题。</p>
-  <br>
+  <dev>
+    <h1>2.创建数组</h1>
+    <p>使用数组文本是创建 JavaScript 数组最简单的方法。</p>
+    <p id="demo2"></p>
+    <script>
+      var cars = ["Audi", "BMW", "porsche"];
+      document.getElementById("demo2").innerHTML = cars;
+    </script>
+    <br>
 
 
-  <h1>使用 JavaScript 关键词 new 创建数组</h1>
-  <p id="demo4"></p>
-  <script>
-    var cars = new Array("Audi", "BMW", "porsche");
-    document.getElementById("demo4").innerHTML = cars;
-  </script>
-  <p>以上两个例子效果完全一样。无需使用 new Array()。</p>
-  <p>出于简洁、可读性和执行速度的考虑，请使用第一种方法（数组文本方法）。</p>
+    <p>空格和折行并不重要。声明可横跨多行：</p>
+    <p id="demo3"></p>
+    <script>
+      var cars = [
+        "Audi",
+        "BMW",
+        "porsche"
+      ];
+      document.getElementById("demo3").innerHTML = cars;
+    </script>
+    <p>请不要在最后一个元素之后写逗号（比如 "porsche",）。</p>
+    <p>可能存在跨浏览器兼容性问题。</p>
+    <br>
+
+
+    <h1>使用 JavaScript 关键词 new 创建数组</h1>
+    <p id="demo4"></p>
+    <script>
+      var cars = new Array("Audi", "BMW", "porsche");
+      document.getElementById("demo4").innerHTML = cars;
+    </script>
+    <p>以上两个例子效果完全一样。无需使用 new Array()。</p>
+    <p>出于简洁、可读性和执行速度的考虑，请使用第一种方法（数组文本方法）。</p>
+  </dev>
   <hr>
 
 
-  <h1>3.访问数组</h1>
-  <p>使用数字索引（从 0 开始）访问 JavaScript 数组元素。</p>
-  <p id="demo5"></p>
-  <script>
-    var cars = ["Audi", "BMW", "porsche"];
-    document.getElementById("demo5").innerHTML = cars[0];
-  </script>
-  <p>数组索引从 0 开始。</p>
+  <dev>
+    <h1>3.访问数组</h1>
+    <p>使用数字索引（从 0 开始）访问 JavaScript 数组元素。</p>
+    <p id="demo5"></p>
+    <script>
+      var cars = ["Audi", "BMW", "porsche"];
+      document.getElementById("demo5").innerHTML = cars[0];
+    </script>
+    <p>数组索引从 0 开始。</p>
+  </dev>
   <hr>
 
 
-  <h1>4.改变数组元素</h1>
-  <p id="demo6"></p>
-  <script>
-    var cars = ["Audi", "BMW", "porsche"];
-    cars[0] = "Volvo";
-    document.getElementById("demo6").innerHTML = cars;
-  </script>
+  <dev>
+    <h1>4.改变数组元素</h1>
+    <p id="demo6"></p>
+    <script>
+      var cars = ["Audi", "BMW", "porsche"];
+      cars[0] = "Volvo";
+      document.getElementById("demo6").innerHTML = cars;
+    </script>
+  </dev>
   <hr>
 
 
-  <h1>5.访问完整数组</h1>
-  <p>通过 JavaScript，可通过引用数组名来访问完整数组：</p>
-  <p id="demo7"></p>
-  <script>
-    var cars = ["Audi", "BMW", "porsche"];
-    document.getElementById("demo7").innerHTML = cars;
-  </script>
+  <dev>
+    <h1>5.访问完整数组</h1>
+    <p>通过 JavaScript，可通过引用数组名来访问完整数组：</p>
+    <p id="demo7"></p>
+    <script>
+      var cars = ["Audi", "BMW", "porsche"];
+      document.getElementById("demo7").innerHTML = cars;
+    </script>
+  </dev>
   <hr>
 
 
-  <p>数组是对象</p>
-  <p>数组是一种特殊类型的对象。在 JavaScript 中对数组使用 typeof 运算符会返回 "object"。</p>
-  <p>但是，JavaScript 数组最好以数组来描述。</p>
-  <p>数组使用数字来访问其“元素”。在本例中，person[0] 返回 Bill：</p>
-  <br>
-  <h1>6.数组是一种特殊类型的对象</h1>
-  <p><b>数组：</b></p>
-  <p>数组使用数字访问它的元素。</p>
-  <p id="demo8"></p>
-  <script>
-    var person = ["Bill", "Gates", 62];
-    document.getElementById("demo8").innerHTML = person[0];
-  </script>
-  <br>
-  <p><b>对象：</b></p>
-  <p>使用名称来访问对象属性。</p>
-  <p id="demo9"></p>
-  <script>
-    var person = {firstName: "Bill", lastName: "Gates", age: 62};
-    document.getElementById("demo9").innerHTML = person["firstName"];
-  </script>
+  <dev>
+    <p>数组是对象</p>
+    <p>数组是一种特殊类型的对象。在 JavaScript 中对数组使用 typeof 运算符会返回 "object"。</p>
+    <p>但是，JavaScript 数组最好以数组来描述。</p>
+    <p>数组使用数字来访问其“元素”。在本例中，person[0] 返回 Bill：</p>
+    <br>
+    <h1>6.数组是一种特殊类型的对象</h1>
+    <p><b>数组：</b></p>
+    <p>数组使用数字访问它的元素。</p>
+    <p id="demo8"></p>
+    <script>
+      var person = ["Bill", "Gates", 62];
+      document.getElementById("demo8").innerHTML = person[0];
+    </script>
+    <br>
+    <p><b>对象：</b></p>
+    <p>使用名称来访问对象属性。</p>
+    <p id="demo9"></p>
+    <script>
+      var person = {firstName: "Bill", lastName: "Gates", age: 62};
+      document.getElementById("demo9").innerHTML = person["firstName"];
+    </script>
+  </dev>
   <hr>
 
 
@@ -146,165 +157,184 @@
     <p>JavaScript 数组的真实力量隐藏在数组的属性和方法中：</p>
     <h3>实例</h3>
     <pre>
-      var x = cars.length;   <span class="code_comment">// length 属性返回元素的数量</span>
-      var y = cars.sort();   <span class="code_comment">// sort() 方法对数组进行排序</span>
+      var x = cars.length;   <span>// length 属性返回元素的数量</span>
+      var y = cars.sort();   <span>// sort() 方法对数组进行排序</span>
     </pre>
     <p>我们将在下一章学习数组方法。</p>
   </div>
   <hr>
 
 
-  <h1>7.length 属性</h1>
-  <p>length 属性返回数组长度。</p>
-  <p id="demo10"></p>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo10").innerHTML = fruits.length;
-  </script>
-  <p>length 属性始终大于最高数组索引（下标）。</p>
+  <dev>
+    <h1>7.length 属性</h1>
+    <p>length 属性返回数组长度。</p>
+    <p id="demo10"></p>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo10").innerHTML = fruits.length;
+    </script>
+    <p>length 属性始终大于最高数组索引（下标）。</p>
+  </dev>
   <hr>
 
 
-  <h1>8.访问第一个数组元素</h1>
-  <p id="demo11"></p>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    var first = fruits[0];
-    document.getElementById("demo11").innerHTML = first;
-  </script>
+  <dev>
+    <h1>8.访问第一个数组元素</h1>
+    <p id="demo11"></p>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      var first = fruits[0];
+      document.getElementById("demo11").innerHTML = first;
+    </script>
+  </dev>
   <hr>
 
 
-  <h1>9.访问最后一个数组元素</h1>
-  <p id="demo12"></p>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    var last = fruits[fruits.length - 1];
-    document.getElementById("demo12").innerHTML = last;
-  </script>
+  <dev>
+    <h1>9.访问最后一个数组元素</h1>
+    <p id="demo12"></p>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      var last = fruits[fruits.length - 1];
+      document.getElementById("demo12").innerHTML = last;
+    </script>
+  </dev>
   <hr>
 
 
-  <h1>10.遍历数组元素</h1>
-  <p>遍历数组的最佳方法是使用标准的 for 循环：</p>
-  <p style="color: red;">遍历数组的最安全方法是使用 "for" 循环：</p>
-  <p id="demo13"></p>
-  <script>
-    var fruits, text, fLen, i;
-    fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fLen = fruits.length;
+  <dev>
+    <h1>10.遍历数组元素</h1>
+    <p>遍历数组的最佳方法是使用标准的 for 循环：</p>
+    <p style="color: red;">遍历数组的最安全方法是使用 "for" 循环：</p>
+    <p id="demo13"></p>
+    <script>
+      var fruits, text, fLen, i;
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fLen = fruits.length;
 
-    text = "<ul>";
-    for (i = 0; i < fLen; i++) {
-      text += "<li>" + fruits[i] + "</li>";
-    }
-    text += "</ul>";
+      text = "<ul>";
+      for (i = 0; i < fLen; i++) {
+        text += "<li>" + fruits[i] + "</li>";
+      }
+      text += "</ul>";
 
-    document.getElementById("demo13").innerHTML = text;
-  </script>
+      document.getElementById("demo13").innerHTML = text;
+    </script>
+  </dev>
   <hr>
 
 
-  <h1>11. Array.forEach()</h1>
-  <p>Array.forEach() 为每个数组元素调用函数。</p>
-  <p>Internet Explorer 8 以及更早的版本不支持 Array.forEach()。</p>
-  <p id="demo14"></p>
-  <script>
-    var fruits, text;
-    fruits = ["Banana", "Orange", "Apple", "Mango"];
+  <dev>
+    <h1>11. Array.forEach()</h1>
+    <p>Array.forEach() 为每个数组元素调用函数。</p>
+    <p>Internet Explorer 8 以及更早的版本不支持 Array.forEach()。</p>
+    <p id="demo14"></p>
+    <script>
+      var fruits, text;
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-    text = "<ul>";
-    fruits.forEach(myFunction);
-    text += "</ul>";
-    document.getElementById("demo14").innerHTML = text;
+      text = "<ul>";
+      fruits.forEach(myFunction_1);
+      text += "</ul>";
+      document.getElementById("demo14").innerHTML = text;
 
-    function myFunction(value) {
-      text += "<li>" + value + "</li>";
-    }
-  </script>
+      function myFunction_1(value) {
+        text += "<li>" + value + "</li>";
+      }
+    </script>
+  </dev>
   <hr>
 
 
-  <h1>12.添加数组元素: push() 方法</h1>
-  <p>push 方法向数组追加新元素。</p>
-  <p id="demo15"></p>
-  <button onclick="myFunction()">试一试</button>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo15").innerHTML = fruits;
-
-    function myFunction() {
-      fruits.push("Lemon");
+  <dev>
+    <h1>12.添加数组元素: push() 方法</h1>
+    <p>push 方法向数组追加新元素。</p>
+    <p id="demo15"></p>
+    <button onclick="myFunction_2()">试一试</button>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
       document.getElementById("demo15").innerHTML = fruits;
-    }
-  </script>
+
+      function myFunction_2() {
+        fruits.push("Lemon");
+        document.getElementById("demo15").innerHTML = fruits;
+      }
+    </script>
+  </dev>
   <br>
 
 
-  <h1>13.也可以使用 length 属性向数组添加新元素：</h1>
-  <p>length 属性提供了一种在不使用 push() 方法的情况下将新元素附加到数组的简便方法。</p>
-  <p id="demo16"></p>
-  <button onclick="myFunction()">试一试</button>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo16").innerHTML = fruits;
-
-    function myFunction() {
-      fruits[fruits.length] = "Lemon";
+  <dev>
+    <h1>13.也可以使用 length 属性向数组添加新元素：</h1>
+    <p>length 属性提供了一种在不使用 push() 方法的情况下将新元素附加到数组的简便方法。</p>
+    <p id="demo16"></p>
+    <button onclick="myFunction()">试一试</button>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
       document.getElementById("demo16").innerHTML = fruits;
-    }
-  </script>
+
+      function myFunction() {
+        fruits[fruits.length] = "Lemon";
+        document.getElementById("demo16").innerHTML = fruits;
+      }
+    </script>
+  </dev>
   <br>
   <br>
 
-  <h1>14.添加最高索引的元素可在数组中创建未定义的“洞”：</h1>
-  <p><b style="color: red;">警告！</b></p>
-  <p>添加具有高索引的元素可以在数组中创建未定义的“孔”。</p>
-  <p id="demo17"></p>
-  <script>
-    var fruits, text, fLen, i;
-    fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits[6] = "Lemon";
 
-    fLen = fruits.length;
-    text = "";
-    for (i = 0; i < fLen; i++) {
-      text += fruits[i] + "<br>";
-    }
-    document.getElementById("demo17").innerHTML = text;
-  </script>
+  <dev>
+    <h1>14.添加最高索引的元素可在数组中创建未定义的“洞”：</h1>
+    <p><b style="color: red;">警告！</b></p>
+    <p>添加具有高索引的元素可以在数组中创建未定义的“孔”。</p>
+    <p id="demo17"></p>
+    <script>
+      var fruits, text, fLen, i;
+      fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      fruits[6] = "Lemon";
+
+      fLen = fruits.length;
+      text = "";
+      for (i = 0; i < fLen; i++) {
+        text += fruits[i] + "<br>";
+      }
+      document.getElementById("demo17").innerHTML = text;
+    </script>
+  </dev>
   <hr>
 
 
-  <h1>15.关联数组</h1>
-  <p>很多编程元素支持命名索引的数组。</p>
-  <p>具有命名索引的数组被称为关联数组（或散列）。</p>
-  <p>JavaScript <em>不支持</em>命名索引的数组。</p>
-  <p>在 JavaScript 中，数组只能使用<em>数字索引</em>。</p>
-  <h3>实例:</h3>
-  <p id="demo18"></p>
-  <script>
-    var person = [];
-    person[0] = "John";
-    person[1] = "Doe";
-    person[2] = 46;
-    document.getElementById("demo18").innerHTML =
-      person[0] + " " + person.length;
-  </script>
-  <br>
+  <dev>
+    <h1>15.关联数组</h1>
+    <p>很多编程元素支持命名索引的数组。</p>
+    <p>具有命名索引的数组被称为关联数组（或散列）。</p>
+    <p>JavaScript <em>不支持</em>命名索引的数组。</p>
+    <p>在 JavaScript 中，数组只能使用<em>数字索引</em>。</p>
+    <h3>实例:</h3>
+    <p id="demo18"></p>
+    <script>
+      var person = [];
+      person[0] = "John";
+      person[1] = "Doe";
+      person[2] = 46;
+      document.getElementById("demo18").innerHTML =
+        person[0] + " " + person.length;
+    </script>
+    <br>
 
 
-  <h1>JavaScript 数组</h1>
-  <p>如果在访问数组时使用命名索引，JavaScript 会将数组重新定义为标准对象，并且某些数组方法和属性将产生未定义或不正确的结果。</p>
-  <p id="demo19"></p>
-  <script>
-    var person = [];
-    person["firstName"] = "John";
-    person["lastName"] = "Doe";
-    person["age"] = 46;
-    document.getElementById("demo19").innerHTML =
-      person[0] + " " + person.length;
-  </script>
+    <p>如果在访问数组时使用命名索引，JavaScript 会将数组重新定义为标准对象，并且某些数组方法和属性将产生未定义或不正确的结果。</p>
+    <p id="demo19"></p>
+    <script>
+      var person = [];
+      person["firstName"] = "John";
+      person["lastName"] = "Doe";
+      person["age"] = 46;
+      document.getElementById("demo19").innerHTML =
+        person[0] + " " + person.length;
+    </script>
+  </dev>
   <hr>
 
 
@@ -328,79 +358,83 @@
   <hr>
 
 
-  <h1>避免 new Array()</h1>
-  <h3>没有必要使用 JavaScript 的内建数组构造器 new Array()。</h3>
-  <p>请使用 [] 取而代之！</p>
-  <p>下面两条不同的语句创建了名为 points 的新的空数组：</p>
-  <pre>
+  <dev>
+    <h1>16.避免 new Array()</h1>
+    <h3>没有必要使用 JavaScript 的内建数组构造器 new Array()。</h3>
+    <p>请使用 [] 取而代之！</p>
+    <p>下面两条不同的语句创建了名为 points 的新的空数组：</p>
+    <pre>
     var points = new Array();         <span class="code_comment">// 差</span>
     var points = [];                  <span class="code_comment">// 优</span>
   </pre>
-  <p>下面两条不同的语句创建包含六个数字的新数组：</p>
-  <pre>
+    <p>下面两条不同的语句创建包含六个数字的新数组：</p>
+    <pre>
     var points = new Array(40, 100, 1, 5, 25, 10); <span>// 差</span>
     var points = [40, 100, 1, 5, 25, 10];          <span>// 优</span>
   </pre>
 
-  <h1><span>new</span> 关键词只会使代码复杂化。它还会产生某些不可预期的结果：</h1>
-  <p>new Array(40, 100) 创建包含两个元素的数组（40 和 100）</p>
-  <p id="demo20"></p>
-  <script>
-    var points = new Array(40, 100);  // 创建包含两个元素的数组（40 和 100）
-    document.getElementById("demo20").innerHTML = points[0];
-  </script>
-  <br>
+    <h1><span>new</span> 关键词只会使代码复杂化。它还会产生某些不可预期的结果：</h1>
+    <p>new Array(40, 100) 创建包含两个元素的数组（40 和 100）</p>
+    <p id="demo20"></p>
+    <script>
+      var points = new Array(40, 100);  // 创建包含两个元素的数组（40 和 100）
+      document.getElementById("demo20").innerHTML = points[0];
+    </script>
+    <br>
 
-  <p>new Array(40)会创建包含 40 个未定义元素的数组！！！</p>
-  <p id="demo21"></p>
-  <script>
-    var points = new Array(40); // 创建包含 40 个未定义元素的数组！！！
-    document.getElementById("demo21").innerHTML = points[0];
-  </script>
+    <p>new Array(40)会创建包含 40 个未定义元素的数组！！！</p>
+    <p id="demo21"></p>
+    <script>
+      var points = new Array(40); // 创建包含 40 个未定义元素的数组！！！
+      document.getElementById("demo21").innerHTML = points[0];
+    </script>
+  </dev>
   <hr>
   <hr>
 
 
-  <h1>如何识别数组</h1>
-  <p>常见的问题是：我如何知晓某个变量是否是数组？</p>
-  <p>问题在于 JavaScript 运算符 typeof 返回 object，因为 JavaScript 数组属于对象。</p>
-  <h3>解决方案 1：</h3>
-  <p>新的 ECMASCRIPT 5 方法 Array.isArray() 在数组上使用时返回 true：</p>
-  <p id="demo22"></p>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo22").innerHTML = Array.isArray(fruits);
-  </script>
-  <p>此方案的问题在于 ECMAScript 5 不支持老的浏览器。</p>
+  <dev>
+    <h1>如何识别数组</h1>
+    <p>常见的问题是：我如何知晓某个变量是否是数组？</p>
+    <p>问题在于 JavaScript 运算符 typeof 返回 object，因为 JavaScript 数组属于对象。</p>
+    <h3>解决方案 1：</h3>
+    <p>新的 ECMASCRIPT 5 方法 Array.isArray() 在数组上使用时返回 true：</p>
+    <p id="demo22"></p>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo22").innerHTML = Array.isArray(fruits);
+    </script>
+    <p>此方案的问题在于 ECMAScript 5 不支持老的浏览器。</p>
+    <br>
+
+
+    <h3>解决方案 2：</h3>
+    <p>创建您自己的 isArray() 函数以解决此问题：</p>
+    <p>这个“自制的” isArray() 函数在数组上使用时返回 true：</p>
+    <p id="demo23"></p>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo23").innerHTML = isArray(fruits);
+
+      function isArray(myArray) {
+        return myArray.constructor.toString().indexOf("Array") > -1;
+      }
+    </script>
+    <p>假如参数为数组，则上面的函数始终返回 true。</p>
+    <p>或者更准确的解释是：假如对象原型包含单词 "Array" 则返回 true。</p>
+    <br>
+
+
+    <h3>解决方案 3：</h3>
+    <p>假如对象由给定的构造器创建，则 instanceof 运算符返回 true：</p>
+    <p>当在数组上使用时，instanceof 运算符返回true：</p>
+    <p id="demo24"></p>
+    <script>
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo24").innerHTML = fruits instanceof Array;
+    </script>
+  </dev>
   <hr>
-
-
-  <h3>解决方案 2：</h3>
-  <p>创建您自己的 isArray() 函数以解决此问题：</p>
-  <p>这个“自制的” isArray() 函数在数组上使用时返回 true：</p>
-  <p id="demo23"></p>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo23").innerHTML = isArray(fruits);
-
-    function isArray(myArray) {
-      return myArray.constructor.toString().indexOf("Array") > -1;
-    }
-  </script>
-  <p>假如参数为数组，则上面的函数始终返回 true。</p>
-  <p>或者更准确的解释是：假如对象原型包含单词 "Array" 则返回 true。</p>
-  <hr>
-
-
-  <h3>解决方案 3：</h3>
-  <p>假如对象由给定的构造器创建，则 instanceof 运算符返回 true：</p>
-  <p>当在数组上使用时，instanceof 运算符返回true：</p>
-  <p id="demo24"></p>
-  <script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo24").innerHTML = fruits instanceof Array;
-  </script>
-
 
 </body>
 </html>

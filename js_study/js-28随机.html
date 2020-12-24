@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 随机</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_random.asp">JavaScript 随机</a>
+  <hr>
+
+
+  <dev>
+    <h2>1. Math.random()</h2>
+    <p>Math.random() 返回 0（包含）和 1（不包括）之间的随机数：</p>
+    <p id="demo_1"></p>
+    <script>
+      document.getElementById("demo_1").innerHTML = Math.random();
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h2>2. 随机整数</h2>
+    <p>Math.random() 与 Math.floor() 一起使用用于返回随机整数。</p>
+    <p>Math.floor(Math.random() * 10) 返回 0 与 9 之间的随机整数（均包含）：</p>
+    <p id="demo_2"></p>
+    <script>
+      document.getElementById("demo_2").innerHTML =
+        Math.floor(Math.random() * 10);
+    </script>
+    <br>
+
+
+    <p>Math.floor(Math.random() * 11) 返回 0 与 10 之间的随机整数（均包含）：</p>
+    <p id="demo_3"></p>
+    <script>
+      document.getElementById("demo_3").innerHTML =
+        Math.floor(Math.random() * 11);
+    </script>
+    <br>
+
+
+    <p>Math.floor(Math.random() * 100)) 返回 0 与 99 之间的随机整数（均包含）：</p>
+    <p id="demo_4"></p>
+    <script>
+      document.getElementById("demo_4").innerHTML =
+        Math.floor(Math.random() * 100);
+    </script>
+    <br>
+
+
+    <p>Math.floor() 与 Math.random() * 101 一起使用，返回 0 与 100 之间的随机整数（均包含）：</p>
+    <p id="demo_5"></p>
+    <script>
+      document.getElementById("demo_5").innerHTML =
+        Math.floor(Math.random() * 101);
+    </script>
+    <br>
+
+
+    <p>Math.floor(Math.random() * 10) + 1) 返回 1 与 10 之间的随机整数（均包含）：</p>
+    <p id="demo_6"></p>
+    <script>
+      document.getElementById("demo_6").innerHTML =
+        Math.floor(Math.random() * 10) + 1;
+    </script>
+    <br>
+
+
+    <p>Math.floor(Math.random() * 100) + 1) 返回 1 与 100 之间的随机整数（均包含）：</p>
+    <p id="demo_7"></p>
+    <script>
+      document.getElementById("demo_7").innerHTML =
+        Math.floor(Math.random() * 100) + 1;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>一个适当的随机函数</h1>
+    <p>正如你从上面的例子看到的，创建一个随机函数用于生成所有随机整数是一个好主意。</p>
+    <p>这个 JavaScript 函数始终返回介于 min（包括）和 max（不包括）之间的随机数：</p>
+    <button onclick="document.getElementById('demo_8').innerHTML = getRndInteger(1,10)">点击我</button>
+    <p id="demo_8"></p>
+    <script>
+      function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+    </script>
+    <br>
+
+
+    <p>这个 JavaScript 函数始终返回介于 min 和 max（都包括）之间的随机数：</p>
+    <p>每当您点击按钮，getRndInteger(min, max) 就会返回 1 与 10（均包含）之间的随机数：</p>
+    <button onclick="document.getElementById('demo_9').innerHTML = getRndInteger_2(1,10)">点击我</button>
+    <p id="demo_9"></p>
+    <script>
+      function getRndInteger_2(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    </script>
+  </dev>
+  <hr>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 数组迭代方法</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_array_iteration.asp">JavaScript 数组迭代方法</a>
+  <hr>
+
+
+  <h1>数组迭代方法对每个数组项进行操作。</h1>
+
+
+  <dev>
+    <h1>1. Array.forEach()</h1>
+    <p>为每个元素调用一次函数。</p>
+    <p id="demo_1"></p>
+    <script>
+      var txt_1 = "";
+      var numbers_1 = [45, 4, 9, 16, 25];
+      numbers_1.forEach(myFunction_1);
+      document.getElementById("demo_1").innerHTML = txt_1;
+
+      function myFunction_1(value, index, array) {
+        txt_1 = txt_1 + value + "<br>";
+      }
+    </script>
+    <br>
+
+
+    <p><span>注释：</span>该函数接受 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>上面的例子只用了 value 参数。这个例子可以重新写为：</p>
+    <p>为每个元素调用一次函数。</p>
+    <p id="demo_2"></p>
+    <script>
+      var txt_2 = "";
+      var numbers_2 = [45, 4, 9, 16, 25];
+      numbers_2.forEach(myFunction_2);
+      document.getElementById("demo_2").innerHTML = txt_2;
+
+      function myFunction_2(value) {
+        txt_2 = txt_2 + value + "<br>";
+      }
+    </script>
+    <p>所有浏览器都支持 Array.forEach()，除了 Internet Explorer 8 或更早的版本：</p>
+    <br>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>2. Array.map()</h1>
+    <p>map() 方法通过对每个数组元素执行函数来创建新数组。</p>
+    <p>map() 方法不会对没有值的数组元素执行函数。</p>
+    <p>map() 方法不会更改原始数组。</p>
+    <p>这个例子将每个数组值乘以2：</p>
+    <p id="demo_3"></p>
+    <script>
+      var numbers_4 = [45, 4, 9, 16, 25];
+      var numbers_5 = numbers_4.map(myFunction_3);
+
+      document.getElementById("demo_3").innerHTML = numbers_5;
+
+      function myFunction_3(value, index, array) {
+        return value * 2;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意，该函数有 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>当回调函数仅使用 value 参数时，可以省略索引和数组参数：</p>
+    <p id="demo_4"></p>
+    <script>
+      var numbers_6 = [45, 4, 9, 16, 25];
+      var numbers_7 = numbers_6.map(myFunction_4);
+
+      document.getElementById("demo_4").innerHTML = numbers_7;
+
+      function myFunction_4(value) {
+        return value * 2;
+      }
+    </script>
+    <p>所有浏览器都支持 Array.map()，除了 Internet Explorer 8 或更早的版本：</p>
+    <br>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>3. Array.filter()</h1>
+    <p>filter() 方法创建一个包含通过测试的数组元素的新数组。</p>
+    <p>使用通过测试的所有数组元素创建一个新数组。</p>
+    <p>这个例子用值大于 18 的元素创建一个新数组：</p>
+    <p id="demo_5"></p>
+    <script>
+      var numbers_8 = [45, 4, 9, 16, 25];
+      var over18_8 = numbers_8.filter(myFunction_5);
+
+      document.getElementById("demo_5").innerHTML = over18_8;
+
+      function myFunction_5(value, index, array) {
+        return value > 18;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意，该函数有 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>在上面的例子中，回调函数不使用 index 和 array 参数，因此可以省略它们：</p>
+    <p id="demo_6"></p>
+    <script>
+      var numbers_9 = [45, 4, 9, 16, 25];
+      var over18_9 = numbers_9.filter(myFunction_6);
+
+      document.getElementById("demo_6").innerHTML = over18_9;
+
+      function myFunction_6(value) {
+        return value > 18;
+      }
+    </script>
+    <p>所有浏览器都支持 Array.filter()，除了 Internet Explorer 8 或更早的版本：</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>4. Array.reduce()</h1>
+    <p>reduce() 方法在每个数组元素上运行函数，以生成（减少它）单个值。</p>
+    <p>reduce() 方法在数组中从左到右工作。另请参见 reduceRight（）。</p>
+    <p>reduce() 方法不会减少原始数组。</p>
+    <p>此例确定数组中所有数字的总和：</p>
+    <p id="demo_7"></p>
+    <script>
+      var numbers_10 = [45, 4, 9, 16, 25];
+      var sum_10 = numbers_10.reduce(myFunction_7);
+
+      document.getElementById("demo_7").innerHTML = "总和是：" + sum_10;
+
+      function myFunction_7(total, value, index, array) {
+        return total + value;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 4 个参数：</p>
+    <ul>
+      <li>总数（初始值/先前返回的值）</li>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>上例并未使用 index 和 array 参数。可以将它改写为：</p>
+    <p id="demo_8"></p>
+    <script>
+      var numbers_11 = [45, 4, 9, 16, 25];
+      var sum_11 = numbers_11.reduce(myFunction_8);
+
+      document.getElementById("demo_8").innerHTML = "总和是：" + sum_11;
+
+      function myFunction_8(total, value) {
+        return total + value;
+      }
+    </script>
+    <br>
+
+
+    <p>reduce() 方法能够接受一个初始值：</p>
+    <p id="demo_9"></p>
+    <script>
+      var numbers_12 = [45, 4, 9, 16, 25];
+      var sum_12 = numbers_12.reduce(myFunction_9, 100);
+
+      document.getElementById("demo_9").innerHTML = "总和是：" + sum_12;
+
+      function myFunction_9(total, value) {
+        return total + value;
+      }
+    </script>
+    <p>所有浏览器都支持 Array.reduce()，除了 Internet Explorer 8 或更早的版本：</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>5. Array.reduceRight()</h1>
+    <p>reduceRight() 方法在每个数组元素上运行函数，以生成（减少它）单个值。</p>
+    <p>reduceRight() 方法在数组中从右到左工作。另请参见 reduce（）。</p>
+    <p>reduceRight() 方法不会减少原始数组。</p>
+    <p>这个例子确定数组中所有数字的总和：</p>
+    <p id="demo_10"></p>
+    <script>
+      var numbers_13 = [45, 4, 9, 16, 25];
+      var sum_13 = numbers_13.reduceRight(myFunction_10);
+
+      document.getElementById("demo_10").innerHTML = "总和是：" + sum_13;
+
+      function myFunction_10(total, value, index, array) {
+        return total + value;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 4 个参数：</p>
+    <ul>
+      <li>总数（初始值/先前返回的值）</li>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>上例并未使用 index 和 array 参数。可以将它改写为：</p>
+    <p id="demo_11"></p>
+    <script>
+      var numbers_14 = [45, 4, 9, 16, 25];
+      var sum_14 = numbers_14.reduceRight(myFunction_11);
+
+      document.getElementById("demo_11").innerHTML = "总和是：" + sum_14;
+
+      function myFunction_11(total, value) {
+        return total + value;
+      }
+    </script>
+    <p>所有浏览器都支持 Array.reduceRight()，除了 Internet Explorer 8 或更早的版本：</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>6. Array.every()</h1>
+    <p>every() 方法检查所有数组值是否通过测试。</p>
+    <p>这个例子检查所有数组值是否大于 18：</p>
+    <p id="demo_12_1"></p>
+    <p id="demo_12"></p>
+    <script>
+      var numbers_15 = [45, 4, 9, 16, 25];
+      var allOver18_15 = numbers_15.every(myFunction_12);
+
+      document.getElementById("demo_12_1").innerHTML = numbers_15;
+      document.getElementById("demo_12").innerHTML = "所有都大于 18 是：" + allOver18_15;
+
+      function myFunction_12(value, index, array) {
+        return value > 18;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>如果回调函数仅使用第一个参数（值）时，可以省略其他参数：</p>
+    <p id="demo_13_1"></p>
+    <p id="demo_13"></p>
+    <script>
+      var numbers_16 = [45, 19, 25];
+      var allOver18_16 = numbers_16.every(myFunction_13);
+
+      document.getElementById("demo_13_1").innerHTML = numbers_16;
+      document.getElementById("demo_13").innerHTML = "所有都大于 18 是：" + allOver18_16;
+
+      function myFunction_13(value) {
+        return value > 18;
+      }
+    </script>
+    <p>所有浏览器都支持 Array.every()，除了 Internet Explorer 8 或更早的版本：</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>7. Array.some()</h1>
+    <p>some() 方法检查某些数组值是否通过了测试。</p>
+    <p id="demo_14_1"></p>
+    <p id="demo_14"></p>
+    <script>
+      var numbers_17 = [45, 4, 9, 16, 25];
+      var someOver18_17 = numbers_17.some(myFunction_14);
+
+      document.getElementById("demo_14_1").innerHTML = numbers_17;
+      document.getElementById("demo_14").innerHTML = "某些值大于 18 是：" + someOver18_17;
+
+      function myFunction_14(value, index, array) {
+        return value > 18;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <p>所有浏览器都支持 Array.some()，除了 Internet Explorer 8 或更早的版本：</p>
+    <br>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>8. Array.indexOf()</h1>
+    <p>如果未找到项目，Array.indexOf() 返回 -1。</p>
+    <p>如果项目多次出现，则返回第一次出现的位置。</p>
+    <p id="demo_15_1"></p>
+    <p id="demo_15"></p>
+    <p id="demo_16"></p>
+    <script>
+      var fruits_18 = ["Apple", "Orange", "Apple", "Mango"];
+      var a = fruits_18.indexOf("Apple", 0);
+      var b = fruits_18.indexOf("Apple", 1);
+      document.getElementById("demo_15_1").innerHTML = fruits_18;
+      document.getElementById("demo_15").innerHTML = "Apple 被找到的位置是(start=0)：" + a;
+      document.getElementById("demo_16").innerHTML = "Apple 被找到的位置是(start=1)：" + b;
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 2 个参数：</p>
+    <ul>
+      <li>item: 必需。要检索的项目。</li>
+      <li>start: 可选。从哪里开始搜索。负值将从结尾开始的给定位置开始，并搜索到结尾。</li>
+    </ul>
+    <br>
+
+
+    <p>Internet Explorer 8 或更早的版本不支持 indexOf()。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>9. Array.lastIndexOf()</h1>
+    <p>Array.lastIndexOf() 与 Array.indexOf() 类似，但是从数组结尾开始搜索。</p>
+    <p id="demo_17_1"></p>
+    <p id="demo_17"></p>
+    <script>
+      var fruits_19 = ["Apple", "Orange", "Apple", "Mango"];
+      var a = fruits_19.lastIndexOf("Apple");
+      document.getElementById("demo_17_1").innerHTML = fruits_19;
+      document.getElementById("demo_17").innerHTML = "Apple is found in position " + a;
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 2 个参数：</p>
+    <ul>
+      <li>item: 必需。要检索的项目。</li>
+      <li>start: 可选。从哪里开始搜索。负值将从结尾开始的给定位置开始，并搜索到开头。</li>
+    </ul>
+    <br>
+
+
+    <p>Internet Explorer 8 或更早的版本不支持 lastIndexOf()。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>10. Array.find()</h1>
+    <p>find() 方法返回通过测试函数的第一个数组元素的值。</p>
+    <p>这个例子查找（返回）大于 18 的第一个元素的值：</p>
+    <p id="demo_18_1"></p>
+    <p id="demo_18"></p>
+    <script>
+      var numbers_20 = [4, 9, 16, 25, 29];
+      var first_20 = numbers_20.find(myFunction_11);
+
+      document.getElementById("demo_18_1").innerHTML = numbers_20;
+      document.getElementById("demo_18").innerHTML = "大于 18 的第一个值是：" + first_20;
+
+      function myFunction_11(value, index, array) {
+        return value > 18;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>老旧的浏览器不支持 Array.find()。下面列出了完全支持此方法的首个浏览器版本：</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>11. Array.findIndex()</h1>
+    <p>findIndex() 方法返回通过测试函数的第一个数组元素的索引。</p>
+    <p>这个例子查找大于 18 的第一个元素的索引：</p>
+    <p id="demo_19_1"></p>
+    <p id="demo_19"></p>
+    <script>
+      var numbers_21 = [4, 9, 16, 25, 29];
+      var first_21 = numbers_21.findIndex(myFunction_12);
+
+      document.getElementById("demo_19_1").innerHTML = numbers_21;
+      document.getElementById("demo_19").innerHTML = "大于 18 的第一个值的索引是：" + first_21;
+
+      function myFunction_12(value, index, array) {
+        return value > 18;
+      }
+    </script>
+    <br>
+
+
+    <p>请注意此函数接受 3 个参数：</p>
+    <ul>
+      <li>项目值</li>
+      <li>项目索引</li>
+      <li>数组本身</li>
+    </ul>
+    <br>
+
+
+    <p>老旧的浏览器不支持 Array.findIndex()。下面列出了完全支持此方法的首个浏览器版本：</p>
+  </dev>
+  <hr>
+
+</body>
+</html>

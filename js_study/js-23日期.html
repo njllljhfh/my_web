@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 日期</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_dates.asp">JavaScript 日期</a>
+  <hr>
+
+
+  <dev>
+    <h1>1.JavaScript 日期</h1>
+    <p id="demo_1"></p>
+    <script>
+      var d_1 = new Date();
+      document.getElementById("demo_1").innerHTML = d_1;
+    </script>
+  </dev>
+  <hr>
+
+  <div>
+    <h2>JavaScript 日期输出</h2>
+    <p>默认情况下，JavaScript 将使用浏览器的时区并将日期显示为全文本字符串：</p>
+    <pre>Tue Apr 02 2019 09:01:19 GMT+0800 (中国标准时间)</pre>
+    <p>稍后，您将在本教程学到更多关于如何显示日期的知识。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>创建 Date 对象</h2>
+    <p>Date 对象由新的 <span class="code_marked">Date()</span> 构造函数创建。</p>
+    <p>有 4 种方法创建新的日期对象：</p>
+    <ul>
+      <li>new Date()</li>
+      <li>new Date(year, month, day, hours, minutes, seconds, milliseconds)</li>
+      <li>new Date(milliseconds)</li>
+      <li>new Date(date string)</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h1>2. new Date()</h1>
+    <p>使用 new Date()，使用当前日期和时间创建一个新的日期对象。</p>
+    <p><span style="color:red;">日期对象是静态的。</span> 计算机时间正在滴答作响，但日期对象不会。</p>
+    <p id="demo_2"></p>
+    <script>
+      var d_2 = new Date();
+      document.getElementById("demo_2").innerHTML = d_2;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>3. new Date(year, month, day, hours, minutes, seconds, milliseconds)</h1>
+    <p>new Date(year, month, ...) 用指定日期和时间创建新的日期对象。</p>
+    <p>7个数字分别指定年、月、日、小时、分钟、秒和毫秒（按此顺序）：</p>
+    <p id="demo_3"></p>
+    <script>
+      var d_3 = new Date(2019, 11, 25, 10, 33, 30, 0);
+      document.getElementById("demo_3").innerHTML = d_3;
+    </script>
+    <p><span style="color:red;">注释：</span> JavaScript 从 0 到 11 计算月份。</p>
+    <p>一月是 0。十二月是11。</p>
+    <br>
+
+
+    <p>6 个数字指定年、月、日、时、分、秒：</p>
+    <p id="demo_4"></p>
+    <script>
+      var d_4 = new Date(2019, 12, 25, 10, 33, 30);
+      document.getElementById("demo_4").innerHTML = d_4;
+    </script>
+    <br>
+
+
+    <p>5 个数字指定年、月、日、时、分：</p>
+    <p id="demo_5"></p>
+    <script>
+      var d_5 = new Date(2018, 11, 24, 10, 33);
+      document.getElementById("demo_5").innerHTML = d_5;
+    </script>
+    <br>
+
+
+    <p>4 个数字指定年、月、日和小时：</p>
+    <p id="demo_6"></p>
+    <script>
+      var d_6 = new Date(2018, 11, 24, 10);
+      document.getElementById("demo_6").innerHTML = d_6;
+    </script>
+    <br>
+
+
+    <p>3 个数字指定年、月、日：</p>
+    <p id="demo_7"></p>
+    <script>
+      var d_7 = new Date(2018, 11, 24);
+      document.getElementById("demo_7").innerHTML = d_7;
+    </script>
+    <br>
+
+
+    <p>2 个数字指定年、月：</p>
+    <p id="demo_8"></p>
+    <script>
+      var d_8 = new Date(2018, 11);
+      document.getElementById("demo_8").innerHTML = d_8;
+    </script>
+    <br>
+
+
+    <p><span style="color:red;">注释：</span> 您不能省略月份。如果只提供一个参数，则将其视为 <b>毫秒</b>。</p>
+    <p>一个参数会被解释为：new Date(milliseconds)。</p>
+    <p id="demo_9"></p>
+    <script>
+      var d_9 = new Date(2018);
+      document.getElementById("demo_9").innerHTML = d_9;
+    </script>
+    <br>
+
+
+    <p>上个世纪</p>
+    <p>一位和两位数年份将被解释为 19xx 年：</p>
+    <p>两位年份将被解释为 19xx：</p>
+    <p id="demo_10"></p>
+    <script>
+      var d_10 = new Date(99, 10, 25);
+      document.getElementById("demo_10").innerHTML = d_10;
+    </script>
+    <br>
+
+
+    <p>一位的年份会被解释为 19xx：</p>
+    <p id="demo_11"></p>
+    <script>
+      var d_11 = new Date(9, 10, 25);
+      document.getElementById("demo_11").innerHTML = d_11;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>4. new Date(dateString)</h1>
+    <p>new Date(dateString) 从日期字符串创建一个新的日期对象：</p>
+    <p id="demo_12"></p>
+    <script>
+      var d_12 = new Date("December 25, 2019 12:46:00");
+      document.getElementById("demo_12").innerHTML = d_12;
+    </script>
+    <p>日期字符串将在下一章中介绍。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>5. new Date(milliseconds)</h1>
+    <p>使用 new Date(<i>milliseconds</i>)，创建一个零时（January 1, 1970, 00:00:00 Universal Time）加毫秒的新日期对象：</p>
+    <p id="demo_13"></p>
+    <script>
+      var d_13 = new Date(0);
+      document.getElementById("demo_13").innerHTML = d_13;
+    </script>
+    <br>
+
+
+    <p>1970 年 1 月 1 日起的 100000000000 毫秒，大约是 1973 年 3 月 3 日：</p>
+    <p id="demo_14"></p>
+    <script>
+      var d_14 = new Date(100000000000);
+      document.getElementById("demo_14").innerHTML = d_14;
+    </script>
+    <br>
+
+
+    <p>1970 年 1 月 1 日起的 100000000000 毫秒，大约是 1966 年 10 月 31 日：</p>
+    <p id="demo_15"></p>
+    <script>
+      var d_15 = new Date(-100000000000);
+      document.getElementById("demo_15").innerHTML = d_15;
+    </script>
+    <br>
+
+
+    <p>使用 new Date(<i>milliseconds</i>)，创建一个零时（January 1, 1970, 00:00:00 Universal Time）加毫秒的新日期对象：:</p>
+    <p>一天（24小时）是 86,400,000 毫秒。</p>
+    <p id="demo_16"></p>
+    <script>
+      var d_16 = new Date(86400000);
+      document.getElementById("demo_16").innerHTML = d_16;
+    </script>
+  </dev>
+  <hr>
+
+
+  <div>
+    <h1>日期方法</h1>
+    <p>创建 Date 对象时，可以使用许多<em>方法</em>对其进行操作。</p>
+    <p>日期方法允许您使用本地时间或 UTC（通用或 GMT）时间来获取和设置日期对象的年、月、日、小时、分钟、秒和毫秒。</p>
+    <p>日期方法和时区将在下一章中介绍。</p>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h1>显示日期</h1>
+    <p>JavaScript（默认情况下）将以全文本字符串格式输出日期：</p>
+    <pre>Wed Mar 25 2015 08:00:00 GMT+0800 (中国标准时间)</pre>
+    <p>在 HTML 中显示日期对象时，会使用 toString() 方法自动转换为字符串。</p>
+
+    <h3>实例</h3>
+    <p id="demo_17"></p>
+    <script>
+      var d_17 = new Date();
+      document.getElementById("demo_17").innerHTML = d_17;
+    </script>
+    <br>
+
+
+    <h3>等同于：</h3>
+    <p>toString() 方法将日期转换为字符串：</p>
+    <p id="demo_18"></p>
+    <script>
+      var d_18 = new Date();
+      document.getElementById("demo_18").innerHTML = d_18.toString();
+    </script>
+    <br>
+
+
+    <p>toUTCString() 方法将日期转换为 UTC 字符串（日期显示标准）：</p>
+    <p id="demo_19"></p>
+    <script>
+      var d_19 = new Date();
+      document.getElementById("demo_19").innerHTML = d_19.toUTCString();
+    </script>
+    <br>
+
+
+    <p>toDateString() 方法将日期转换为日期字符串：</p>
+    <p id="demo_20"></p>
+    <script>
+      var d_20 = new Date();
+      document.getElementById("demo_20").innerHTML = d_20.toDateString();
+    </script>
+  </dev>
+  <hr>
+
+
+</body>
+</html>

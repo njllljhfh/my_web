@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Math 对象</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_math.asp">JavaScript Math 对象</a>
+  <hr>
+
+  <h1>JavaScript Math 对象允许您对数字执行数学任务。</h1>
+  <hr>
+
+
+  <dev>
+    <h1>1. Math.PI</h1>
+    <p>Math.PI 返回圆周长与直径的比率：</p>
+    <p id="demo_1"></p>
+    <script>
+      document.getElementById("demo_1").innerHTML = Math.PI;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>2. Math.round()</h1>
+    <p>Math.round(x) 返回 x 四舍五入到最接近的整数的值：</p>
+    <p id="demo_2"></p>
+    <script>
+      document.getElementById("demo_2").innerHTML = Math.round(4.4);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>3. Math.pow()</h1>
+    <p>Math.pow(x,y) 返回 x 的 y 次幂的值：</p>
+    <p id="demo_3"></p>
+    <script>
+      document.getElementById("demo_3").innerHTML = Math.pow(8, 2);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>4. Math.sqrt()</h1>
+    <p>Math.sqrt(x) 返回 x 的平方根：</p>
+    <p id="demo_4"></p>
+    <script>
+      document.getElementById("demo_4").innerHTML = Math.sqrt(64);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>5. Math.abs()</h1>
+    <p>Math.abs(x) 返回 x 的绝对值：</p>
+    <p id="demo_5"></p>
+    <script>
+      document.getElementById("demo_5").innerHTML = Math.abs(-4.4);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>6. Math.ceil()</h1>
+    <p>Math.ceil() 把数字上舍入为最接近的整数：</p>
+    <p id="demo_6"></p>
+    <script>
+      document.getElementById("demo_6").innerHTML = Math.ceil(4.4);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>7. Math.floor()</h1>
+    <p>Math.floor(x) 返回 x 被下舍入为最接近整数的值：</p>
+    <p id="demo_7"></p>
+    <script>
+      document.getElementById("demo_7").innerHTML = Math.floor(4.7);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>8. Math.sin()</h1>
+    <p>Math.sin(x) 返回 x（以弧度计）的正弦：</p>
+    <p>以弧度计的角度 = (以度数计的角度) * PI / 180。</p>
+    <p id="demo_8"></p>
+    <script>
+      document.getElementById("demo_8").innerHTML =
+        "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>9. Math.cos()</h1>
+    <p>Math.cos(x) 返回 x（以弧度计）的余弦：</p>
+    <p>以弧度计的角度 = (以度数计的角度) * PI / 180。</p>
+    <p id="demo_9"></p>
+    <script>
+      document.getElementById("demo_9").innerHTML =
+        "The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>10. Math.min()</h1>
+    <p>Math.min() 返回参数列表中的最低值：</p>
+    <p id="demo_10"></p>
+    <script>
+      document.getElementById("demo_10").innerHTML =
+        Math.min(0, 150, 30, 20, -8, -200);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>11. Math.max()</h1>
+    <p>Math.max() 返回参数列表中的最高值：</p>
+    <p id="demo_11"></p>
+    <script>
+      document.getElementById("demo_11").innerHTML =
+        Math.max(0, 150, 30, 20, -8, -200);
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>12. Math.random()</h1>
+    <p>Math.random() 返回 0 与 1 之间的随机值：</p>
+    <p id="demo_12"></p>
+    <script>
+      document.getElementById("demo_12").innerHTML = Math.random();
+    </script>
+  </dev>
+  <hr>
+
+  <dev>
+    <h1>13. 数学常量</h1>
+    <p id="demo_13"></p>
+    <script>
+      document.getElementById("demo_13").innerHTML =
+        "<p><b>Math.E =</b> " + Math.E + "</p>" +
+        "<p><b>Math.PI =</b> " + Math.PI + "</p>" +
+        "<p><b>Math.SQRT2 =</b> " + Math.SQRT2 + "</p>" +
+        "<p><b>Math.SQRT1_2 =</b> " + Math.SQRT1_2 + "</p>" +
+        "<p><b>Math.LN2 =</b> " + Math.LN2 + "</p>" +
+        "<p><b>Math.LN10 =</b> " + Math.LN10 + "</p>" +
+        "<p><b>Math.LOG2E =</b> " + Math.LOG2E + "</p>" +
+        "<p><b>Math.Log10E =</b> " + Math.LOG10E + "</p>";
+    </script>
+  </dev>
+  <hr>
+
+
+  <div>
+    <h2>Math 构造器</h2>
+    <p>与其他全局对象不同，Math对象没有构造函数。方法和属性是静态的。</p>
+    <p>可以在不首先创建Math对象的情况下使用所有方法和属性（常量）。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>Math 对象方法</h2>
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">方法</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>abs(x)</td>
+        <td>返回 x 的绝对值</td>
+      </tr>
+
+      <tr>
+        <td>acos(x)</td>
+        <td>返回 x 的反余弦值，以弧度计</td>
+      </tr>
+
+      <tr>
+        <td>asin(x)</td>
+        <td>返回 x 的反正弦值，以弧度计</td>
+      </tr>
+
+      <tr>
+        <td>atan(x)</td>
+        <td>以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值。</td>
+      </tr>
+
+      <tr>
+        <td>atan2(y,x)</td>
+        <td>返回从 x 轴到点 (x,y) 的角度</td>
+      </tr>
+
+      <tr>
+        <td>ceil(x)</td>
+        <td>对 x 进行上舍入</td>
+      </tr>
+
+      <tr>
+        <td>cos(x)</td>
+        <td>返回 x 的余弦</td>
+      </tr>
+
+      <tr>
+        <td>exp(x)</td>
+        <td>返回 Ex 的值</td>
+      </tr>
+
+      <tr>
+        <td>floor(x)</td>
+        <td>对 x 进行下舍入</td>
+      </tr>
+
+      <tr>
+        <td>log(x)</td>
+        <td>返回 x 的自然对数（底为e）</td>
+      </tr>
+
+      <tr>
+        <td>max(x,y,z,...,n)</td>
+        <td>返回最高值</td>
+      </tr>
+
+      <tr>
+        <td>min(x,y,z,...,n)</td>
+        <td>返回最低值</td>
+      </tr>
+
+      <tr>
+        <td>pow(x,y)</td>
+        <td>返回 x 的 y 次幂</td>
+      </tr>
+
+      <tr>
+        <td>random()</td>
+        <td>返回 0 ~ 1 之间的随机数</td>
+      </tr>
+
+      <tr>
+        <td>round(x)</td>
+        <td>把 x 四舍五入为最接近的整数</td>
+      </tr>
+
+      <tr>
+        <td>sin(x)</td>
+        <td>返回 x（x 以角度计）的正弦</td>
+      </tr>
+
+      <tr>
+        <td>sqrt(x)</td>
+        <td>返回 x 的平方根</td>
+      </tr>
+
+      <tr>
+        <td>tan(x)</td>
+        <td>返回角的正切</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+</body>
+</html>

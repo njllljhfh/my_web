@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 逻辑</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_booleans.asp">JavaScript 逻辑</a>
+  <hr>
+
+  <h1>JavaScript 布尔（逻辑）代表两个值之一：true 或 false</h1>
+  <hr>
+
+
+  <div>
+    <h2>布尔值</h2>
+    <p>通常，在编程中，您会需要只能有两个值之一的数据类型，比如</p>
+    <ul>
+      <li>YES / NO</li>
+      <li>ON / OFF</li>
+      <li>TRUE / FALSE</li>
+    </ul>
+    <p>鉴于此，JavaScript 提供一种 <em>布尔</em> 数据类型。它只接受值 <em>true</em> 或 <em>false</em>。</jp>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h1>1. Boolean() 函数</h1>
+    <p>您可以使用 Boolean() 函数来确定表达式（或变量）是否为真：</p>
+    <p>显示 Boolean(10 > 9) 的值：</p>
+    <button onclick="myFunction_1()">试一试</button>
+    <p id="demo_1"></p>
+    <script>
+      function myFunction_1() {
+        document.getElementById("demo_1").innerHTML = Boolean(10 > 9);
+      }
+    </script>
+    <br>
+
+
+    <p>或者甚至更简单：</p>
+    <p>显示 10 > 9 的值：</p>
+    <button onclick="myFunction_2()">试一试</button>
+    <p id="demo_2"></p>
+    <script>
+      function myFunction_2() {
+        document.getElementById("demo_2").innerHTML = 10 > 9;
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <div>
+    <h2>比较和条件</h2>
+    <p>JS 比较这一章列出了完整的比较运算符。</p>
+    <p>JS 条件这一章列出了完整的条件语句。</p>
+    <p>下面是一些例子：</p>
+    <table class="dataintable">
+      <tr>
+        <th style="width:25%;">运算符</th>
+        <th style="width:25%;">描述</th>
+        <th style="width:40%;">实例</th>
+      </tr>
+
+      <tr>
+        <td>==</td>
+        <td>等于</td>
+        <td>if (day == &quot;Monday&quot;)</td>
+      </tr>
+
+      <tr>
+        <td>&gt;</td>
+        <td>大于</td>
+        <td>if (salary &gt; 9000)</td>
+      </tr>
+
+      <tr>
+        <td>&lt;</td>
+        <td>小于</td>
+        <td>if (age &lt; 18)</td>
+      </tr>
+    </table>
+    <p>表达式的布尔值是 JavaScript 比较和条件的基础。</p>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h1>所有具有“真实”值的即为 True</h1>
+    <p id="demo_3"></p>
+    <script>
+      var b1 = Boolean(100);
+      var b2 = Boolean(3.14);
+      var b3 = Boolean(-15);
+      var b4 = Boolean("Hello");
+      var b5 = Boolean('false');
+      var b6 = Boolean(1 + 7 + 3.14);
+
+      document.getElementById("demo_3").innerHTML =
+        "100 是 " + b1 + "<br>" +
+        "3.14 是 " + b2 + "<br>" +
+        "-15 是 " + b3 + "<br>" +
+        "任何（非空）字符串是 " + b4 + "<br>" +
+        "即使字符串 'false' 也是 " + b5 + "<br>" +
+        "任何表达式（除了零）是 " + b6;
+    </script>
+  </dev>
+  <hr>
+
+  <dev>
+    <h1>所有不具有“真实”值的即为 False</h1>
+    <h2>0（零）的布尔值为 false：</h2>
+    <button onclick="myFunction_3()">试一试</button>
+    <p id="demo_4"></p>
+    <script>
+      function myFunction_3() {
+        var x = 0;
+        document.getElementById("demo_4").innerHTML = Boolean(x);
+      }
+    </script>
+    <br>
+
+
+    <h2>-0 （负零）的布尔值为 false：</h2>
+    <button onclick="myFunction_4()">试一试</button>
+    <p id="demo_5"></p>
+    <script>
+      function myFunction_4() {
+        var x = -0;
+        document.getElementById("demo_5").innerHTML = Boolean(x);
+      }
+    </script>
+    <br>
+
+
+    <h2>""（空值）的布尔值为 false：</h2>
+    <button onclick="myFunction_5()">试一试</button>
+    <p id="demo_6"></p>
+    <script>
+      function myFunction_5() {
+        var x = "";
+        document.getElementById("demo_6").innerHTML = Boolean(x);
+      }
+    </script>
+    <br>
+
+
+    <h2>undefined 的布尔值是 false：</h2>
+    <button onclick="myFunction_6()">试一试</button>
+    <p id="demo_7"></p>
+    <script>
+      function myFunction_6() {
+        var x;
+        document.getElementById("demo_7").innerHTML = Boolean(x);
+      }
+    </script>
+    <br>
+
+
+    <h2>null 的布尔值是 false：</h2>
+    <button onclick="myFunction_7()">试一试</button>
+    <p id="demo_8"></p>
+    <script>
+      function myFunction_7() {
+        var x = null;
+        document.getElementById("demo_8").innerHTML = Boolean(x);
+      }
+    </script>
+    <br>
+
+
+    <h2>false 的布尔值（正如您猜到的）是 false：</h2>
+    <button onclick="myFunction_8()">试一试</button>
+    <p id="demo_9"></p>
+    <script>
+      function myFunction_8() {
+        var x = false;
+        document.getElementById("demo_9").innerHTML = Boolean(x);
+      }
+    </script>
+    <br>
+
+
+    <h2>NaN 的布尔值是 false：</h2>
+    <button onclick="myFunction_9()">试一试</button>
+    <p id="demo_10"></p>
+    <script>
+      function myFunction_9() {
+        var x = 10 / "H";
+        document.getElementById("demo_10").innerHTML = Boolean(x);
+      }
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>布尔可以是对象</h1>
+    <p>通常 JavaScript 布尔是由字面量创建的原始值：</p>
+    <pre>var x = false</pre>
+    <p>但是布尔也可以通过关键词 <span class="code_marked">new</span> 作为对象来定义：</p>
+    <pre>var y = new Boolean(false)</pre>
+    <br>
+
+    <p>永远不要将布尔值创建为对象。</p>
+    <p>无法安全地比较布尔和对象。</p>
+    <p id="demo_11"></p>
+    <script>
+      var x = false;         // x 是布尔值
+      var y = new Boolean(false);  // y 是对象
+      document.getElementById("demo_11").innerHTML = typeof x + "<br>" + typeof y;
+    </script>
+    <br>
+
+
+    <p>不要创建布尔对象。它会拖慢执行速度。</p>
+    <p>new 关键词会使代码复杂化，并产生某些意想不到的结果：</p>
+    <p>当使用 == 运算符时，相等的布尔是相等的：</p>
+    <p id="demo_12"></p>
+    <script>
+      var x = false;         // x 是布尔值
+      var y = new Boolean(false);  // y 是对象
+      document.getElementById("demo_12").innerHTML = (x == y);
+    </script>
+    <br>
+
+
+    <p>当使用 === 运算符时，相等的布尔是不相等的，因为 === 运算符需要在类型和值两方面同时相等。</p>
+    <p id="demo_13"></p>
+    <script>
+      var x = false;         // x 是数字
+      var y = new Boolean(false);  // y 是对象
+      document.getElementById("demo_13").innerHTML = (x === y);
+    </script>
+    <br>
+
+
+    <p style="color:red;">或者甚至更糟。对象无法进行比较：</p>
+    <p style="color:red;">比较两个 JavaScript 对象将始终返回 false。</p>
+    <p id="demo_14"></p>
+    <script>
+      var x = new Boolean(false);  // x 是对象
+      var y = new Boolean(false);  // y 是对象
+      document.getElementById("demo_14").innerHTML = (x == y);
+    </script>
+  </dev>
+
+</body>
+</html>

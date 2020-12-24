@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4ba4c9c-40a8-41ff-80cf-6f9b1e4d5881" name="Default Changelist" comment="_1">
-      <change afterPath="$PROJECT_DIR$/js_study/js-12函数.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-13对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-14事件.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-15字符串.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-16字符串方法.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-17数字.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-18数字方法.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js_study/js-19数组.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-20数组方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-21数组排序.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-22数组迭代方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-23日期.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-24日期格式化.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-25获取日期方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-26设置日期方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-27Math对象.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js_study/js-28随机.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO9.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-9算术.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-1简介.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-11数据类型.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-2使用.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-3输出.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-4语句.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-5语法.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-6注释.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-7变量.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-8运算符.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js_study/NO_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-10赋值.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js_study/js-19数组.html" beforeDir="false" afterPath="$PROJECT_DIR$/js_study/js-19数组.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,66 +23,141 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="my_web" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
+        <entry file="file://$PROJECT_DIR$/js_study/js-22数组迭代方法.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="598">
+              <caret line="455" column="18" selection-start-line="455" selection-start-column="18" selection-end-line="455" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/js-16字符串方法.html">
+        <entry file="file://$PROJECT_DIR$/js_study/js-23日期.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10186">
-              <caret line="463" column="10" selection-start-line="463" selection-start-column="10" selection-end-line="463" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/js-17数字.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js_study/js-18数字方法.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="586">
+              <caret line="247" column="62" lean-forward="true" selection-start-line="247" selection-start-column="62" selection-end-line="247" selection-end-column="62" />
               <folding>
-                <element signature="n#style#0;n#b#0;n#p#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#1;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4949#4967#0" expanded="true" />
-                <element signature="e#5333#5339#0" expanded="true" />
-                <element signature="e#5351#5357#0" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#1;n#dev#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#3;n#dev#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#15;n#dev#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js_study/js-19数组.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-24日期格式化.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="797">
-              <caret line="394" column="2" selection-start-line="394" selection-start-column="2" selection-end-line="394" selection-end-column="2" />
+            <state relative-caret-position="265">
+              <caret line="223" column="5" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
               <folding>
-                <element signature="e#556#562#0" expanded="true" />
-                <element signature="e#566#572#0" expanded="true" />
-                <element signature="e#585#591#0" expanded="true" />
-                <element signature="e#596#602#0" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#412#418#0" expanded="true" />
+                <element signature="e#428#434#0" expanded="true" />
+                <element signature="e#504#510#0" expanded="true" />
+                <element signature="e#520#526#0" expanded="true" />
+                <element signature="e#530#536#0" expanded="true" />
+                <element signature="e#546#552#0" expanded="true" />
                 <element signature="e#615#621#0" expanded="true" />
-                <element signature="e#624#630#0" expanded="true" />
-                <element signature="e#4182#4201#0" expanded="true" />
-                <element signature="e#5887#5905#0" expanded="true" />
+                <element signature="e#632#638#0" expanded="true" />
+                <element signature="e#642#648#0" expanded="true" />
+                <element signature="e#659#665#0" expanded="true" />
+                <element signature="e#729#735#0" expanded="true" />
+                <element signature="e#758#764#0" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#dev#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#3386#3392#0" expanded="true" />
+                <element signature="e#3401#3407#0" expanded="true" />
+                <element signature="e#3548#3554#0" expanded="true" />
+                <element signature="e#3564#3570#0" expanded="true" />
+                <element signature="e#3710#3716#0" expanded="true" />
+                <element signature="e#3726#3732#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-21数组排序.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="207" column="25" selection-start-line="207" selection-start-column="25" selection-end-line="207" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#b#0;n#p#0;n#dev#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#6;n#dev#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-27Math对象.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-28随机.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="84" column="81" lean-forward="true" selection-start-line="84" selection-start-column="81" selection-end-line="84" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js_study/js-29逻辑.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="210" column="11" selection-start-line="210" selection-start-column="11" selection-end-line="210" selection-end-column="11" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1487#1493#0" expanded="true" />
+                <element signature="e#1499#1505#0" expanded="true" />
+                <element signature="e#1548#1552#1" expanded="true" />
+                <element signature="e#1601#1605#0" expanded="true" />
+                <element signature="e#1653#1657#1" expanded="true" />
+                <element signature="e#1703#1707#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-25获取日期方法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="249" selection-start-line="249" selection-end-line="249" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#1;n#dev#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js_study/js-26设置日期方法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,6 +179,8 @@
       <find>【</find>
       <find>myFunction</find>
       <find>txt_14</find>
+      <find>fruits_2</find>
+      <find>myFunction_2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,12 +223,22 @@
         <option value="$PROJECT_DIR$/js_study/js-17数字.html" />
         <option value="$PROJECT_DIR$/js_study/js-18数字方法.html" />
         <option value="$PROJECT_DIR$/js_study/js-19数组.html" />
+        <option value="$PROJECT_DIR$/js_study/js-20数组方法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-21数组排序.html" />
+        <option value="$PROJECT_DIR$/js_study/js-22数组迭代方法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-23日期.html" />
+        <option value="$PROJECT_DIR$/js_study/js-日期格式化.html" />
+        <option value="$PROJECT_DIR$/js_study/js-25获取日期方法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-26设置日期方法.html" />
+        <option value="$PROJECT_DIR$/js_study/js-27Math对象.html" />
+        <option value="$PROJECT_DIR$/js_study/js-28随机.html" />
+        <option value="$PROJECT_DIR$/js_study/js-29逻辑.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
+    <option name="width" value="1574" />
     <option name="height" value="980" />
   </component>
   <component name="ProjectView">
@@ -181,18 +259,6 @@
               <item name="my_web" type="462c0819:PsiDirectoryNode" />
               <item name="js_study" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_web" type="462c0819:PsiDirectoryNode" />
-              <item name="js_study" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_web" type="462c0819:PsiDirectoryNode" />
-              <item name="js_study" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -212,7 +278,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="zielu.svntoolbox.prj.config" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -247,20 +313,20 @@
       <workItem from="1606479429697" duration="384000" />
       <workItem from="1606486549068" duration="365000" />
       <workItem from="1607693781020" duration="861000" />
-      <workItem from="1608627943649" duration="20724000" />
+      <workItem from="1608627943649" duration="50113000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61496000" />
+    <option name="totallyTimeSpent" value="90885000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="980" extended-state="0" />
+    <frame x="0" y="23" width="1574" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887386" visible="true" weight="0.15260786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5011261" side_tool="true" weight="0.14285715" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -270,7 +336,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.30743244" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30743244" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -302,13 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="517" column="4" selection-start-line="517" selection-start-column="4" selection-end-line="517" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -375,13 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/js-2使用.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="97" column="21" lean-forward="true" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_study/js-1简介.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -424,17 +476,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_study/js-16字符串方法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10186">
           <caret line="463" column="10" selection-start-line="463" selection-start-column="10" selection-end-line="463" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/demo/myScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -460,19 +512,161 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-2使用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-20数组方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="374" column="7" selection-start-line="374" selection-start-column="7" selection-end-line="374" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#p#4;n#dev#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#7;n#dev#11;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js_study/js-19数组.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="394" column="2" selection-start-line="394" selection-start-column="2" selection-end-line="394" selection-end-column="2" />
+        <state relative-caret-position="374">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding>
-            <element signature="e#556#562#0" expanded="true" />
-            <element signature="e#566#572#0" expanded="true" />
-            <element signature="e#585#591#0" expanded="true" />
-            <element signature="e#596#602#0" expanded="true" />
+            <element signature="e#554#560#0" expanded="true" />
+            <element signature="e#564#570#0" expanded="true" />
+            <element signature="e#589#595#0" expanded="true" />
+            <element signature="e#600#606#0" expanded="true" />
+            <element signature="e#625#631#0" expanded="true" />
+            <element signature="e#634#640#0" expanded="true" />
+            <element signature="e#4187#4206#0" expanded="true" />
+            <element signature="e#5938#5957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="702" column="4" selection-start-line="702" selection-start-column="4" selection-end-line="702" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-22数组迭代方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="455" column="18" selection-start-line="455" selection-start-column="18" selection-end-line="455" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-23日期.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="247" column="62" lean-forward="true" selection-start-line="247" selection-start-column="62" selection-end-line="247" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#1;n#dev#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#3;n#dev#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#15;n#dev#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-25获取日期方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="249" selection-start-line="249" selection-end-line="249" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#1;n#dev#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-24日期格式化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="223" column="5" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#412#418#0" expanded="true" />
+            <element signature="e#428#434#0" expanded="true" />
+            <element signature="e#504#510#0" expanded="true" />
+            <element signature="e#520#526#0" expanded="true" />
+            <element signature="e#530#536#0" expanded="true" />
+            <element signature="e#546#552#0" expanded="true" />
             <element signature="e#615#621#0" expanded="true" />
-            <element signature="e#624#630#0" expanded="true" />
-            <element signature="e#4182#4201#0" expanded="true" />
-            <element signature="e#5887#5905#0" expanded="true" />
+            <element signature="e#632#638#0" expanded="true" />
+            <element signature="e#642#648#0" expanded="true" />
+            <element signature="e#659#665#0" expanded="true" />
+            <element signature="e#729#735#0" expanded="true" />
+            <element signature="e#758#764#0" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#dev#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3386#3392#0" expanded="true" />
+            <element signature="e#3401#3407#0" expanded="true" />
+            <element signature="e#3548#3554#0" expanded="true" />
+            <element signature="e#3564#3570#0" expanded="true" />
+            <element signature="e#3710#3716#0" expanded="true" />
+            <element signature="e#3726#3732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-21数组排序.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="207" column="25" selection-start-line="207" selection-start-column="25" selection-end-line="207" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#b#0;n#p#0;n#dev#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#6;n#dev#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-26设置日期方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-27Math对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-28随机.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="84" column="81" lean-forward="true" selection-start-line="84" selection-start-column="81" selection-end-line="84" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_study/js-29逻辑.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="210" column="11" selection-start-line="210" selection-start-column="11" selection-end-line="210" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1487#1493#0" expanded="true" />
+            <element signature="e#1499#1505#0" expanded="true" />
+            <element signature="e#1548#1552#1" expanded="true" />
+            <element signature="e#1601#1605#0" expanded="true" />
+            <element signature="e#1653#1657#1" expanded="true" />
+            <element signature="e#1703#1707#0" expanded="true" />
           </folding>
         </state>
       </provider>
