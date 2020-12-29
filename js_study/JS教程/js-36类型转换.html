@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 类型转换</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_type_conversion.asp">JavaScript 类型转换</a>
+  <hr>
+
+  <h1>Number() 转换数值，String() 转换字符串，Boolean() 转换布尔值。</h1>
+  <hr>
+
+
+  <div>
+    <h2>JavaScript 数据类型</h2>
+    <p>JavaScript 中有五种可包含值的数据类型：</p>
+    <ul>
+      <li>字符串（string）</li>
+      <li>数字（number）</li>
+      <li>布尔（boolean）</li>
+      <li>对象（object）</li>
+      <li>函数（function）</li>
+    </ul>
+
+    <p>有三种对象类型：</p>
+    <ul>
+      <li>对象（Object）</li>
+      <li>日期（Date）</li>
+      <li>数组（Array）</li>
+    </ul>
+
+    <p>同时有两种不能包含值的数据类型：</p>
+    <ul>
+      <li>null</li>
+      <li>undefined</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>typeof 运算符</h2>
+    <p>typeof 运算符返回变量、对象、函数或表达式的类型。</p>
+    <p id="demo_1"></p>
+    <script>
+      document.getElementById("demo_1").innerHTML =
+        typeof "john" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof NaN + "<br>" +
+        typeof false + "<br>" +
+        typeof [1, 2, 3, 4] + "<br>" +
+        typeof {name: 'john', age: 34} + "<br>" +
+        typeof new Date() + "<br>" +
+        typeof function () {
+        } + "<br>" +
+        typeof myCar + "<br>" +
+        typeof null;
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <p>请注意：</p>
+    <ul>
+      <li>NaN 的数据类型是数值</li>
+      <li>数组的数据类型是对象</li>
+      <li>日期的数据类型是对象</li>
+      <li>null 的数据类型是对象</li>
+      <li>未定义变量的数据类型是 <em>undefined</em></li>
+      <li>尚未赋值的变量的数据类型也是 <em>undefined</em></li>
+    </ul>
+    <p>您无法使用 typeof 去判断 JavaScript 对象是否是数组（或日期）。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>typeof 的数据类型</h1>
+    <p>typeof 运算符不是变量。它属于运算符。运算符（比如 + - * /）没有数据类型。</p>
+    <p>但是，typeof 始终会返回字符串（包含运算数的类型）。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>constructor 属性</h2>
+    <p>constructor 属性返回变量或对象的构造器函数。</p>
+    <p id="demo_2"></p>
+    <script>
+      document.getElementById("demo_2").innerHTML =
+        "john".constructor + "<br>" +
+        (3.14).constructor + "<br>" +
+        false.constructor + "<br>" +
+        [1, 2, 3, 4].constructor + "<br>" +
+        {name: 'john', age: 34}.constructor + "<br>" +
+        new Date().constructor + "<br>" +
+        function () {
+        }.constructor;
+    </script>
+    <br>
+
+
+    <h3>您可以通过检查 constructor 属性来确定某个对象是否为数组（包含单词 "Array"）：</h3>
+    <p>这个“自制的” isArray_3() 函数在数组上使用时返回 true：</p>
+    <p id="demo_3"></p>
+    <script>
+      var fruits_3 = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo_3").innerHTML = isArray_3(fruits_3);
+
+      function isArray_3(myArray) {
+        return myArray.constructor.toString().indexOf("Array") > -1;
+      }
+    </script>
+    <br>
+
+
+    <h3>或者更简单，您可以检查对象是否是数组函数：</h3>
+    <p id="demo_4"></p>
+    <script>
+      var fruits_4 = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo_4").innerHTML = isArray_4(fruits_4);
+
+      function isArray_4(myArray) {
+        return myArray.constructor === Array;
+      }
+    </script>
+    <br>
+
+
+    <h3>您可以通过检查 constructor 属性来确定某个对象是否为日期（包含单词 "Date"）：</h3>
+    <p>这个“自制的” isDate_5() 函数在日期上使用时返回 true：</p>
+    <p id="demo_5"></p>
+    <script>
+      var myDate_5 = new Date();
+      document.getElementById("demo_5").innerHTML = isDate_5(myDate_5);
+
+      function isDate_5(myDate) {
+        return myDate.constructor.toString().indexOf("Date") > -1;
+      }
+    </script>
+    <br>
+
+
+    <h3>或者更简单，您可以检查对象是否是日期函数：</h3>
+    <p id="demo_6"></p>
+    <script>
+      var myDate_6 = new Date();
+      document.getElementById("demo_6").innerHTML = isDate_6(myDate_6);
+
+      function isDate_6(myDate) {
+        return myDate.constructor === Date;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>JavaScript 类型转换</h2>
+    <p>JavaScript 变量能够被转换为新变量以及另一种数据类型：</p>
+    <ul>
+      <li>通过使用 JavaScript 函数</li>
+      <li>通过 JavaScript 本身<em>自动</em>转换</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>把数值转换为字符串</h1>
+    <p>全局方法 String() 能够把数字转换为字符串。</p>
+    <p>它可用于任意类型的数字、文字、变量或表达式：</p>
+    <p id="demo_7"></p>
+    <script>
+      var x = 123;
+      document.getElementById("demo_7").innerHTML =
+        String(x) + "<br>" +
+        String(123) + "<br>" +
+        String(100 + 23);
+    </script>
+    <br>
+
+
+    <h1>数字方法 toString() 同理。</h1>
+    <p>toString() 方法把数字转换为字符串。</p>
+    <p id="demo_8"></p>
+    <script>
+      var x = 123;
+      document.getElementById("demo_8").innerHTML =
+        x.toString() + "<br>" +
+        (123).toString() + "<br>" +
+        (100 + 23).toString();
+    </script>
+  </div>
+  <br>
+
+
+  <h3>在数字方法这一章，您将学到更多可用于将数值转换为字符串的方法：</h3>
+  <br>
+
+
+  <div>
+    <h2>把布尔转换为字符串</h2>
+    <p>全局方法 String() 能够将布尔转换为字符串。</p>
+    <pre>
+      String(false)       // 返回 &quot;false&quot;
+      String(true)        // 返回 &quot;true&quot;
+    </pre>
+
+    <p>布尔方法 toString() 同理。</p>
+    <pre>
+      false.toString()     // 返回 &quot;false&quot;
+      true.toString()      // 返回 &quot;true&quot;
+    </pre>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>把日期转换为字符串</h2>
+    <p>全局方法 <span class="code_marked">String()</span> 可将日期转换为字符串。</p>
+    <pre>String(Date())      <span class="code_comment" id="demo1"></span></pre>
+    <script>
+      document.getElementById("demo1").innerHTML = "// 返回 " + "\"" + String(Date()) + "\"";
+    </script>
+    <br>
+
+
+    <p>日期方法 <span class="code_marked">toString()</span> 同理。</p>
+    <h3>实例</h3>
+    <pre>Date().toString()   <span class="code_comment" id="demo2"></span></pre>
+    <script>
+      document.getElementById("demo2").innerHTML = "// 返回 " + "\"" + Date().toString() + "\"";
+    </script>
+    <br>
+
+    <p>在 日期方法 这一章，您能够找到更多可用于把日期转换为字符串的方法：</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>把字符串转换为数值</h2>
+    <p>全局方法 Number() 可把字符串转换为数字。</p>
+    <p>包含数字的字符串（比如 &quot;3.14&quot;）转换为数字（比如 3.14）。</p>
+    <p>空的字符串转换为 0。</p>
+    <p>其他字符串将转换为 NaN（Not a number，不是数字）。</p>
+    <pre>
+      Number(&quot;3.14&quot;)    // 返回 3.14
+      Number(&quot; &quot;)       // 返回 0
+      Number(&quot;&quot;)        // 返回 0
+      Number(&quot;99 88&quot;)   // 返回 NaN
+    </pre>
+
+    <p>在 数字方法 这一章中，您将找到更多可用于把字符串转换为数字的方法：</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>一元 + 运算符</h1>
+    <p>一元的 + 运算符可用于把变量转换为数字：</p>
+    <p id="demo_9"></p>
+    <script>
+      var y_9 = "5";      // y 是字符串
+      var x_9 = +y_9;      // x 是数字
+      document.getElementById("demo_9").innerHTML = x_9;
+    </script>
+    <br>
+
+
+    <h3>如果无法转换变量，则仍会成为数字，但是值为 NaN（Not a number）：</h3>
+    <p id="demo_10"></p>
+    <script>
+      var y_10 = "Bill";   // y 是字符串
+      var x_10 = +y_10;      // x 是数字 (NaN)
+      document.getElementById("demo_10").innerHTML = x_10;
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>把布尔转换数值</h2>
+    <p>全局方法 Number() 也可把布尔转换为数字。</p>
+    <pre>
+      Number(false)     // 返回 0
+      Number(true)      // 返回 1
+    </pre>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>把日期转换为数字</h2>
+    <p>全局方法 Number() 可用于把日期转换为数字。</p>
+    <pre>
+      d = new Date();
+      Number(d)          <span id="demo3"></span>
+    </pre>
+    <script>
+      d = new Date();
+      document.getElementById("demo3").innerHTML = "// 返回 " + Number(d);
+    </script>
+    <br>
+
+    <p>日期方法 getTime() 同理。</p>
+    <pre>
+      d = new Date();
+      d.getTime()        <span id="demo4"></span>
+    </pre>
+    <script>
+      d = new Date();
+      document.getElementById("demo4").innerHTML = "// 返回 " + d.getTime();
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>自动类型转换</h1>
+    <p>如果 JavaScript 尝试操作一种“错误”的数据类型，它会试图将该值转换为“正确”的类型。</p>
+    <p>结果并不总是你所期望的：</p>
+    <p id="demo_11"></p>
+    <script>
+      document.getElementById("demo_11").innerHTML =
+        (5 + null) + "<br>" +
+        ("5" + null) + "<br>" +
+        ("5" + 2) + "<br>" +
+        ("5" - 2) + "<br>" +
+        ("5" * "2") + "<br>" +
+        ("5" / "2") + "<br>"
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>自动字符串转换</h2>
+    <p>JavaScript 自动调用变量的 toString() 函数，当您试图“输出”对象或变量时：</p>
+    <pre>
+      document.getElementById(&quot;demo&quot;).innerHTML = myVar;
+      // 如果 myVar = {name:&quot;Fjohn&quot;}  // toString 转换为 &quot;[object Object]&quot;
+      // 如果 myVar = [1,2,3,4]       // toString 转换为 &quot;1,2,3,4&quot;
+      // 如果 myVar = new Date()      // toString 转换为 &quot;<span id="demo5"></span>&quot;</span>
+    </pre>
+    <script>
+      myVar = new Date();
+      document.getElementById("demo5").innerHTML = myVar;
+    </script>
+    <br>
+
+    <p>数字和布尔也会被转换，但并不明显：</p>
+    <pre>
+        // 如果 myVar = 123             // toString 转换为 &quot;123&quot;
+        // 如果 myVar = true            // toString 转换为 &quot;true&quot;
+        // 如果 myVar = false           // toString 转换为 &quot;false&quot;
+    </pre>
+  </div>
+  <hr>
+
+
+  <h1>类型转换表</h1>
+  <h3>下表中列出了将不同 JavaScript 值转换为数字、字符串和布尔的结果：</h3>
+  <hr>
+
+</body>
+</html>

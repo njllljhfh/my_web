@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Break 和 Continue</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_break.asp">JavaScript Break 和 Continue</a>
+  <hr>
+
+
+  <h2>break 语句“跳出”循环。</h2>
+  <h2>continue 语句“跳过”循环中的一个迭代。</h2>
+  <hr>
+
+
+  <dev>
+    <h1>1. Break 语句</h1>
+    <p>在本教程稍早的章节中，您已见到了 break 语句。它被用于“跳出” switch 语句。</p>
+    <p>break 语句也可用于跳出循环。</p>
+    <p>break 语句会中断循环，并继续执行循环之后的代码（如果有）：</p>
+    <p id="demo_1"></p>
+    <script>
+      var text_1 = "";
+      var i_1;
+      for (i_1 = 0; i_1 < 10; i_1++) {
+        if (i_1 === 3) {
+          break;
+        }
+        text_1 += "数字是 " + i_1 + "<br>";
+      }
+      document.getElementById("demo_1").innerHTML = text_1;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>2. Continue 语句</h1>
+    <p>continue 语句中断（循环中）的一个迭代，如果发生指定的条件。然后继续循环中的下一个迭代。</p>
+    <p>这个循环在 i=3 时跳过这一步：</p>
+    <p id="demo_2"></p>
+    <script>
+      var text_2 = "";
+      var i_2;
+      for (i_2 = 0; i_2 < 10; i_2++) {
+        if (i_2 === 3) {
+          continue;
+        }
+        text_2 += "数字是 " + i_2 + "<br>";
+      }
+      document.getElementById("demo_2").innerHTML = text_2;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>JavaScript 标签</h1>
+    <p>如需标记 JavaScript 语句，请将标签名和冒号置于语句之前：</p>
+    <pre>
+      <i>label</i>:
+      <i>statements</i>
+    </pre>
+    <p>break 和 continue 语句是仅有的可“跳出”代码块的 JavaScript 语句。
+    </p>
+    <h3>语法：</h3>
+    <pre>
+      break <i>labelname</i>;
+      continue <i>labelname</i>;
+    </pre>
+    <p>continue 语句（不论有无标签引用）只能用于<em>跳过一个迭代</em>。</p>
+    <p>break 语句，如果没有标签引用，只能用于<em>跳出一个循环或一个 switch</em>。</p>
+    <p>如果有标签引用，则 break 语句可用于<em style="color:red;">跳出任意代码块</em>：</p>
+    <br>
+
+
+    <h3>实例</h3>
+    <h2>break</h2>
+    <p id="demo_3"></p>
+    <script>
+      var cars_3 = ["BMW", "Volvo", "porsche", "Ford"];
+      var text_3 = "";
+
+      list: {
+        text_3 += cars_3[0] + "<br>";
+        text_3 += cars_3[1] + "<br>";
+        break list;
+        text_3 += cars_3[2] + "<br>";
+        text_3 += cars_3[3] + "<br>";
+      }
+
+      document.getElementById("demo_3").innerHTML = text_3;
+    </script>
+    <p>代码块指的是 { 与 } 之间的代码片段。</p>
+  </dev>
+  <hr>
+
+
+</body>
+</html>

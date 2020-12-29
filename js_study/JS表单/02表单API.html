@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 验证 API</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_validation_api.asp">JavaScript 验证 API</a>
+  <hr>
+
+  <div>
+    <h1>约束验证 DOM 方法</h1>
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">属性</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>checkValidity()</td>
+        <td>返回 true，如果 input 元素包含有效数据</td>
+      </tr>
+
+      <tr>
+        <td>setCustomValidity()</td>
+        <td>设置 input 元素的 validationMessage 属性。</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>checkValidity() 方法</h1>
+    <p>如果输入字段包含无效的数据，显示一条消息：</p>
+
+    <p>输入数字并点击提交：</p>
+    <input id="id_1" type="number" min="100" max="300" required>
+    <button onclick="myFunction_1()">提交</button>
+    <p>如果该数字小于 100 或大于 300，将显示错误消息。</p>
+    <p id="demo_1"></p>
+    <script>
+      function myFunction_1() {
+        var inpObj_1 = document.getElementById("id_1");
+        // inpObj_1.setCustomValidity("输入数据有误！！！");
+        if (!inpObj_1.checkValidity()) {
+          document.getElementById("demo_1").innerHTML = inpObj_1.validationMessage;
+        }
+        else {
+          document.getElementById("demo_1").innerHTML = "输入有效";
+        }
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>约束验证 DOM 属性</h1>
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">属性</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>validity</td>
+        <td>包含与 input 元素的合法性相关的布尔属性。</td>
+      </tr>
+
+      <tr>
+        <td>validationMessage</td>
+        <td>包含当 validity 为 false 时浏览器显示的消息。</td>
+      </tr>
+
+      <tr>
+        <td>willValidate</td>
+        <td>指示是否验证 input 元素。</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>合法性属性</h2>
+    <p>input 元素的 <span class="code_marked">validity</span> 属性包含了与数据合法性相关的一系列属性：</p>
+
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">属性</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>customError</td>
+        <td>设置为 true，如果设置自定义的合法性消息。</td>
+      </tr>
+
+      <tr>
+        <td>patternMismatch</td>
+        <td>设置为 true，如果元素值不匹配其 pattern 属性。</td>
+      </tr>
+
+      <tr>
+        <td>rangeOverflow</td>
+        <td>设置为 true，如果元素值大约其 max 属性。</td>
+      </tr>
+
+      <tr>
+        <td>rangeUnderflow</td>
+        <td>设置为 true，如果元素值小于其 min 属性。</td>
+      </tr>
+
+      <tr>
+        <td>stepMismatch</td>
+        <td>当字段拥有 step 属性，且输入的 value 值不符合设定的间隔值时，该属性值为 true。</td>
+      </tr>
+
+      <tr>
+        <td>tooLong</td>
+        <td>设置为 true，如果元素值超过了其 maxLength 属性。</td>
+      </tr>
+
+      <tr>
+        <td>typeMismatch</td>
+        <td>当字段的 type 是 email 或者 url 但输入的值不是正确的类型时，属性值为 true。</td>
+      </tr>
+
+      <tr>
+        <td>valueMissing</td>
+        <td>设置为 true，如果元素（包含 required）没有值。</td>
+      </tr>
+
+      <tr>
+        <td>valid</td>
+        <td>设置为 true，如果元素值是有效的。</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+
+  <div>
+    <h3>rangeOverflow 属性</h3>
+    <p>如果输入字段中的数字大于 100（input 元素的 max 属性），则显示一条消息：</p>
+    <input id="id_2" type="number" max="100">
+    <button onclick="myFunction_2()">提交</button>
+    <p>如果数字大于 100（输入的 max 属性），将显示错误消息。</p>
+    <p id="demo_2"></p>
+    <script>
+      function myFunction_2() {
+        var txt_2 = "";
+        if (document.getElementById("id_2").validity.rangeOverflow) {
+          txt_2 = "值太大";
+        }
+        else {
+          txt_2 = "输入有效";
+        }
+        document.getElementById("demo_2").innerHTML = txt_2;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h3>rangeUnderflow 属性</h3>
+    <p>如果输入字段中的数字小于 100（input 元素的 min 属性），则显示一条消息：</p>
+    <input id="id_3" type="number" min="100">
+    <button onclick="myFunction_3()">提交</button>
+    <p>如果数字小于100（输入的 min 属性），将显示错误消息。</p>
+    <p id="demo_3"></p>
+    <script>
+      function myFunction_3() {
+        var txt_3 = "";
+        if (document.getElementById("id_3").validity.rangeUnderflow) {
+          txt_3 = "值太小";
+        }
+        else {
+          txt_3 = "输入有效";
+        }
+        document.getElementById("demo_3").innerHTML = txt_3;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+</body>
+</html>

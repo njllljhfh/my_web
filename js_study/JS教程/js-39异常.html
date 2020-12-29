@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 错误 - Throw 和 Try to Catch</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_errors.asp">JavaScript 错误 - Throw 和 Try to Catch</a>
+  <hr>
+
+  <div>
+    <h3>try 语句使您能够测试代码块中的错误。</h3>
+    <h3>catch 语句允许您处理错误。</h3>
+    <h3>throw 语句允许您创建自定义错误。</h3>
+    <h3>finally 使您能够执行代码，在 try 和 catch 之后，无论结果如何。</h3>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>错误总会发生！</h1>
+    <p>当执行 JavaScript 代码时，会发生各种错误。</p>
+    <p>错误可能是程序员的编码错误，由错误输入引起的错误，或者由于其他不可预见的问题。</p>
+    <p>在本例中，我们通过 adddlert 编写警告代码来故意制造了一个错误：</p>
+    <p id="demo_1"></p>
+    <script>
+      try {
+        adddlert("欢迎您，亲爱的用户！");
+      }
+      catch (err) {
+        document.getElementById("demo_1").innerHTML = err.message;
+      }
+    </script>
+    <!--JavaScript 将 adddlert 捕获为一个错误，然后执行代码来处理该错误。-->
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>JavaScript try 和 catch</h1>
+    <p>try 语句允许您定义一个代码块，以便在执行时检测错误。</p>
+    <p>catch 语句允许你定义一个要执行的代码块，如果 try 代码块中发生错误。</p>
+    <p>JavaScript 语句 <span class="code_marked">try</span> 和 <span class="code_marked">catch</span> 成对出现：</p>
+    <pre>
+      try {
+           <i>供测试的代码块</i>
+      }
+       catch(err) {
+           <i>处理错误的代码块</i>
+      }
+    </pre>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>JavaScript 抛出错误</h1>
+    <p>当发生错误时，JavaScript 通常会停止并产生错误消息。</p>
+    <p>技术术语是这样描述的：JavaScript 将抛出异常（抛出错误）。</p>
+    <p>JavaScript 实际上会创建带有两个属性的 Error 对象：name 和 message。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>throw 语句</h1>
+    <p>throw 语句允许您创建自定义错误。</p>
+    <p>从技术上讲您能够<em>抛出异常（抛出错误）</em>。</p>
+    <p>异常可以是 JavaScript 字符串、数字、布尔或对象：</p>
+    <pre>
+      throw &quot;Too big&quot;;    // 抛出文本
+      throw 500;          // 抛出数字
+    </pre>
+
+    <p>如果把 throw 与 try 和 catch 一同使用，就可以控制程序流并生成自定义错误消息。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>输入验证案例</h1>
+    <p>本例会检查输入。如果值是错误的，将抛出异常（err）。</p>
+    <p>该异常（err）被 catch 语句捕获并显示一条自定义的错误消息：</p>
+    <p>请输入 5 到 10 之间的数字：</p>
+    <input id="demo_2" type="text">
+    <button type="button" onclick="myFunction_2()">检测输入</button>
+    <p id="p_2"></p>
+
+    <script>
+      function myFunction_2() {
+        var message, x;
+        message = document.getElementById("p_2");
+        message.innerHTML = "";
+        x = document.getElementById("demo_2").value;
+        try {
+          if (x == "") throw "是空的";
+          if (isNaN(x)) throw "不是数字";
+          x = Number(x);
+          if (x < 5) throw "太小";
+          if (x > 10) throw "太大";
+        }
+        catch (err) {
+          message.innerHTML = "输入：" + err;
+          // window.alert("x的值是：" + x);
+        }
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>HTML 验证</h1>
+    <p>以上代码仅仅是一个例子。</p>
+    <p>现代浏览器通常会结合 JavaScript 与内置的 HTML 验证，通过使用在 HTML 属性中定义的预定义的验证规则：</p>
+    <pre>
+      &lt;input id=&quot;demo&quot; type=&quot;number&quot; min=&quot;5&quot; max=&quot;10&quot; step=&quot;1&quot;&gt;
+    </pre>
+    <p>您将在本教程稍后的章节学到更多有关表单验证的知识。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>finally 语句</h1>
+    <p>finally 语句允许您在 try 和 catch 之后执行代码，无论结果：</p>
+    <pre>
+      try {
+           供测试的代码块
+      }
+       catch(err) {
+           处理错误的代码块
+      }
+      finally {
+           无论 try / catch 结果如何都执行的代码块
+      }
+    </pre>
+    <br>
+
+    <h2>实例</h2>
+    <p>请输入 5 到 10 之间的数字：</p>
+    <input id="demo_3" type="text">
+    <button type="button" onclick="myFunction_3()">检测输入</button>
+    <p id="p_3"></p>
+    <script>
+      function myFunction_3() {
+        var message, x;
+        message = document.getElementById("p_3");
+        message.innerHTML = "";
+        x = document.getElementById("demo_3").value;
+        try {
+          if (x == "") throw "是空的";
+          if (isNaN(x)) throw "不是数字";
+          x = Number(x);
+          if (x > 10) throw "太大";
+          if (x < 5) throw "太小";
+        }
+        catch (err) {
+          message.innerHTML = "输入：" + err;
+        }
+        finally {
+          document.getElementById("demo_3").value = "";
+        }
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>Error 对象</h2>
+    <p>JavaScript 拥有当错误发生时提供错误信息的内置 error 对象。</p>
+    <p>error 对象提供两个有用的属性：name 和 message。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>Error 对象属性</h2>
+
+    <table class="dataintable">
+      <tr>
+        <th style="width:25%;">属性</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>name</td>
+        <td>设置或返回错误名</td>
+      </tr>
+
+      <tr>
+        <td>message</td>
+        <td>设置或返回错误消息（一条字符串）</td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>Error Name Values</h2>
+    <p>error 的 name 属性可返回六个不同的值：</p>
+    <table class="dataintable">
+      <tr>
+        <th style="width:25%;">错误名</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>EvalError</td>
+        <td>已在 eval() 函数中发生的错误</td>
+      </tr>
+
+      <tr>
+        <td>RangeError</td>
+        <td>已发生超出数字范围的错误</td>
+      </tr>
+
+      <tr>
+        <td>ReferenceError</td>
+        <td>已发生非法引用</td>
+      </tr>
+
+      <tr>
+        <td>SyntaxError</td>
+        <td>已发生语法错误</td>
+      </tr>
+
+      <tr>
+        <td>TypeError</td>
+        <td>已发生类型错误</td>
+      </tr>
+
+      <tr>
+        <td>URIError</td>
+        <td>在 encodeURI() 中已发生的错误</td>
+      </tr>
+    </table>
+    <p>下面为您详解这六个不同的值。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>Eval 错误</h1>
+    <p>EvalError 指示 eval() 函数中的错误。</p>
+    <p>更新版本的 JavaScript 不会抛出任何 EvalError。请使用 SyntaxError 代替。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>范围错误</h1>
+    <p>RangeError 会在您使用了合法值的范围之外的数字时抛出。</p>
+    <p>例如：您不能将数字的有效位数设置为 500。</p>
+    <p id="demo_4">
+      <script>
+        var num_4 = 1;
+        try {
+          num_4.toPrecision(500);
+        }
+        catch (err) {
+          document.getElementById("demo_4").innerHTML = err.name;
+        }
+      </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>引用错误</h1>
+    <p>假如您使用（引用）了尚未声明的变量，则 ReferenceError 会被抛出：</p>
+    <p>您不能使用不存在的变量的值：</p>
+    <p id="demo_5"></p>
+    <script>
+      var x_5;
+      try {
+        x_5 = y_5 + 1;
+      }
+      catch (err) {
+        document.getElementById("demo_5").innerHTML = err.name;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>语法错误</h1>
+    <p>假如您计算带语法错误的代码，会 SyntaxError 被抛出：</p>
+    <p id="demo_6"></p>
+    <script>
+      try {
+        eval("alert('Hello)");
+      }
+      catch (err) {
+        document.getElementById("demo_6").innerHTML = err.name;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>类型错误</h1>
+    <p>假如您使用的值不在期望值的范围之内，则 TypeError 被抛出：</p>
+    <p>您无法将数字转换为大写：</p>
+    <p id="demo_7"></p>
+    <script>
+      var num_7 = 1;
+      try {
+        num_7.toUpperCase();
+      }
+      catch (err) {
+        document.getElementById("demo_7").innerHTML = err.name;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>URI 错误</h1>
+    <p>假如您在 URI 函数中使用非法字符，则 URIError 被抛出：</p>
+    <p>使用 decodeURI() 无法解码某些字符：</p>
+    <p id="demo_8"></p>
+    <script>
+      try {
+        decodeURI("%%%");
+      }
+      catch (err) {
+        document.getElementById("demo_8").innerHTML = err.name;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>非标准的 Error 对象属性</h2>
+    <p>Mozilla 和 Microsoft 定义了非标准的 error 对象属性：</p>
+    <ul>
+      <li>fileName (Mozilla)</li>
+      <li>lineNumber (Mozilla)</li>
+      <li>columnNumber (Mozilla)</li>
+      <li>stack (Mozilla)</li>
+      <li>description (Microsoft)</li>
+      <li>number (Microsoft)</li>
+    </ul>
+    <p>请勿在公共网站使用这些属性。它们并不会在所有浏览器中工作。</p>
+  </div>
+  <hr>
+
+
+</body>
+</html>

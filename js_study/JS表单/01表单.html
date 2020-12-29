@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 表单</title>
+
+  <script>
+    function validateForm_1() {
+      var x = document.forms["myForm_1"]["fname"].value;
+      if (x == "") {
+        alert("必须填写姓名！");
+        return false;
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_validation.asp">JavaScript 表单</a>
+  <hr>
+
+  <div>
+    <h2>JavaScript 表单验证</h2>
+    <p>HTML 表单验证能够通过 JavaScript 来完成。</p>
+    <p>如果某个表单字段（fname）是空的，那么该函数会发出一条警告消息，并返回 false，以防止表单被提交出去：</p>
+    <h3>JavaScript 实例</h3>
+    <pre>
+      function validateForm() {
+          var x = document.forms[&quot;myForm&quot;][&quot;fname&quot;].value;
+          if (x == &quot;&quot;) {
+              alert(&quot;必须填写姓名&quot;);
+              return false;
+          }
+      }
+    </pre>
+    <p>该函数能够在表单提交时被调用：</p>
+  </div>
+  <hr>
+
+
+  <form name="myForm_1" action="/demo/action_page.php" onsubmit="return validateForm_1()" method="post">
+    姓名：<input type="text" name="fname">
+    <input type="submit" value="提交">
+  </form>
+  <hr>
+
+
+  <div>
+    <h1>JavaScript 能够验证数字输入</h1>
+    <p>JavaScript 常用于验证数字输入：</p>
+    <p>请输入 1 到 10 之间的数字：</p>
+    <input id="numb_2">
+    <button type="button" onclick="myFunction_2()">提交</button>
+    <p id="demo_2"></p>
+    <script>
+      function myFunction_2() {
+        var x_2, text_2;
+
+        // 获取 id="numb" 的输入字段的值
+        x_2 = document.getElementById("numb_2").value;
+
+        // 如果 x 不是数字或小于 1 或大于 10
+        if (isNaN(x_2) || x_2 < 1 || x_2 > 10) {
+          text_2 = "输入无效";
+        }
+        else {
+          text_2 = "输入有效";
+        }
+        document.getElementById("demo_2").innerHTML = text_2;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>自动 HTML 表单验证</h1>
+    <p>HTML 表单验证能够被浏览器自动执行：</p>
+    <p>如果表单字段（fname）是空的，required 属性防止表单被提交：</p>
+
+    <form action="/demo/action_page.php" method="post">
+      <input type="text" name="fname" required>
+      <input type="submit" value="提交">
+    </form>
+
+    <p>如果单击“提交”，而不填写文本字段，您的浏览器将显示错误消息。</p>
+    <p>自动 HTML 表单验证不适用于 Internet Explorer 9 或更早的版本。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>数据验证</h2>
+    <p>数据验证指的是确保干净、正确和有用的用户输入的过程。</p>
+    <p>典型的验证任务是：</p>
+    <ul>
+      <li>用户是否已填写所有必需的字段？</li>
+      <li>用户是否已输入有效的日期？</li>
+      <li>用户是否在数字字段中输入了文本？</li>
+    </ul>
+
+    <p>大多数情况下，数据验证的作用是确保正确的用户输入。</p>
+    <p>验证可以通过很多不同的方法来定义，并且可以使用很多不同的方法来开发。</p>
+    <p><em>服务器端验证</em>是由 web 服务器执行的，在输入被送往服务器之后。</p>
+    <p><em>客户端验证</em>是由 web 浏览器执行的，在输入被送往 web 服务器之前。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>HTML 约束验证</h2>
+    <p>HTML5 引入了一种新的 HTML 验证概念，名为<em>约束验证（constraint validation）</em>。</p>
+    <p>HTML 约束验证基于：</p>
+    <ul>
+      <li>约束验证 <em>HTML 输入属性</em></li>
+      <li>约束验证 <em>CSS 伪选择器</em></li>
+      <li>约束验证 <em>DOM 属性和方法</em></li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>约束验证 HTML 输入属性</h2>
+
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">属性</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>disabled</td>
+        <td>规定 input 元素应该被禁用</td>
+      </tr>
+
+      <tr>
+        <td>max</td>
+        <td>规定 input 元素的最大值</td>
+      </tr>
+
+      <tr>
+        <td>min</td>
+        <td>规定 input 元素的最小值</td>
+      </tr>
+
+      <tr>
+        <td>pattern</td>
+        <td>规定 input 元素的值模式</td>
+      </tr>
+
+      <tr>
+        <td>required</td>
+        <td>规定输入字段需要某个元素</td>
+      </tr>
+
+      <tr>
+        <td>type</td>
+        <td>规定 input 元素的类型</td>
+      </tr>
+    </table>
+
+    <p>如需完整的列表，请访问我们的 <a href="https://www.w3school.com.cn/html/html_form_attributes.asp" title="HTML Input 属性">HTML input 属性</a>。</p>
+  </div>
+  <hr>
+
+
+
+  <div>
+    <h2>约束验证 CSS 伪选择器</h2>
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">选择器</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>:disabled</td>
+        <td>选择设置了 &quot;disabled&quot; 属性的 input 元素。</td>
+      </tr>
+
+      <tr>
+        <td>:invalid</td>
+        <td>选择带有无效值的 input 元素。</td>
+      </tr>
+
+      <tr>
+        <td>:optional</td>
+        <td>选择未设置  &quot;required&quot; 属性的 input 元素。</td>
+      </tr>
+
+      <tr>
+        <td>:required</td>
+        <td>选择设置了  &quot;required&quot; 属性的 input 元素。</td>
+      </tr>
+
+      <tr>
+        <td>:valid</td>
+        <td>选择带有有效值的 input 元素。</td>
+      </tr>
+    </table>
+
+    <p>如需完整列表，请访问 <a href="https://www.w3school.com.cn/css/css_pseudo_classes.asp" title="CSS 伪类 (Pseudo-classes)">CSS 伪类</a>。</p>
+  </div>
+  <hr>
+
+</body>
+</html>

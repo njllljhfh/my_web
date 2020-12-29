@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Switch 语句</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_switch.asp">JavaScript Switch 语句</a>
+  <hr>
+
+
+  <dev>
+    <h1>1. Switch 语句</h1>
+    <p>请使用 switch 语句来选择多个需被执行的代码块之一。</p>
+    <h3>代码解释：</h3>
+    <ul>
+      <li>计算一次 switch 表达式</li>
+      <li>把表达式的值与每个 case 的值进行对比</li>
+      <li>如果存在匹配，则执行关联代码</li>
+    </ul>
+    <br>
+
+
+    <h3>实例</h3>
+    <p>getDay() 方法返回 0 至 6 之间的周名数字（weekday number）。</p>
+    <p>(Sunday=0, Monday=1, Tuesday=2 ..)</p>
+    <p>本例使用周名数字来计算周的名称：</p>
+    <p id="demo_1"></p>
+    <script>
+      var day_1;
+      switch (new Date().getDay()) {
+        case 0:
+          day_1 = "周日";
+          break;
+        case 1:
+          day_1 = "周一";
+          break;
+        case 2:
+          day_1 = "周二";
+          break;
+        case 3:
+          day_1 = "周三";
+          break;
+        case 4:
+          day_1 = "周四";
+          break;
+        case 5:
+          day_1 = "周五";
+          break;
+        case  6:
+          day_1 = "周六";
+      }
+      document.getElementById("demo_1").innerHTML = "今天是" + day_1;
+    </script>
+  </dev>
+  <hr>
+
+  <dev>
+    <p>2. break 关键词</p>
+    <p>如果 JavaScript 遇到 break 关键词，它会跳出 switch 代码块。</p>
+    <p>此举将停止代码块中更多代码的执行以及 case 测试。</p>
+    <p>如果找到匹配，并完成任务，则随机中断执行（break）。无需更多测试。</p>
+    <p>break 能够节省大量执行时间，因为它会“忽略” switch 代码块中的其他代码的执行。</p>
+    <p>不必中断 switch 代码块中的最后一个 case。代码块在此处会自然结束。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>3.default 关键词</h1>
+    <p>default 关键词规定不存在 case 匹配时所运行的代码：</p>
+    <h3>实例</h3>
+    <p>getDay() 方法返回 0 至 6 的数字周名。</p>
+    <p>如果今日既不是周六（6）也不是周日（0），则输出一段默认消息：</p>
+    <p id="demo_3"></p>
+    <script>
+      var text_3;
+      switch (new Date().getDay()) {
+        case 6:
+          text_3 = "今天是周六";
+          break;
+        case 0:
+          text_3 = "今天是周日";
+          break;
+        default:
+          text_3 = "期待周末";
+      }
+      document.getElementById("demo_3").innerHTML = text_3;
+    </script>
+    <br>
+
+
+    <p>默认的 case 不必是 switch 代码块中最后一个 case：</p>
+    <p style="color:red;">如果 default 不是 switch 代码块中最后一个 case，请记得用 break 结束默认 case。</p>
+    <p id="demo_4"></p>
+    <script>
+      var text_4;
+      switch (new Date().getDay()) {
+        default:
+          text_4 = "期待周末";
+          break;
+        case 6:
+          text_4 = "今天是周六";
+          break;
+        case 0:
+          text_4 = "今天是周日";
+      }
+      document.getElementById("demo_4").innerHTML = text_4;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>常见的代码块</h1>
+    <p>有时您会需要不同的 case 来使用相同的代码。</p>
+    <p>在本例中，case 4 和 5 分享相同的代码块，而 0 和 6 分享另一段代码块：</p>
+    <p id="demo_5"></p>
+    <script>
+      var text_5;
+      switch (new Date().getDay()) {
+        case 4:
+        case 5:
+          text_5 = "周末马上就到了";
+          break;
+        case 0:
+        case 6:
+          text_5 = "今天是周末";
+          break;
+        default:
+          text_5 = "期待周末";
+      }
+      document.getElementById("demo_5").innerHTML = text_5;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>Switching 的细节</h1>
+    <p>如果多种 case 匹配一个 case 值，则选择第一个 case。</p>
+    <p>如果未找到匹配的 case，程序将继续使用默认 label。</p>
+    <p>如果未找到默认 label，程序将继续 switch 后的语句。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>严格的比较</h1>
+    <p>Switch case 使用严格比较（===）。</p>
+    <p>值必须与要匹配的类型相同。</p>
+    <p>只有操作数属于同一类型时，严格比较才能为 true。</p>
+    <p>在这个例子中，x 将不匹配：</p>
+    <p id="demo_6"></p>
+    <script>
+      var x = "0";
+      var text_6;
+      switch (x) {
+        case 0:
+          text_6 = "Off";
+          break;
+        case 1:
+          text_6 = "On";
+          break;
+        default:
+          text_6 = "未找到值";
+      }
+      document.getElementById("demo_6").innerHTML = text_6;
+    </script>
+  </dev>
+
+
+</body>
+</html>

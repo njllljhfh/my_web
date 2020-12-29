@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 正则表达式</title>
+  <style type="text/css">
+    .important {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://www.w3school.com.cn/js/js_regexp.asp">JavaScript 正则表达式</a>
+  <hr>
+
+
+  <div id="intro">
+    <p><strong>正则表达式是构成搜索模式的字符序列。</strong></p>
+    <p><strong>该搜索模式可用于文本搜索和文本替换操作。</strong></p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>什么是正则表达式？</h1>
+    <p>正则表达式是构成<em>搜索模式（search pattern）</em>的字符序列。</p>
+    <p>当您搜索文本中的数据时，您可使用搜索模式来描述您搜索的内容。</p>
+    <p>正则表达式可以是单字符，或者更复杂的模式。</p>
+    <p>正则表达式可用于执行所有类型的<em>文本搜索</em>和<em>文本替换</em>操作。</p>
+
+    <h3>语法</h3>
+    <pre>/<i>pattern</i>/<i>modifiers</i>;</pre>
+
+    <h3>实例</h3>
+    <pre>var patt = /w3school/i;</pre>
+
+    <h3>例子解释：</h3>
+    <p><span> /w3school/i </span> 是一个正则表达式。</p>
+    <p><span> w3school </span> 是模式（pattern）（在搜索中使用）。</p>
+    <p><span> i </span> 是修饰符（把搜索修改为大小写不敏感）。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>使用字符串方法</h1>
+    <p>在 JavaScript 中，正则表达式常用于两个字符串方法：search() 和 replace()。</p>
+    <p>search() 方法使用表达式来搜索匹配，然后返回匹配的位置。</p>
+    <p>replace() 方法返回模式被替换处修改后的字符串。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>使用字符串方法 search() 来处理字符串</h1>
+    <p>search() 方法也接受字符串作为搜索参数。字符串参数将被转换为正则表达式：</p>
+    <p>在字符串中搜索“W3School”，并显示匹配的位置：</p>
+    <p id="demo_1"></p>
+    <script>
+      var str_1 = "Visit W3School!";
+      var n_1 = str_1.search("W3School");
+      document.getElementById("demo_1").innerHTML = n_1;
+    </script>
+    <br>
+
+
+    <h1>在字符串方法 search() 中使用正则表达式</h1>
+    <p>使用正则表达式执行搜索字符串中 "w3school" 的 <em class="important">大小写不敏感</em> 的搜索：</p>
+    <p id="demo_2"></p>
+    <script>
+      var str_2 = "Visit W3School!";
+      var n_2 = str_2.search(/w3School/i);
+      document.getElementById("demo_2").innerHTML = n_2;
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>使用字符串方法 replace() 处理字符串</h1>
+    <p>replace() 也接受字符串作为搜索参数：</p>
+    <p>请把下面的段落中的“Microsoft”替换为“W3School”：</p>
+    <button onclick="myFunction_3()">试一试</button>
+    <p id="demo_3">请访问 Microsoft！</p>
+    <script>
+      function myFunction_3() {
+        var str_3 = document.getElementById("demo_3").innerHTML;
+        var txt_3 = str_3.replace("Microsoft", "W3School");
+        document.getElementById("demo_3").innerHTML = txt_3;
+      }
+    </script>
+    <br>
+
+
+    <h1>在字符串方法 replace() 中使用正则表达式</h1>
+    <p>使用大小写不明的正则表达式以 W3school 来替换字符串中的 Microsoft：</p>
+    <p>将“microsoft”替换为以下段落中的“W3School”：</p>
+    <button onclick="myFunction_4()">试一试</button>
+    <p id="demo_4">Please visit Microsoft and Microsoft!</p>
+    <script>
+      function myFunction_4() {
+        var str_4 = document.getElementById("demo_4").innerHTML;
+        var txt_4 = str_4.replace(/microsoft/i, "W3School");
+        document.getElementById("demo_4").innerHTML = txt_4;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>您注意到了吗？</h1>
+    <p>正则表达式参数（而不是字符串参数）可以在上面的方法中使用。</p>
+    <p>正则表达式可以使您的搜索更强大（例如，不区分大小写）。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>使用 RegExp 对象</h1>
+    <p>在 JavaScript 中，RegExp 对象是带有预定义属性和方法的正则表达式对象。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>使用 test()</h1>
+    <p>test() 是一个正则表达式方法。</p>
+    <p>它通过模式来搜索字符串，然后根据结果返回 true 或 false。</p>
+    <p>下面的例子搜索字符串中的字符 "e"：</p>
+    <p id="p01">The best things in life are free!</p>
+    <p id="demo_5"></p>
+    <script>
+      text_5 = document.getElementById("p01").innerHTML;
+      // 您不必首先把正则表达式放入变量中。
+      document.getElementById("demo_5").innerHTML = /e/.test(text_5);
+    </script>
+  </div>
+  <hr>
+
+  <div>
+    <h1>使用 exec()</h1>
+    <p>exec() 方法是一个正则表达式方法。</p>
+    <p>它通过指定的模式（pattern）搜索字符串，并返回已找到的文本。</p>
+    <p>如果未找到匹配，则返回 null。</p>
+    <p>下面的例子搜索字符串中的字符 "e"：</p>
+    <p id="demo_6"></p>
+    <script>
+      var obj_6 = /e/.exec("The best things in life are free!");
+      document.getElementById("demo_6").innerHTML =
+        "Found " + obj_6[0] + " in position " + obj_6.index + " in the text: " + obj_6.input;
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>完整的 RegExp 参考手册</h2>
+    <p>如需完整的参考手册，请访问我们完整的
+      <a href="https://www.w3school.com.cn/jsref/jsref_obj_regexp.asp" title="JavaScript RegExp 对象">JavaScript RegExp 参考手册</a>。
+    </p>
+    <p>该参考手册包含了所有 RegExp 属性和方法的描述和实例。</p>
+  </div>
+  <hr>
+
+
+</body>
+</html>

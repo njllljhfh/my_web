@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript For 循环</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_loop_for.asp">JavaScript For 循环</a>
+  <hr>
+
+
+  <h1>循环可多次执行代码块。</h1>
+  <hr>
+
+
+  <dev>
+    <h1>1. 循环</h1>
+    <p id="demo_1"></p>
+    <script>
+      var cars = ["BMW", "Volvo", "porsche", "Ford", "Fiat", "Audi"];
+      var text_1 = "";
+      var i;
+      for (i = 0; i < cars.length; i++) {
+        text_1 += cars[i] + "<br>";
+      }
+      document.getElementById("demo_1").innerHTML = text_1;
+    </script>
+  </dev>
+  <hr>
+
+
+  <div>
+    <h2>不同类型的循环</h2>
+    <p>JavaScript 支持不同类型的循环：</p>
+    <ul>
+      <li>for - 多次遍历代码块</li>
+      <li>for/in - 遍历对象属性</li>
+      <li>while - 当指定条件为 true 时循环一段代码块</li>
+      <li>do/while - 当指定条件为 true 时循环一段代码块</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <dev>
+    <h2>For 循环</h2>
+    <p>for 循环是在您希望创建循环时经常使用的工具。</p>
+    <p>for 循环的语法如下：</p>
+    <pre>
+      for (<i>语句 1</i>; <i>语句 2</i>; <i>语句 3</i>) {
+           <i>要执行的代码块</i>
+      }
+    </pre>
+
+    <p>语句 1 在循环（代码块）开始之前执行。</p>
+    <p>语句 2 定义运行循环（代码块）的条件。</p>
+    <p>语句 3 会在循环（代码块）每次被执行后执行。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>语句 1</h1>
+    <p>通常，您会使用语句 1 来初始化循环中所使用的的变量（i = 0）。</p>
+    <p>但情况并不总是这样，JavaScript 不会在意。语句 1 是可选的。</p>
+    <p>您可以在语句 1 中初始化多个值（由逗号分隔）：</p>
+    <p id="demo_2"></p>
+    <script>
+      var cars_2 = ["BMW", "Volvo", "porsche", "Ford"];
+      var i_2, len_2, text_2;
+      for (i_2 = 0, len_2 = cars_2.length, text_2 = ""; i_2 < len_2; i_2++) {
+        text_2 += cars_2[i_2] + "<br>";
+      }
+      document.getElementById("demo_2").innerHTML = text_2;
+    </script>
+    <br>
+
+
+    <p>而且您还可以省略语句 1（比如在循环开始前设置好值）：</p>
+    <p id="demo_3"></p>
+    <script>
+      var cars_3 = ["BMW", "Volvo", "porsche", "Ford"];
+      var i_3 = 2;
+      var len_3 = cars_3.length;
+      var text_3 = "";
+
+      for (; i_3 < len_3; i_3++) {
+        text_3 += cars[i_3] + "<br>";
+      }
+      document.getElementById("demo_3").innerHTML = text_3;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>语句 2</h1>
+    <p>通常语句 2 用于计算初始变量的条件。</p>
+    <p>但情况并不总是这样，JavaScript 不会在意。语句 2 也是可选的。</p>
+    <p>如果语句 2 返回 true，那么循环会重新开始，如果返回 false，则循环将结束。</p>
+    <p>如果省略语句 2，那么必须在循环中提供一个 break。否则循环永远不会结束。请在下一章阅读更多关于 break 的内容。</p>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>语句 3</h1>
+    <p>通常语句 3 会递增初始变量的值。</p>
+    <p>但情况并不总是这样，JavaScript 不会在意。语句 3 也是可选的。</p>
+    <p>语句 3 可做任何事情，比如负递增（i--），正递增（i = i + 15），或者任何其他事情。</p>
+    <p>语句 3 也可被省略（比如当您在循环内递增值时）：</p>
+    <p id="demo_4"></p>
+    <script>
+      var cars_4 = ["BMW", "Volvo", "porsche", "Ford"];
+
+      var i_4 = 0;
+      var len_4 = cars_4.length;
+      var text_4 = "";
+
+      for (; i_4 < len_4;) {
+        text_4 += cars[i_4] + "<br>";
+        i_4++;
+      }
+      document.getElementById("demo_4").innerHTML = text_4;
+    </script>
+  </dev>
+  <hr>
+
+
+  <dev>
+    <h1>For/In 循环</h1>
+    <p>for/in 语句循环遍历对象的属性。</p>
+    <p id="demo_5"></p>
+
+    <script>
+      var txt_5 = "";
+      var person_5 = {fname:"Bill", lname:"Gates", age:62};
+      var x_5;
+      for (x_5 in person_5) {
+        txt_5 += person_5[x_5] + " ";
+      }
+      document.getElementById("demo_5").innerHTML = txt_5;
+    </script>
+  </dev>
+  <hr>
+
+</body>
+</html>
