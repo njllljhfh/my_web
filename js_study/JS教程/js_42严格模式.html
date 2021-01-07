@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Use Strict</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_strict.asp">JavaScript Use Strict</a>
+  <hr>
+
+  <h2>"use strict"; 定义 JavaScript 代码应该以“严格模式”执行。</h2>
+  <hr>
+
+  <div>
+    <h2>&quot;use strict&quot; 指令</h2>
+    <p>&quot;use strict&quot; 是 JavaScript 1.8.5 中的新指令（ECMAScript version 5）。</p>
+    <p>它不算一条语句，而是一段文字表达式，更早版本的 JavaScript 会忽略它。</p>
+    <p>&quot;use strict&quot;; 的作用是指示 JavaScript 代码应该以“严格模式”执行。</p>
+    <p>在严格模式中，您无法，例如，使用未声明的变量。</p>
+    <p>以下版本的浏览器支持严格模式：</p>
+    <ul>
+      <li>版本 10 以后的 IE</li>
+      <li>版本 4 以后的 Firefox</li>
+      <li>版本 13 以后的 Chrome</li>
+      <li>版本 5.1 以后的 Safari</li>
+      <li>版本 12 以后的 Opera</li>
+    </ul>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>声明严格模式</h1>
+    <p>通过在脚本或函数的开头添加 &quot;use strict&quot;; 来声明严格模式。</p>
+    <p>在脚本开头进行声明，拥有全局作用域（脚本中的所有代码均以严格模式来执行）：</p>
+
+    <h3>使用 "use strict":</h3>
+    <h3>不允许使用变量而不声明它。</h3>
+    <p>在浏览器中激活调试（F12）以查看错误报告。</p>
+    <script>
+      "use strict";
+      x_1 = 3.14;  // 会引发错误（x_1 未定义）,因为 x_1 尚未声明
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>全局 "use strict" 声明</h1>
+    <p>在浏览器中激活调试（F12）以查看错误报告。</p>
+    <script>
+      "use strict";
+      myFunction();
+
+      function myFunction() {
+        y_2 = 3.14;   // 会引发错误（y_2 未定义）,因为 y_2 尚未声明
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>在函数中声明严格模式，拥有局部作用域（只有函数中的代码以严格模式执行）：</h1>
+    <p>函数中的“use strict”只会导致该函数出错。</p>
+    <p>在浏览器中激活调试（F12）以查看错误报告。</p>
+    <script>
+      x_3 = 3.14;    // 不会引发错误
+      myFunction();
+
+      function myFunction() {
+        "use strict";
+        y_3 = 3.14;  // 会引发错误（y_3 未定义）
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>&quot;use strict&quot;; 语法</h1>
+    <p>声明严格模式的语法被设计为兼容更早版本的 JavaScript。</p>
+    <p>编译 JavaScript 程序中的数值文字（比如 4+5）或字符串文字（&quot;Bill Gates&quot;）不会有负面效果。它只会编译为不存在的变量然后消失。</p>
+    <p>所有 &quot;use strict&quot;; 只会对“理解”其含义的新编译器产生影响。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>为什么使用严格模式？</h2>
+    <p>严格模式使我们更容易编写“安全的” JavaScript。</p>
+    <p>严格模式把之前可接受的“坏语法”转变为真实的错误。</p>
+    <p>举例来说，在普通的 JavaScript 中，错打变量名会创建新的全局变量。在严格模式中，此举将抛出错误，这样就不可能意外创建全局变量。</p>
+    <p>在普通 JavaScript 中，如果向不可写属性赋值，开发者不会得到任何错误反馈。</p>
+    <p>在严格模式中，向不可写的、只能读取的、不存在的属性赋值，或者向不存在的变量或对象赋值，将抛出错误。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>严格模式中不允许的事项</h1>
+    <h3>在不声明变量的情况下使用变量，是不允许的：</h3>
+    <script>
+      "use strict";
+      x_4 = 3.14;  // 会引发错误（x_4 未定义）
+    </script>
+    <br>
+
+
+    <h3>对象也是变量</h3>
+    <h3>在不声明对象的情况下使用对象也是不允许的：</h3>
+    <script>
+      "use strict";
+      x_5 = {p1: 10, p2: 20};   // 会引发错误（x_5 未定义）
+    </script>
+    <br>
+
+
+    <h3>删除变量（或对象）是不允许的：</h3>
+    <script>
+      "use strict";
+      var x_6 = 3.14;
+      delete x_6;     // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>删除函数是不允许的：</h3>
+    <script>
+      "use strict";
+
+      function x_7(p1, p2) {
+      }
+
+      delete x_7;        // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>重复参数名是不允许的：</h3>
+    <script>
+      "use strict";
+
+      function x_8(p1, p1) {
+      }   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>八进制数值文本是不允许的：</h3>
+    <script>
+      "use strict";
+      var x_9 = 010;   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>转义字符是不允许的：</h3>
+    <script>
+      "use strict";
+      var x_10 = "\010";   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>写入只读属性是不允许的：</h3>
+    <p id="demo_11"></p>
+    <script>
+      "use strict";
+      var obj_11 = {};
+      Object.defineProperty(obj_11, "x", {value: 0, writable: false});
+
+      document.getElementById("demo_11").innerHTML = obj_11.x;
+
+      obj_11.x = 3.14;   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>删除不可删除的属性是不允许的：</h3>
+    <script>
+      "use strict";
+      delete Object.prototype;   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>字符串 "eval" 不可用作变量：</h3>
+    <script>
+      "use strict";
+      var eval = 3.14;   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>字符串 "arguments" 不可用作变量：</h3>
+    <script>
+      "use strict";
+      var arguments = 3.14;   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>with 语句是不允许的：</h3>
+    <script>
+      "use strict";
+      with (Math) {
+        x_12 = cos(2)
+      }   // 会引发错误
+    </script>
+    <br>
+
+
+    <h3>处于安全考虑，不允许 eval() 在其被调用的作用域中创建变量：</h3>
+    <script>
+      "use strict";
+      eval("var x_13 = 2");
+      alert(x_13);      // This will cause an error
+    </script>
+    <br>
+
+    <p>在类似 f() 的函数调用中，this 的值是全局对象。在严格模式中，现在它成为了 undefined。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>对未来的保障</h2>
+    <p>严格模式中不允许使用为未来预留的关键词。它们是：</p>
+    <ul>
+      <li>implements</li>
+      <li>interface</li>
+      <li>let</li>
+      <li>package</li>
+      <li>private</li>
+      <li>protected</li>
+      <li>public</li>
+      <li>static</li>
+      <li>yield</li>
+    </ul>
+
+
+    <script>
+      "use strict";
+      var public = 1500;   // 会引发错误
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1 style="color:#ff0000;">警告</h1>
+    <p>&quot;use strict&quot; 指令只能在脚本或函数的<em>开头</em>被识别。</p>
+  </div>
+  <hr>
+</body>
+</html>

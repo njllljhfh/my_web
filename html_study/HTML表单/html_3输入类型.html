@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML 输入类型</title>
+  <style type="text/css">
+    .note {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>本章描述 &lt;input&gt; 元素的输入类型。</h1>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：text</h2>
+    <p><em>&lt;input type=&quot;text&quot;&gt;</em> 定义供<em>文本输入</em>的单行输入字段：</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      First name:<br>
+      <input type="text" name="firstname">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br><br>
+      <input type="submit">
+    </form>
+
+    <p>请注意表单本身是不可见的。</p>
+    <p>同时请注意文本字段的默认宽度是 20 个字符。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：password</h2>
+    <p><em>&lt;input type=&quot;password&quot;&gt;</em> 定义<em>密码字段</em>：</p>
+
+    <form action="">
+      User name:<br>
+      <input type="text" name="userid">
+      <br>
+      User password:<br>
+      <input type="password" name="psw">
+    </form>
+
+    <p>密码字段中的字符被掩码（显示为星号或圆点）。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：submit</h2>
+    <p><em>&lt;input type=&quot;submit&quot;&gt;</em> 定义<em>提交</em>表单数据至<em>表单处理程序</em>的按钮。</p>
+    <p>表单处理程序（form-handler）通常是包含处理输入数据的脚本的服务器页面。</p>
+    <p>在表单的 action 属性中规定表单处理程序（form-handler）：</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      First name:<br>
+      <input type="text" name="firstname" value="Mickey">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname" value="Mouse">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <p>如果您点击提交，表单数据会被发送到名为 demo_form.asp 的页面。</p>
+    <p>如果您省略了提交按钮的 value 属性，那么该按钮将获得默认文本。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Input Type: radio</h2>
+    <p>&lt;input type=&quot;radio&quot;&gt; 定义单选按钮。</p>
+    <p>Radio buttons let a user select ONLY ONE of a limited number of choices:</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      <input type="radio" name="sex" value="male" checked>Male
+      <br>
+      <input type="radio" name="sex" value="female">Female
+      <br><br>
+      <input type="submit">
+    </form>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Input Type: checkbox</h2>
+    <p>&lt;input type=&quot;checkbox&quot;&gt; 定义复选框。</p>
+    <p>复选框允许用户在有限数量的选项中选择零个或多个选项。</p>
+
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      <input type="checkbox" name="vehicle" value="Bike">I have a bike
+      <br>
+      <input type="checkbox" name="vehicle" value="Car" checked>I have a car
+      <br><br>
+      <input type="submit">
+    </form>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Input Type: button</h2>
+    <p><em>&lt;input type=&quot;button&gt;</em> 定义<em>按钮</em>。</p>
+
+    <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTML5 输入类型</h2>
+    <p>HTML5 增加了多个新的输入类型：</p>
+    <ul>
+      <li>color</li>
+      <li>date</li>
+      <li>datetime</li>
+      <li>datetime-local</li>
+      <li>email</li>
+      <li>month</li>
+      <li>number</li>
+      <li>range</li>
+      <li>search</li>
+      <li>tel</li>
+      <li>time</li>
+      <li>url</li>
+      <li>week</li>
+    </ul>
+    <p class="note"><span>注释：</span>老式 web 浏览器不支持的输入类型，会被视为输入类型 text。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：number</h2>
+    <p><em>&lt;input type=&quot;number&quot;&gt;</em> 用于应该包含数字值的输入字段。</p>
+    <p>您能够对数字做出限制。</p>
+    <p>根据浏览器支持，限制可应用到输入字段。</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      数量（1 到 5 之间）：
+      <input type="number" name="quantity" min="1" max="5">
+      <input type="submit">
+    </form>
+
+    <p><b>注释：</b>IE9 及早期版本不支持 type="number"。</p>
+    <br/><br/>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入限制</h2>
+    <p>这里列出了一些常用的输入限制（其中一些是 HTML5 中新增的）：</p>
+
+    <table class="dataintable">
+      <tr>
+        <th>属性</th>
+        <th>描述</th>
+      </tr>
+
+      <tr>
+        <td>disabled</td>
+        <td>规定输入字段应该被禁用。</td>
+      </tr>
+
+      <tr>
+        <td>max</td>
+        <td>规定输入字段的最大值。</td>
+      </tr>
+
+      <tr>
+        <td>maxlength</td>
+        <td>规定输入字段的最大字符数。</td>
+      </tr>
+
+      <tr>
+        <td>min</td>
+        <td>规定输入字段的最小值。</td>
+      </tr>
+
+      <tr>
+        <td>pattern</td>
+        <td>规定通过其检查输入值的正则表达式。</td>
+      </tr>
+
+      <tr>
+        <td>readonly</td>
+        <td>规定输入字段为只读（无法修改）。</td>
+      </tr>
+
+      <tr>
+        <td>required</td>
+        <td>规定输入字段是必需的（必需填写）。</td>
+      </tr>
+
+      <tr>
+        <td>size</td>
+        <td>规定输入字段的宽度（以字符计）。</td>
+      </tr>
+
+      <tr>
+        <td>step</td>
+        <td>规定输入字段的合法数字间隔。</td>
+      </tr>
+
+      <tr>
+        <td>value</td>
+        <td>规定输入字段的默认值。</td>
+      </tr>
+    </table>
+    <p>您将在下一章学到更多有关输入限制的知识。</p>
+    <br><br>
+
+
+    <p>
+      Depending on browser support:<br>
+      Fixed steps will apply in the input field.
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      Quantity:
+      <input type="number" name="points"
+             min="0" max="100" step="10" value="30">
+      <input type="submit">
+    </form>
+
+    <p><b>Note:</b>type="number" is not supported in IE9 and earlier.
+    </p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：date</h2>
+    <p><em>&lt;input type=&quot;date&quot;&gt;</em> 用于应该包含日期的输入字段。</p>
+    <p>
+      根据浏览器支持：<br>
+      当您填写输入字段时会弹出日期选择器。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      生日：
+      <input type="date" name="bday">
+      <input type="submit">
+    </form>
+
+    <p><b>注释：</b>Firefox 或者 Internet Explorer 11 以及更早版本不支持 type="date"。</p>
+    <br/><br/>
+
+
+    您可以向输入添加限制：
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      请输入 1980-01-01 之前的日期：<br>
+      <input type="date" name="bdayMax" max="1979-12-31"><br><br>
+      请输入 2000-01-01 之后的日期：<br>
+      <input type="date" name="bdayMin" min="2000-01-02"><br><br>
+      <input type="submit">
+    </form>
+
+    <p><b>注释：</b>Internet Explorer 不支持 type="date"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：color</h2>
+    <p><em>&lt;input type=&quot;color&quot;&gt;</em> 用于应该包含颜色的输入字段。</p>
+    <p>
+      Depending on browser support:<br>
+      A color picker can pop-up when you enter the input field.
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      Select your favorite color:
+      <input type="color" name="favcolor" value="#ff0000">
+      <input type="submit">
+    </form>
+
+    <p><b>Note:</b> type="color" is not supported in Internet Explorer.</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：range</h2>
+    <p><em>&lt;input type=&quot;range&quot;&gt;</em> 用于应该包含一定范围内的值的输入字段。</p>
+
+    <p>
+      根据浏览器支持：<br>
+      输入类型 "range" 可显示为滑动控件。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      Points:
+      <input type="range" name="points" min="0" max="10">
+      <input type="submit">
+    </form>
+
+    <p>您能够使用如下属性来规定限制：min、max、step、value。</p>
+    <p><b>注释：</b>IE9 及早期版本不支持 type="range"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：month</h2>
+    <p><em>&lt;input type=&quot;month&quot;&gt;</em> 允许用户选择月份和年份。</p>
+    <p>
+      根据浏览器支持：<br>
+      当您填写输入字段时会弹出日期选择器。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      生日（月和年）：
+      <input type="month" name="bdaymonth">
+      <input type="submit">
+    </form>
+
+    <p><b>注释：</b>Firefox 或者 Internet Explorer 11 以及更早版本不支持 type="month"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：week</h2>
+    <p><em>&lt;input type=&quot;week&quot;&gt;</em> 允许用户选择周和年。</p>
+
+    <p>
+      根据浏览器支持：<br>
+      当您填写输入字段时会弹出日期选择器。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      Select a week:
+      <input type="week" name="year_week">
+      <input type="submit">
+    </form>
+
+    <p><b>注释：</b>
+      Internet Explorer 不支持 type="week"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：time</h2>
+    <p><em>&lt;input type=&quot;time&quot;&gt;</em> 允许用户选择时间（无时区）。</p>
+
+    <p>
+      根据浏览器支持：<br>
+      当您填写输入字段时会弹出日期选择器。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      请选取一个时间：
+      <input type="time" name="usr_time">
+      <input type="submit">
+    </form>
+
+    <p><b>注释：</b>Firefox 或者
+      Internet Explorer 11 以及更早版本不支持 type="time"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：datetime</h2>
+    <p><em>&lt;input type=&quot;datetime&quot;&gt;</em> 允许用户选择日期和时间（有时区）。</p>
+    <p>
+      根据浏览器支持：<br>
+      当您填写输入字段时会弹出日期选择器。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      生日（日期和时间）：
+      <input type="datetime" name="bdaytime">
+      <input type="submit">
+    </form>
+
+    <p class="note"><b>注释：</b>Chrome、Firefox 或 Internet Explorer 不支持 type="datetime"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：datetime-local</h2>
+    <p><em>&lt;input type=&quot;datetime-local&quot;&gt;</em> 允许用户选择日期和时间（无时区）。</p>
+    <p>
+      根据浏览器支持：<br>
+      当您填写输入字段时会弹出日期选择器。
+    </p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      生日（日期和时间）：
+      <input type="datetime-local" name="bdaytime">
+      <input type="submit" value="Send">
+    </form>
+
+    <p class="note"><b>注释：</b>Firefox 或者 Internet Explorer 不支持 type="datetime-local"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：email</h2>
+    <p><em>&lt;input type=&quot;email&quot;&gt;</em> 用于应该包含电子邮件地址的输入字段。</p>
+    <p>根据浏览器支持，能够在被提交时自动对电子邮件地址进行验证。</p>
+    <p>某些智能手机会识别 email 类型，并在键盘增加 &quot;.com&quot; 以匹配电子邮件输入。</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      E-mail:
+      <input type="email" name="email">
+      <input type="submit">
+    </form>
+
+    <p class="note"><b>注释：</b>IE9 及更早版本不支持 type="email"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：search</h2>
+    <p><em>&lt;input type=&quot;search&quot;&gt;</em> 用于搜索字段（搜索字段的表现类似常规文本字段）。</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      搜索谷歌：
+      <input type="search" name="googlesearch">
+      <input type="submit">
+    </form>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：tel</h2>
+    <p><em>&lt;input type=&quot;tel&quot;&gt;</em> 用于应该包含电话号码的输入字段。</p>
+    <p>目前只有 Safari 8 支持 tel 类型。</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      Telephone:
+      <input type="tel" name="usrtel">
+      <input type="submit">
+    </form>
+
+    <p class="note"><b>注释：</b>Safari 8 及更新版本支持 type="tel"。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>输入类型：url</h2>
+    <p><em>&lt;input type=&quot;url&quot;&gt;</em> 用于应该包含 URL 地址的输入字段。</p>
+    <p>根据浏览器支持，在提交时能够自动验证 url 字段。</p>
+    <p>某些智能手机识别 url 类型，并向键盘添加 &quot;.com&quot; 以匹配 url 输入。</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      请添加您的首页：
+      <input type="url" name="homepage">
+      <input type="submit">
+    </form>
+
+    <p class="note"><b>Note:</b>IE9 及其更早版本不支持 type="url"。</p>
+  </div>
+  <hr/>
+
+</body>
+</html>

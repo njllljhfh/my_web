@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML 表单元素</title>
+  <style type="text/css">
+    .note {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>本章描述所有 HTML 表单元素。</h1>
+  <hr/>
+
+
+  <div>
+    <h2>&lt;input&gt; 元素</h2>
+    <p>最重要的表单元素是 <em>&lt;input&gt;</em> 元素。</p>
+    <p>&lt;input&gt; 元素根据不同的 <em>type</em> 属性，可以变化为多种形态。</p>
+    <p class="note"><span>注释：</span>下一章讲解所有 HTML 输入类型。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>&lt;select&gt; 元素（下拉列表）</h2>
+    <p><em>&lt;select&gt;</em> 元素定义<em>下拉列表</em>：</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat" selected>Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+      <br><br>
+      <input type="submit">
+    </form>
+
+    <p><em>&lt;option&gt;</em> 元素定义待选择的选项。</p>
+    <p>列表通常会把首个选项显示为被选选项。</p>
+    <p>您能够通过添加 selected 属性来定义预定义选项。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>&lt;textarea&gt; 元素</h2>
+    <p><em>&lt;textarea&gt;</em> 元素定义多行输入字段（<em>文本域</em>）：</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+      <br><br>
+      <input type="submit">
+    </form>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>&lt;button&gt; 元素</h2>
+    <p><em>&lt;button&gt;</em> 元素定义可点击的<em>按钮</em>：</p>
+    <button type="button" onclick="alert('Hello World!')">点击我！</button>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTML5 表单元素</h2>
+    <p>HTML5 增加了如下表单元素：</p>
+    <ul>
+      <li>&lt;datalist&gt;</li>
+      <li>&lt;keygen&gt;</li>
+      <li>&lt;output&gt;</li>
+    </ul>
+    <p class="note"><strong>注释：</strong>默认地，浏览器不会显示未知元素。新元素不会破坏您的页面。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTML5 &lt;datalist&gt; 元素</h2>
+    <p><em>&lt;datalist&gt;</em> 元素为 &lt;input&gt; 元素规定预定义选项列表。</p>
+    <p>用户会在他们输入数据时看到预定义选项的下拉列表。</p>
+    <p>&lt;input&gt; 元素的 <em>list</em> 属性必须引用 &lt;datalist&gt; 元素的 <em>id</em> 属性。</p>
+    <h3>实例</h3>
+    <p>通过 &lt;datalist&gt; 设置预定义值的 &lt;input&gt; 元素：</p>
+
+    <form action="https://www.w3school.com.cn/demo/demo_form.asp">
+      <input list="browsers" name="browser">
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+      <input type="submit">
+    </form>
+
+    <p class="note"><strong>注释：</strong>Safari 或 IE9（以及更早的版本）不支持 datalist 标签。</p>
+  </div>
+  <hr/>
+
+</body>
+</html>

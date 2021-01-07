@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Let</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_let.asp">JavaScript Let</a>
+  <hr/>
+
+
+  <div>
+    <h2>ECMAScript 2015</h2>
+    <p>ES2015 引入了两个重要的 JavaScript 新关键词：<span class="code_marked">let</span> 和 <span class="code_marked">const</span>。
+    </p>
+    <p>这两个关键字在 JavaScript 中提供了块作用域（<em>Block Scope</em>）变量（和常量）。</p>
+    <p>在 ES2015 之前，JavaScript 只有两种类型的作用域：<em>全局作用域</em>和<em>函数作用域</em>。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>1.全局作用域</h2>
+    <p><em>全局</em>（在函数之外）声明的变量拥有<em>全局作用域</em>。</p>
+
+    <p>可以从任何脚本或函数中访问全局变量。</p>
+    <p id="demo1"></p>
+    <script>
+      var carName1 = "porsche";
+      myFunction1();
+
+      function myFunction1() {
+        document.getElementById("demo1").innerHTML =
+          "I can display " + carName1;
+      }
+    </script>
+    <p><em>全局</em>变量可以在 JavaScript 程序中的任何位置访问。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>函数作用域</h2>
+    <p><em>局部</em>（函数内）声明的变量拥有<em>函数作用域</em>。</p>
+
+    <p>myFunction() 之外的 carName2 未定义。</p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+      myFunction();
+
+      function myFunction() {
+        var carName2 = "porsche";
+        document.getElementById("demo2").innerHTML =
+          typeof carName2 + " " + carName2;
+      }
+
+      document.getElementById("demo3").innerHTML =
+        typeof carName2;
+    </script>
+
+    <p><em>局部</em>变量只能在它们被声明的函数内访问。</p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

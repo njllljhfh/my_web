@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 属性选择器</title>
+  <style type="text/css">
+    /*下面的例子为带有 title 属性的所有元素设置样式：*/
+    [title] {
+      color: red;
+    }
+
+    /*下面的例子为 title="W3School1" 的所有元素设置样式：*/
+    [title=W3School1] {
+      border: 5px solid blue;
+    }
+
+    /*下面的例子为包含指定值的 title 属性的所有元素设置样式。适用于由空格分隔的属性值：*/
+    [title~=hello] {
+      color: green;
+    }
+
+    /*下面的例子为带有包含指定值的 lang 属性的所有元素设置样式。适用于由连字符分隔的属性值：*/
+    [lang|=ab] {
+      color: #8c2aff;
+    }
+
+
+    /*属性选择器在为不带有 class 或 id 的表单设置样式时特别有用：*/
+    input[type="text"] {
+      width: 150px;
+      display: block;
+      margin-bottom: 10px;
+      background-color: yellow;
+      font-family: Verdana, Arial;
+    }
+
+    input[type="button"] {
+      width: 120px;
+      margin-left: 35px;
+      display: block;
+      font-family: Verdana, Arial;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/css/css_syntax_attribute_selector.asp">CSS 属性选择器</a>
+  <hr>
+
+
+  <div>
+    <h2>对带有指定属性的 HTML 元素设置样式。</h2>
+    <p>可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</p>
+    <p class="note"><span>注释：</span>只有在规定了 !DOCTYPE 时，IE7 和 IE8 才支持属性选择器。在 IE6 及更低的版本中，不支持属性选择。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>属性选择器</h1>
+    <p>下面的例子为带有 title 属性的所有元素设置样式：</p>
+
+    <h1>可以应用样式：</h1>
+    <h2 title="Hello world">Hello world</h2>
+    <a title="W3School" href="http://w3school.com.cn">W3School</a>
+    <br>
+
+    <h1>无法应用样式：</h1>
+    <h2>Hello world</h2>
+    <a href="http://w3school.com.cn">W3School</a>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>属性和值选择器</h1>
+    <p>下面的例子为 title="W3School" 的所有元素设置样式：</p>
+
+    <h1>可以应用样式：</h1>
+    <img title="W3School1" src="images/ct_css_selector.gif"/>
+    <br>
+    <a title="W3School1" href="http://w3school.com.cn">W3School</a>
+    <br/>
+
+
+    <h1>无法应用样式：</h1>
+    <p title="greeting">Hi!</p>
+    <a class="W3School" href="http://w3school.com.cn">W3School</a>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>属性和值选择器 - 多个值</h1>
+    <p>下面的例子为包含指定值的 title 属性的所有元素设置样式。适用于由空格分隔的属性值：</p>
+
+    <h1>可以应用样式：</h1>
+    <h2 title="hello world">Hello world</h2>
+    <p title="student hello">Hello W3School students!</p>
+    <br>
+
+    <h1>无法应用样式：</h1>
+    <h2 title="world">Hello world</h2>
+    <p title="student">Hello W3School students!</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h3>下面的例子为带有包含指定值的 lang 属性的所有元素设置样式。适用于由连字符分隔的属性值：</h3>
+    <h1>可以应用样式：</h1>
+    <p lang="ab">Hello!</p>
+    <p lang="ab-us">Hi!</p>
+    <br>
+
+    <h1>无法应用样式：</h1>
+    <p lang="us">Hi!</p>
+    <p lang="zh">Hao!</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h1>设置表单的样式</h1>
+    <p>属性选择器在为不带有 class 或 id 的表单设置样式时特别有用：</p>
+    <form name="input" action="" method="get">
+      <input type="text" name="Name" value="Bill" size="20">
+      <input type="text" name="Name" value="Gates" size="20">
+      <input type="button" value="Example Button">
+    </form>
+  </div>
+  <hr>
+
+
+  <h1>CSS 选择器参考手册</h1>
+</body>
+</html>

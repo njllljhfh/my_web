@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript this 关键词</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_this.asp">JavaScript this 关键词</a>
+  <hr/>
+
+
+  <div>
+    <h1>JavaScript <b>this</b> 关键词</h1>
+    <p>在本例中，<b>this</b> 代表 <b>person</b> 对象。</p>
+    <p>因为 person 对象“拥有” fullName 方法。</p>
+    <p id="demo1"></p>
+
+    <script>
+      // 创建对象：
+      var person1 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 678,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+
+      // 显示来自对象的数据：
+      document.getElementById("demo1").innerHTML = person1.fullName();
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>this 是什么？</h2>
+    <p>JavaScript <span class="code_marked">this</span> 关键词指的是它所属的对象。</p>
+    <p>它拥有不同的值，具体取决于它的使用位置：</p>
+    <ul>
+      <li>在方法中，<span class="code_marked">this</span> 指的是所有者对象。</li>
+      <li>单独的情况下，<span class="code_marked">this</span> 指的是全局对象。</li>
+      <li>在函数中，<span class="code_marked">this</span> 指的是全局对象。</li>
+      <li>在函数中，严格模式下，<span class="code_marked">this</span> 是 undefined。</li>
+      <li>在事件中，<span class="code_marked">this</span> 指的是接收事件的元素。</li>
+    </ul>
+    <p>像 <span class="code_marked">call()</span> 和 <span class="code_marked">apply()</span> 这样的方法可以将 this 引用到任何对象。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>1.方法中的 this</h2>
+    <p>在对象方法中，<span class="code_marked">this</span> 指的是此方法的“拥有者”。</p>
+    <p>在本页最上面的例子中，<span class="code_marked">this</span> 指的是 person 对象。</p>
+    <p>person 对象是 fullName 方法的拥有者。</p>
+
+    <p id="demo2"></p>
+    <script>
+      // 创建对象：
+      var person2 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 678,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+
+      // 显示来自对象的数据：
+      document.getElementById("demo2").innerHTML = person2.fullName();
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>2.单独的 this</h2>
+    <p>在单独使用时，拥有者是全局对象，因此 <span class="code_marked">this</span> 指的是全局对象。</p>
+    <p>在浏览器窗口中，全局对象是 <span class="code_marked">[object Window]</span>：</p>
+
+    <p>在本例中，<b>this</b> 引用 window 对象：</p>
+    <p id="demo3"></p>
+    <script>
+      var x3 = this;
+      document.getElementById("demo3").innerHTML = x3;
+    </script>
+    <br>
+
+
+    <p>在严格模式中，如果单独使用，那么 <span class="code_marked">this</span> 指的是全局对象 <span class="code_marked">[object Window]</span>：
+    </p>
+    <p>在本例中，<b>this</b> 引用 window 对象：</p>
+    <p id="demo4"></p>
+    <script>
+      "use strict";
+      var x4 = this;
+      document.getElementById("demo4").innerHTML = x4;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>3.函数中的 this（默认）</h2>
+    <p>在 JavaScript 函数中，函数的拥有者默认绑定 <span class="code_marked">this</span>。</p>
+    <p>因此，在函数中，<span class="code_marked">this</span> 指的是全局对象 <span class="code_marked">[object Window]</span>。</p>
+
+    <p>在本例中，<b>this</b> 代表“拥有” myFunction 的对象：</p>
+    <p id="demo5"></p>
+    <script>
+      document.getElementById("demo5").innerHTML = myFunction5();
+
+      function myFunction5() {
+        return this;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>4.函数中的 this（严格模式）</h2>
+    <p>JavaScript 严格模式不允许默认绑定。</p>
+    <p>因此，在函数中使用时，在严格模式下，<span class="code_marked">this</span> 是未定义的（<span class="code_marked">undefined</span>）。</p>
+
+    <p>在函数中，默认地，<b>this</b> 引用全局对象。</p>
+    <p>在严格模式中，<b>this</b> 是 <b>undefined</b>，因为严格模式不允许默认绑定：</p>
+    <p id="demo6"></p>
+    <script>
+      "use strict";
+      document.getElementById("demo6").innerHTML = myFunction6();
+
+      function myFunction6() {
+        return this;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>5.事件处理程序中的 this</h2>
+    <p>在 HTML 事件处理程序中，<span class="code_marked">this</span> 指的是接收此事件的 HTML 元素：</p>
+    <button onclick="this.style.display='none'">单击来删除我！</button>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>6.对象方法绑定</h2>
+    <p>在此例中，<span class="code_marked">this</span> 是 person 对象（person 对象是该函数的“拥有者”）：</p>
+    <p>在本例中，<b>this</b> 代表“拥有” fullName 方法的 person 对象。</p>
+
+    <p id="demo7"></p>
+    <script>
+      // 创建对象：
+      var person7 = {
+        firstName: "Bill7",
+        lastName: "Gates7",
+        id: 678,
+        myFunction: function () {
+          return this;
+        }
+      };
+
+      // 显示来自对象的数据：
+      document.getElementById("demo7").innerHTML = person7.myFunction();
+    </script>
+    <br>
+
+
+    <p>换句话说，<em>this.firstName</em> 意味着 <em>this</em>（person）对象的 <em>firstName</em> 属性。</p>
+    <p id="demo8"></p>
+    <script>
+      document.getElementById("demo8").innerHTML = person7.myFunction().firstName;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>7.显式函数绑定</h2>
+    <p><span class="code_marked">call()</span> 和 <span class="code_marked">apply()</span> 方法是预定义的 JavaScript 方法。</p>
+    <p>它们都可以用于将另一个对象作为参数调用对象方法。</p>
+    <p>您可以在本教程后面阅读有关 <span class="code_marked">call()</span> 和 <span class="code_marked">apply()</span> 的更多内容。</p>
+    <p>在下面的例子中，当使用 person10 作为参数调用 person9.fullName 时，<span class="code_marked">this</span> 将引用 person10，即使它是 person9
+      的方法：
+    </p>
+
+
+    <p>在本例中，<strong>this</strong> 引用 person10，即使它是 person9 的方法：</p>
+    <p id="demo9"></p>
+
+    <script>
+      var person9 = {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+
+      var person10 = {
+        firstName: "Bill10",
+        lastName: "Gates10",
+      };
+
+      var xxx = person9.fullName.call(person10);
+      document.getElementById("demo9").innerHTML = xxx;
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>
