@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Const</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_const.asp">JavaScript Const</a>
+  <hr/>
+
+  <div>
+    <h2>ECMAScript 2015</h2>
+    <p>ES2015 引入了两个重要的 JavaScript 新关键词：<span class="code_marked">let</span> 和 <span class="code_marked">const</span>。
+    </p>
+    <p>通过 <span class="code_marked">const</span> 定义的变量与 <span class="code_marked">let</span> 变量类似，但不能重新赋值：</p>
+    <h3>实例</h3>
+
+    <p>您无法更改原始值。</p>
+    <p id="demo1"></p>
+    <script>
+      try {
+        const PI1 = 3.141592653589793;
+        PI1 = 3.14;
+      }
+      catch (err) {
+        document.getElementById("demo1").innerHTML = err;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>1.块作用域</h2>
+    <p>在<em>块作用域</em>内使用 <span class="code_marked">const</span> 声明的变量与 <span class="code_marked">let</span> 变量相似。</p>
+    <p>在本例中，x 在块中声明，不同于在块之外声明的 x：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      var x2 = 10;
+      // 此处 x2 是 10
+      {
+        const x2 = 2;
+        // 此处 x2 是 2
+      }
+      // 此处 x2 是 10
+      document.getElementById("demo2").innerHTML = x2;
+    </script>
+    <p>您可以在上一章 <a href="https://www.w3school.com.cn/js/js_let.asp" title="JavaScript Let">JavaScript Let</a>
+      中学到更多有关块作用域的知识。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>2.在声明时赋值</h2>
+    <p>JavaScript <span class="code_marked">const</span> 变量必须在声明时赋值：</p>
+    <h3>不正确</h3>
+    <pre>
+const PI;
+PI = 3.14159265359;
+</pre>
+    <br>
+
+    <h3>正确</h3>
+    <pre>const PI = 3.14159265359;</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>3.不是真正的常数</h2>
+    <p>关键字 <span class="code_marked">const</span> 有一定的误导性。</p>
+    <p>它没有定义常量值。它定义了对值的常量引用。</p>
+    <p>因此，我们不能更改常量原始值，但我们可以更改常量对象的属性。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>4.原始值</h2>
+    <p>如果我们将一个原始值赋给常量，我们就不能改变原始值：</p>
+    <h3>实例</h3>
+    <p>您无法更改原始值。</p>
+    <p id="demo3"></p>
+    <script>
+      try {
+        const PI3 = 3.141592653589793;
+        PI3 = 3.14;  // 会出错
+        PI3 = PI3 + 10;   // 也会出错
+      }
+      catch (err) {
+        document.getElementById("demo3").innerHTML = err;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>5.常量对象可以更改</h2>
+    <p>您可以更改常量对象的属性：</p>
+    <h3>实例</h3>
+    <p>声明常量对象不会使对象属性不可更改：</p>
+    <p id="demo4"></p>
+    <script>
+      // 创建对象：
+      const car4 = {type: "Porsche", model: "911", color: "white"};
+      // 更改属性：
+      car4.color = "red";
+      // 添加属性：
+      car4.owner = "Steve";
+      // 显示属性：
+      document.getElementById("demo4").innerHTML = "车主是：" + car4.owner;
+    </script>
+    <br><br>
+
+
+    <p>但是您无法重新为常量对象赋值：</p>
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      try {
+        const car5 = {type: "Porsche", model: "911", color: "white"};
+        car5 = {type: "BMW", model: "M5", color: "red"};  // ERROR
+      }
+      catch (err) {
+        document.getElementById("demo5").innerHTML = err;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>6.常量数组可以更改</h2>
+    <p>您可以更改常量数组的元素：</p>
+    <h3>实例</h3>
+    <p>声明常量数组不会使元素不可更改：</p>
+    <p id="demo6"></p>
+    <script>
+      // 创建数组：
+      const cars6 = ["Audi", "BMW", "Porsche"];
+      // 更改元素：
+      cars6[0] = "Toyota";
+      // 添加元素：
+      cars6.push("Honda");
+      // 显示数组：
+      document.getElementById("demo6").innerHTML = cars6;
+    </script>
+    <br><br>
+
+
+    <p>但是您无法重新为常量数组赋值：</p>
+    <p id="demo7"></p>
+    <script>
+      try {
+        const cars7 = ["Saab", "Volvo", "BMW"];
+        cars7 = ["Toyota", "Volvo", "Audi"];  // ERROR
+      }
+      catch (err) {
+        document.getElementById("demo7").innerHTML = err;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>7.浏览器支持</h2>
+    <p>Internet Explorer 10 或更早版本不支持 <span class="code_marked">const</span> 关键词。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>8.重新声明</h2>
+    <p>在程序中的任何位置都允许重新声明 JavaScript <span class="code_marked">var</span> 变量：</p>
+    <h3>实例</h3>
+    <pre>
+var x = 2;    <span class="code_comment">//  允许</span>
+var x = 3;    <span class="code_comment">//  允许</span>
+x = 4;        <span class="code_comment">//  允许</span>
+</pre>
+    <br><br>
+
+
+    <p>在同一作用域或块中，不允许将已有的 <span class="code_marked">var</span> 或 <span class="code_marked">let</span> 变量重新声明或重新赋值给 <span
+            class="code_marked">const</span>：</p>
+    <h3>实例</h3>
+    <pre>
+var x = 2;         <span class="code_comment">// 允许</span>
+const x = 2;       <span class="code_comment">// 不允许</span>
+{
+  let x = 2;     <span class="code_comment">// 允许</span>
+  const x = 2;   <span class="code_comment">// 不允许</span>
+}
+</pre>
+    <br><br>
+
+
+    <p>在同一作用域或块中，为已有的 const 变量重新声明声明或赋值是不允许的：</p>
+    <h3>实例</h3>
+    <pre>
+const x = 2;       <span class="code_comment">// 允许</span>
+const x = 3;       <span class="code_comment">// 不允许</span>
+x = 3;             <span class="code_comment">// 不允许</span>
+var x = 3;         <span class="code_comment">// 不允许</span>
+let x = 3;         <span class="code_comment">// 不允许</span>
+
+{
+  const x = 2;   <span class="code_comment">// 允许</span>
+  const x = 3;   <span class="code_comment">// 不允许</span>
+  x = 3;         <span class="code_comment">// 不允许</span>
+  var x = 3;     <span class="code_comment">// 不允许</span>
+  let x = 3;     <span class="code_comment">// 不允许</span>
+}
+</pre>
+    <br><br>
+
+
+    <p>在另外的作用域或块中重新声明 <span class="code_marked">const</span> 是允许的：</p>
+    <h3>实例</h3>
+    <pre>
+const x = 2;       <span class="code_comment">// 允许</span>
+
+{
+  const x = 3;   <span class="code_comment">// 允许</span>
+}
+
+{
+  const x = 4;   <span class="code_comment">// 允许</span>
+}
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>9.提升</h2>
+    <p>通过 <span class="code_marked">var</span> 定义的变量会被<em>提升</em>到顶端。如果您不了解什么是提升（Hoisting），请学习提升这一章。</p>
+    <p>您可以在声明 var 变量之前就使用它：</p>
+    <h3>实例</h3>
+    <p id="demo8"></p>
+    <script>
+      carName8 = "Audi8";
+      document.getElementById("demo8").innerHTML = carName8;
+      var carName8;
+    </script>
+    <br><br>
+
+
+    <p>通过 <span class="code_marked">const</span> 定义的变量不会被提升到顶端。</p>
+    <p><span class="code_marked">const</span> 变量不能在声明之前使用：</p>
+    <h3>实例</h3>
+    <p id="demo9"></p>
+    <script>
+      carName9 = "Audi9";  // 您不可以在此处使用 carName9
+      document.getElementById("demo9").innerHTML = carName9;
+      const carName9;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <p>666</p>
+  </div>
+
+</body>
+</html>

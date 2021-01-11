@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 对象构造器</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_object_constructors.asp">JavaScript 对象构造器</a>
+  <hr/>
+
+  <div>
+    <h1>JavaScript 对象构造器</h1>
+    <p id="demo"></p>
+    <script>
+      // Person 对象的构造器函数
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // 创建 Person 对象
+      var myFriend = new Person("Bill", "Gates", 62, "blue");
+
+      // 显示年龄
+      document.getElementById("demo").innerHTML =
+        "My friend is " + myFriend.age + ".";
+    </script>
+    <p>用大写首字母对构造器函数命名是个好习惯。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>对象类型（蓝图）（类）</h2>
+    <p>前一章的实例是有限制的。它们只创建单一对象。</p>
+    <p>有时我们需要创建相同“类型”的许多对象的“<em>蓝图</em>”。</p>
+    <p>创建一种“对象类型”的方法，是使用<em>对象构造器函数</em>。</p>
+    <p>在上面的例子中，<em>函数 Person()</em> 就是对象构造器函数。</p>
+    <p>通过 <em>new</em> 关键词调用构造器函数可以创建相同类型的对象：</p>
+    <p id="demo1"></p>
+    <script>
+      // Person 对象的构造器函数
+      function Person1(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // 创建 Person 对象
+      var myFriend1 = new Person1("Bill", "Gates", 62, "blue");
+      var myBrother1 = new Person1("Steve", "Jobs", 56, "green");
+
+      // 显示年龄
+      document.getElementById("demo1").innerHTML =
+        "My friend is " + myFriend1.age + ". My brother is " + myBrother1.age + ".";
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2><em>this</em> 关键词</h2>
+    <p>在 JavaScript 中，被称为 <span class="code_marked">this</span> 的事物是代码的“拥有者”。</p>
+    <p><span class="code_marked">this</span> 的值，在对象中使用时，就是对象本身。</p>
+    <p>在构造器函数中，<span class="code_marked">this</span> 是没有值的。它是新对象的替代物。 当一个新对象被创建时，this 的值会成为这个新对象。</p>
+    <p>请注意 <span class="code_marked">this</span> 并不是变量。它是关键词。您无法改变 this 的值。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>为对象添加属性</h2>
+    <p>为已有的对象添加新属性很简单：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+
+      // Person 对象的构造器函数
+      function Person2(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // 创建两个 Person 对象
+      var myFriend2 = new Person2("Bill", "Gates", 62, "blue");
+      var myBrother2 = new Person2("Steve", "Jobs", 56, "green");
+
+      // 向第一个对象添加 name 方法
+      myFriend2.name = function () {
+        return this.firstName + " " + this.lastName;
+      };
+
+      // 显示全名
+      document.getElementById("demo2").innerHTML =
+        "My friend is " + myFriend2.name();
+    </script>
+    <p>新方法被添加到 myFriend2。不是 myBrother2，也不是任何其他 Person2 对象。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>为构造器添加属性</h2>
+    <p>与向已有对象添加新属性不同，您无法为对象构造器添加新属性：</p>
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+
+      // Person 对象的构造器函数
+      function Person3(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // 您不能将新属性添加到构造函数
+      Person3.nationality = "English";
+
+      // 创建两个 Person 对象
+      var myFriend3 = new Person3("Bill", "Gates", 62, "blue");
+      var myBrother3 = new Person3("Steve", "Jobs", 56, "green");
+
+      // 显示国籍
+      document.getElementById("demo3").innerHTML =
+        "The nationality of my friend is " + myFriend3.nationality;
+    </script>
+    <br>
+
+
+    <p>如需向构造器添加一个新属性，您必须添加到构造器函数：</p>
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      // Person 对象的构造器函数
+      function Person4(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        this.nationality = "English";
+      }
+
+      // 创建两个 Person 对象
+      var myFriend4 = new Person4("Bill", "Gates", 62, "blue");
+      var myBrother4 = new Person4("Steve", "Jobs", 56, "green");
+
+      // 显示国籍
+      document.getElementById("demo4").innerHTML =
+        "My friend is " + myFriend4.nationality + ". My brother is " + myBrother4.nationality;
+    </script>
+    <p>这样对象属性就可以拥有默认值。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>为构造器添加方法</h2>
+    <p>您的构造器函数也可以定义方法：</p>
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      // Person 对象的构造器函数
+      function Person5(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        this.name = function () {
+          return this.firstName + " " + this.lastName
+        };
+      }
+
+      // 创建 Person 对象
+      var myFriend5 = new Person5("Bill", "Gates", 62, "blue");
+
+      // 显示全名
+      document.getElementById("demo5").innerHTML =
+        "My friend is " + myFriend5.name();
+    </script>
+    <br>
+
+
+    <p>与向已有对象添加新方法不同，您无法为对象构造器添加新方法。</p>
+    <p>必须在构造器函数内部向一个对象添加方法：</p>
+    <h3>实例</h3>
+    <p id="demo6"></p>
+    <script>
+      // Person 对象的构造器函数
+      function Person6(firstName, lastName, age, eyeColor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.eyeColor = eyeColor;
+        this.changeName = function (name) {
+          this.lastName = name;
+        }
+      }
+
+      // 创建 Person 对象
+      var myFriend6 = new Person6("Bill", "Gates", 62, "green");
+
+      // 修改姓氏
+      myFriend6.changeName("Jobs");
+
+      // 显示姓氏
+      document.getElementById("demo6").innerHTML =
+        "My friend's last name is " + myFriend6.lastName;
+    </script>
+    <p>changeName() 函数把 name 赋值给 person 的 lastName 属性。</p>
+    <p>通过用 <span class="marked">myFriend6</span> 替代 <em>this</em>，JavaScript 可以获知目前处理的哪个 person。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>内建 JavaScript 构造器</h2>
+    <p>JavaScript 提供用于原始对象的构造器：</p>
+    <h3>实例</h3>
+    <p id="demo7"></p>
+    <script>
+      var x1 = new Object();   // 新的 Object 对象
+      var x2 = new String();   // 新的 String 对象
+      var x3 = new Number();   // 新的 Number 对象
+      var x4 = new Boolean();  // 新的 Boolean 对象
+      var x5 = new Array();  // 新的 Array 对象
+      var x6 = new RegExp();   // 新的 RegExp 对象
+      var x7 = new Function(); // 新的 Function 对象
+      var x8 = new Date();   // 新的 Date 对象
+
+      // 显示所有对象的类型
+      document.getElementById("demo7").innerHTML =
+        "x1: " + typeof x1 + "<br>" +
+        "x2: " + typeof x2 + "<br>" +
+        "x3: " + typeof x3 + "<br>" +
+        "x4: " + typeof x4 + "<br>" +
+        "x5: " + typeof x5 + "<br>" +
+        "x6: " + typeof x6 + "<br>" +
+        "x7: " + typeof x7 + "<br>" +
+        "x8: " + typeof x8 + "<br>";
+    </script>
+    <p>没有必要使用 String()、Number()、Boolean()、Array() 以及 RegExp()。</p>
+    <p><span class="code_marked">Math()</span> 对象不再此列。Math 是全局对象。<span class="code_marked">new</span> 关键词不可用于 Math。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>您知道吗？</h2>
+    <p>正如以上所见，JavaScript 提供原始数据类型字符串、数字和布尔的对象版本。但是并无理由创建复杂的对象。原始值快得多！</p>
+    <p>请使用对象字面量 <span class="code_marked">{}</span> 代替 <span class="code_marked">new Object()</span>。</p>
+    <p>请使用字符串字面量 <span class="code_marked">&quot;&quot;</span> 代替 <span class="code_marked">new String()</span>。</p>
+    <p>请使用数值字面量代替 <span class="code_marked">Number()</span>。</p>
+    <p>请使用布尔字面量代替 <span class="code_marked">new Boolean()</span>。</p>
+    <p>请使用数组字面量 <span class="code_marked">[]</span> 代替 <span class="code_marked">new Array()</span>。</p>
+    <p>请使用模式字面量代替 <span class="code_marked">new RexExp()</span>。</p>
+    <p>请使用函数表达式 <span class="code_marked">() {}</span> 代替 <span class="code_marked">new Function()</span>。</p>
+    <h3>实例</h3>
+    <p id="demo8"></p>
+
+    <script>
+      var x11 = {};    // 对象
+      var x22 = "";    // 字符串
+      var x33 = 0;     // 数字
+      var x44 = false;   // 布尔
+      var x55 = [];    // 对象（非数组）
+      var x66 = /()/;    // 对象
+      var x77 = function () {
+      };  // 函数
+
+      // 显示所有类型
+      document.getElementById("demo8").innerHTML =
+        "x11: " + typeof x11 + "<br>" +
+        "x22: " + typeof x22 + "<br>" +
+        "x33: " + typeof x33 + "<br>" +
+        "x44: " + typeof x44 + "<br>" +
+        "x55: " + typeof x55 + "<br>" +
+        "x66: " + typeof x66 + "<br>" +
+        "x77: " + typeof x77 + "<br>";
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>字符串对象</h2>
+    <p>通常，字符串被创建为原始值：var firstName = &quot;John&quot;</p>
+    <p>但是也可以使用 <span class="code_marked">new</span> 关键词创建字符串对象：var firstName = new String(&quot;John&quot;)</p>
+    <p>请在 <a href="https://www.w3school.com.cn/js/js_strings.asp" title="JavaScript 字符串">JS 字符串</a>这一章中学习为何不应该把字符串创建为对象。
+    </p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>数字对象</h2>
+    <p>通常，数值被创建为原始值：var x = 456</p>
+    <p>但是也可以使用 <span class="code_marked">new</span> 关键词创建数字对象：var x = new Number(456)</p>
+    <p>请在 <a href="https://www.w3school.com.cn/js/js_numbers.asp" title="JavaScript 数值">JS 数字</a>这一章中学习为何不应该把数值创建为对象。
+    </p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>布尔对象</h2>
+    <p>通常，逻辑值被创建为原始值：var x = false</p>
+    <p>但是也可以使用 <span class="code_marked">new</span> 关键词创建逻辑对象：var x = new Boolean(false)</p>
+    <p>请在 <a href="https://www.w3school.com.cn/js/js_booleans.asp" title="JavaScript 逻辑">JS 逻辑</a>这一章中学习为何不应该把逻辑值创建为对象。
+    </p>
+  </div>
+  <hr/>
+
+</body>
+</html>

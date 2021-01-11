@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 对象属性</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_object_properties.asp">JavaScript 对象属性</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>属性是任何 JavaScript 对象最重要的部分。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript 属性</h2>
+    <p>属性指的是与 JavaScript 对象相关的值。</p>
+    <p>JavaScript 对象是无序属性的集合。</p>
+    <p>属性通常可以被修改、添加和删除，但是某些属性是只读的。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>访问 JavaScript 属性</h2>
+    <p>访问对象属性的语法是：</p>
+    <pre><i>objectName</i>.<i>property</i>           <span class="code_comment">// person.age</span></pre>
+
+    <p>或者：</p>
+    <pre><i>objectName</i>[&quot;<i>property</i>&quot;]       <span
+            class="code_comment">// person[&quot;age&quot;]</span></pre>
+
+    <p>或者：</p>
+    <pre><i>objectName</i>[<i>expression</i>]       <span class="code_comment">// x = &quot;age&quot;; person[x]</span></pre>
+    <p>表达式必须计算为属性名。</p>
+    <br>
+
+    <h3>例子 1</h3>
+    <p id="demo1"></p>
+    <script>
+      var person1 = {
+        firstname: "Bill",
+        lastname: "Gates",
+        age: 62,
+        eyecolor: "blue"
+      };
+
+      document.getElementById("demo1").innerHTML = person1.firstname + " is " + person1.age + " years old.";
+    </script>
+    <br>
+
+
+    <h3>例子 2</h3>
+    <p id="demo2"></p>
+    <script>
+      var person2 = {
+        firstname: "Bill",
+        lastname: "Gates",
+        age: 62,
+        eyecolor: "blue"
+      };
+
+      document.getElementById("demo2").innerHTML = person2["firstname"] + " is " + person2["age"] + " years old.";
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript for...in 循环</h2>
+    <p>JavaScript <span class="code_marked">for...in</span> 语句遍历对象的属性。</p>
+    <h3>语法</h3>
+    <pre>
+for (<i>variable</i> in <i>object</i>) {
+    <i>要执行的代码</i>
+}
+</pre>
+    <p><span class="code_marked">for...in</span> 循环中的代码块会为每个属性执行一次。</p>
+    <p>循环对象的属性：</p>
+    <br>
+
+
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      var txt3 = "";
+      var person3 = {fname: "Bill", lname: "Gates", age: 62};
+      var x3;
+      for (x3 in person3) {
+        txt3 += person3[x3] + " ";
+      }
+      document.getElementById("demo3").innerHTML = txt3;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>添加新属性</h2>
+    <p>您可以通过简单的赋值，向已存在的对象添加新属性。</p>
+    <p>假设 person 对象已存在 - 那么您可以为其添加新属性：</p>
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      var person4 = {
+        firstname: "Bill",
+        lastname: "Gates",
+        age: 62,
+        eyecolor: "blue"
+      };
+
+      person4.nationality = "English";
+      // person4["nationality"]= "English";
+      document.getElementById("demo4").innerHTML =
+        person4.firstname + " is " + person4.nationality + ".";
+    </script>
+    <p>您不能使用预留词作为属性名（或方法名）。请使用 JavaScript 命名规则。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>删除属性</h2>
+    <p><span class="code_marked">delete</span> 关键词从对象中删除属性：</p>
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      var person5 = {
+        firstname: "Bill",
+        lastname: "Gates",
+        age: 62,
+        eyecolor: "blue"
+      };
+
+      delete person5.age;
+      document.getElementById("demo5").innerHTML =
+        person5.firstname + " is " + person5.age + " years old.";
+    </script>
+
+    <p><span class="code_marked">delete</span> 关键词会同时删除属性的值和属性本身。</p>
+    <p>删除完成后，属性在被添加回来之前是无法使用的。</p>
+    <p><span class="code_marked">delete</span> 操作符被设计用于对象属性。它对变量或函数没有影响。</p>
+    <p><span class="code_marked">delete</span> 操作符不应被用于预定义的 JavaScript 对象属性。这样做会使应用程序崩溃。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>属性值</h2>
+    <p>所有属性都有名称。此外它们还有值。</p>
+    <p>值是属性的特性之一。</p>
+    <p>其他特性包括：可列举、可配置、可写。</p>
+    <p>这些特性定义了属性被访问的方式（是可读的还是可写的？）</p>
+    <p>在 JavaScript 中，所有属性都是可读的，但是只有值是可修改的（只有当属性为可写时）。</p>
+    <p>（ECMAScript 5 拥有获取和设置所有属性特性的方法）</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>原型属性</h2>
+    <p>JavaScript 对象继承了它们的原型的属性。</p>
+    <p><span class="code_marked">delete</span> 关键词不会删除被继承的属性，但是如果您删除了某个原型属性，则将影响到所有从原型继承的对象。</p>
+  </div>
+  <hr/>
+</body>
+</html>

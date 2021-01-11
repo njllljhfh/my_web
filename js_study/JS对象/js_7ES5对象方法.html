@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript ES5 对象方法</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_object_es5.asp">JavaScript ES5 对象方法</a>
+  <hr/>
+
+
+  <div>
+    <h2>ES5 新的对象方法</h2>
+
+    <pre>
+<span class="code_comment">// 添加或更改对象属性</span>
+Object.defineProperty(object, property, descriptor)
+
+<span class="code_comment">// 添加或更改多个对象属性</span>
+Object.defineProperties(object, descriptors)
+
+<span class="code_comment">// 访问属性</span>
+Object.getOwnPropertyDescriptor(object, property)
+
+<span class="code_comment">// 以数组返回所有属性</span>
+Object.getOwnPropertyNames(object)
+
+<span class="code_comment">// 以数组返回所有可枚举的属性</span>
+Object.keys(object)
+
+<span class="code_comment">// 访问原型</span>
+Object.getPrototypeOf(object)
+
+<span class="code_comment">// 阻止向对象添加属性</span>
+Object.preventExtensions(object)
+
+<span class="code_comment">// 如果可将属性添加到对象，则返回 true</span>
+Object.isExtensible(object)
+
+<span class="code_comment">// 防止更改对象属性（而不是值）</span>
+Object.seal(object)
+
+<span class="code_comment">// 如果对象被密封，则返回 true</span>
+Object.isSealed(object)
+
+<span class="code_comment">// 防止对对象进行任何更改</span>
+Object.freeze(object)
+
+<span class="code_comment">// 如果对象被冻结，则返回 true</span>
+Object.isFrozen(object)
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>更改属性值</h2>
+    <h3>语法</h3>
+    <pre>Object.defineProperty(object, property, {value : value})</pre>
+    <p>本例更改了属性值：</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      // 创建对象：
+      var person1 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        language: "EN"
+      };
+      // 更改属性值：
+      Object.defineProperty(person1, "language", {value: "ZH"});
+      document.getElementById("demo1").innerHTML = person1.language;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>更改元数据</h2>
+    <p>ES5 允许更改以下属性元数据：</p>
+    <pre>
+writable : true      <span class="code_comment">// 属性值可修改</span>
+enumerable : true    <span class="code_comment">// 属性可枚举</span>
+configurable : true  <span class="code_comment">// 属性可重新配置</span>
+writable : false     <span class="code_comment">// 属性值不可修改</span>
+enumerable : false   <span class="code_comment">// 属性不可枚举</span>
+configurable : false <span class="code_comment">// 属性不可重新配置</span>
+</pre>
+    <br>
+
+    <p>ES5 允许更改 getter 和 setter：</p>
+    <pre>
+<span class="code_comment">// 定义 getter</span>
+get: function() { return language }
+<span class="code_comment">// 定义 setter</span>
+set: function(value) { language = value }
+</pre>
+    <br>
+
+    <p>此例使语言为只读：</p>
+    <pre>Object.defineProperty(person, &quot;language&quot;, {writable:false});</pre>
+    <br>
+
+    <p>此例使语言不可枚举：</p>
+    <pre>Object.defineProperty(person, &quot;language&quot;, {enumerable:false});</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>列出所有属性</h2>
+    <p>此例列出对象的所有属性：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+
+    <script>
+      // 创建对象：
+      var person2 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        language: "EN"
+      };
+      // 更改属性：
+      Object.defineProperty(person2, "language", {enumerable: false});
+      // 显示属性：
+      document.getElementById("demo2").innerHTML = Object.getOwnPropertyNames(person2);
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>列出可枚举的属性</h2>
+    <p>此例只列出对象的所有可枚举属性：</p>
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      // 创建对象：
+      var person3 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        language: "EN"
+      };
+      // 更改属性：
+      Object.defineProperty(person3, "language", {enumerable: false});
+      // 显示属性：
+      document.getElementById("demo3").innerHTML = Object.keys(person3);
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>添加属性</h2>
+    <p>此例向对象添加新属性：</p>
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      // 创建对象：
+      var person4 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        language: "EN"
+      };
+      // 添加属性：
+      Object.defineProperty(person4, "year", {value: "2019"});
+      document.getElementById("demo4").innerHTML = person4.year;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>添加 Getter 和 Setter</h2>
+    <p>Object.defineProperty() 方法也可以用于添加 Getter 和 Setter：</p>
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      // 创建对象：
+      var person5 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+
+      // 定义 getter
+      Object.defineProperty(person5, "fullName", {
+        get: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      });
+
+      // 显示全名：
+      document.getElementById("demo5").innerHTML = person5.fullName;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>一个计数器实例</h2>
+    <h3>实例</h3>
+    <p>创建完美的计数器：</p>
+    <p id="demo6"></p>
+    <script>
+      // 定义对象：
+      var obj6 = {counter: 0};
+
+      // 定义 Setter 和 Getter
+      Object.defineProperty(obj6, "reset", {
+        get: function () {
+          this.counter = 0;
+        }
+      });
+      Object.defineProperty(obj6, "increment", {
+        get: function () {
+          this.counter++;
+        }
+      });
+      Object.defineProperty(obj6, "decrement", {
+        get: function () {
+          this.counter--;
+        }
+      });
+      Object.defineProperty(obj6, "add", {
+        set: function (value) {
+          this.counter += value;
+        }
+      });
+      Object.defineProperty(obj6, "subtract", {
+        set: function (i) {
+          this.counter -= i;
+        }
+      });
+
+      // 操作计数器：
+      obj6.reset;
+      obj6.add = 5;
+      obj6.subtract = 1;
+      obj6.increment;
+      obj6.decrement;
+      document.getElementById("demo6").innerHTML = obj6.counter;
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>

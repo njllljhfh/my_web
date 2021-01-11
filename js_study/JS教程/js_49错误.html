@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 常见错误</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_mistakes.asp">JavaScript 常见错误</a>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript</h2>
+    <p>如果要测试对象是否为空，则必须先测试它是否未定义。</p>
+    <p id="demo"></p>
+    <script>
+      // Uncaught ReferenceError: myObj is not defined
+      document.getElementById("demo").innerHTML = myObj !== null;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript</h2>
+    <p>如果要测试对象是否为空，则必须先测试它是否未定义。</p>
+    <p id="demo2"></p>
+    <script>
+      document.getElementById("demo2").innerHTML = typeof myObj2 !== "undefined" && myObj2 !== null;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>期望块级范围</h2>
+    <p>JavaScript <em>不会</em>为每个代码块创建新的作用域。</p>
+    <p>很多编程语言都是如此，但是 JavaScript <em>并非如此</em>。</p>
+    <p>认为这段代码会返回 <span class="code_marked">undefined</span>，是新的 JavaScript 开发者的常见错误：</p>
+    <h3>实例</h3>
+    <p>JavaScript不会为每个代码块创建新的作用域。</p>
+    <p>此代码将显示 i（10）的值，即使在 for 循环块之外：</p>
+    <p id="demo3"></p>
+    <script>
+      for (var i3 = 0; i3 < 10; i3++) {
+        // some code
+      }
+      document.getElementById("demo3").innerHTML = i3;
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>

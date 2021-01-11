@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 闭包</title>
+  <style type="text/css">
+    .marked, .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_function_closures.asp">JavaScript 闭包</a>
+  <hr>
+
+
+  <div id="intro">
+    <p><strong>JavaScript 变量属于<span class="marked">本地</span>或<span class="marked">全局</span>作用域。</strong></p>
+    <p><strong>全局变量能够通过<span class="marked">闭包</span>实现局部（私有）。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>1.全局变量</h2>
+    <p>函数能够访问函数<em>内部</em>定义的所有变量，比如：</p>
+    <h3>实例</h3>
+    <button type="button" onclick="myFunction1()">单击这里！</button>
+    <p id="demo1"></p>
+    <script>
+      function myFunction1() {
+        var a = 4;
+        document.getElementById("demo1").innerHTML = a * a;
+      }
+    </script>
+    <br>
+
+
+    <p>但是函数也能访问函数<em>外部</em>定义的变量，比如：</p>
+    <h3>实例</h3>
+    <button type="button" onclick="myFunction2()">单击这里！</button>
+    <p id="demo2"></p>
+    <script>
+      var a2 = 4;
+
+      function myFunction2() {
+        document.getElementById("demo2").innerHTML = a2 * a2;
+      }
+    </script>
+    <br>
+
+    <p>在最后这个例子中，<span class="marked">a</span> 是<em>全局</em>变量。</p>
+    <p>在网页中，全局变量属于 window 对象。</p>
+    <p>全局变量能够被页面中（以及窗口中）的所有脚本使用和修改。</p>
+    <p>在第一个例子中，<span class="marked">a</span> 是<em>局部</em>变量。</p>
+    <p>局部变量只能用于其被定义的函数内部。对于其他函数和脚本代码来说它是不可见的。</p>
+    <p>拥有相同名称的全局变量和局部变量是不同的变量。修改一个，不会改变其他。</p>
+    <p><span class="marked">不通过</span>关键词 <span class="code_marked">var</span> 创建的变量总是全局的，即使它们在函数中创建。</p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>2.变量的生命周期</h2>
+    <p>全局变量活得和您的应用程序（窗口、网页）一样久。</p>
+    <p>局部变量活得不长。它们在函数调用时创建，在函数完成后被删除。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>3.一个计数器的困境</h2>
+    <p>假设您想使用变量来计数，并且您希望此计数器可用于所有函数。</p>
+    <p>您可以使用全局变量和函数来递增计数器：</p>
+    <h3>a.实例</h3>
+    <p id="demo3"></p>
+    <script>
+      // 初始化计数器
+      var counter3 = 0;
+
+      // 递增计数器的函数
+      function add3() {
+        counter3 += 1;
+      }
+
+      // 调用三次 add()
+      add3();
+      add3();
+      add3();
+
+      // 计数器目前应该是 3
+      document.getElementById("demo3").innerHTML = "计数器是：" + counter3;
+    </script>
+    <br>
+
+
+    <p>上述解决方案有一个问题：页面上的任何代码都可以更改计数器，而无需调用 add()。</p>
+    <p>对于 add() 函数，计数器应该是局部的，以防止其他代码更改它：</p>
+    <h3>b.实例</h3>
+    <p>使用局部变量计数。</p>
+    <p id="demo4"></p>
+    <script>
+      // 初始化计数器
+      var counter4 = 0;
+
+      // 递增计数器的函数
+      function add4() {
+        var counter4 = 0;
+        counter4 += 1;
+      }
+
+      // 调用三次 add()
+      add4();
+      add4();
+      add4();
+
+      // 结果不是 3，因为您混用了全局本地计数器
+      document.getElementById("demo4").innerHTML = "计数器是：" + counter4;
+    </script>
+    <p>它没有用，因为我们显示全局计数器而不是本地计数器。</p>
+    <br>
+
+
+    <p>通过让函数返回它，我们可以删除全局计数器并访问本地计数器：</p>
+    <h3>c.实例</h3>
+    <p>使用局部变量计数。</p>
+    <button type="button" onclick="myFunction5()">计数！</button>
+    <p id="demo5">0</p>
+    <script>
+      // 递增计数器的函数
+      function add5() {
+        var counter = 0;
+        counter += 1;
+        return counter;
+      }
+
+      // 试图递增计数器
+      function myFunction5() {
+        document.getElementById("demo5").innerHTML = add5();
+      }
+    </script>
+    <p>它没有用，因为我们每次调用函数时都会重置本地计数器。</p>
+    <p>JavaScript 内部函数可以解决这个问题。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>4.JavaScript 嵌套函数</h2>
+    <p>所有函数都有权访问全局作用域。</p>
+    <p>事实上，在 JavaScript 中，所有函数都有权访问它们“上面”的作用域。</p>
+    <p>JavaScript 支持嵌套函数。嵌套函数可以访问其上的作用域。</p>
+    <p>在本例中，内部函数 <span class="marked">plus()</span> 可以访问父函数中的 <span class="marked">counter</span> 计数器变量：</p>
+    <h3>实例</h3>
+    <p id="demo6">0</p>
+    <script>
+      document.getElementById("demo6").innerHTML = add6();
+
+      function add6() {
+        var counter = 0;
+
+        function plus() {
+          counter += 1;
+        }
+
+        plus();
+        return counter;
+      }
+    </script>
+    <p>这样即可解决计数器困境，如果我们能够从外面访问 <span class="marked">plus()</span> 函数。</p>
+    <p>我们还需要找到只执行一次 <span class="marked">counter = 0</span> 的方法。</p>
+    <p><span class="marked">我们需要闭包（closure）。</span></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>5.JavaScript 闭包</h2>
+    <p>记得自调用函数吗？这种函数会做什么呢？</p>
+    <h3>实例</h3>
+    <button type="button" onclick="myFunction7()">计数！</button>
+    <p id="demo7">0</p>
+    <script>
+      var add7 = (function () {
+        var counter = 0;
+        return function () {
+          counter += 1;
+          return counter;
+        }
+      })();
+
+      function myFunction7() {
+        document.getElementById("demo7").innerHTML = add7();
+      }
+    </script>
+    <br>
+
+    <h3>例子解释</h3>
+    <p>变量 <span class="marked">add</span> 的赋值是自调用函数的返回值。</p>
+    <p>这个自调用函数只运行一次。它设置计数器为零（0），并返回函数表达式。</p>
+    <p>这样 add 成为了函数。最“精彩的”部分是它能够访问父作用域中的计数器。</p>
+    <p>这被称为 JavaScript <em>闭包</em>。它使函数拥有“<em>私有</em>”变量成为可能。</p>
+    <p>计数器被这个匿名函数的作用域保护，并且只能使用 add 函数来修改。</p>
+    <p class="marked">闭包指的是有权访问父作用域的函数，即使在父函数关闭之后。</p>
+  </div>
+  <hr/>
+
+</body>
+</html>

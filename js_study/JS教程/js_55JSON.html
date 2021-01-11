@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript JSON</title>
+  <style type="text/css">
+    a, .important {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json.asp">JavaScript JSON</a>
+  <hr/>
+
+  <div id="intro">
+    <p><strong>JSON 是存储和传输数据的格式。</strong></p>
+    <p><strong>JSON 经常在数据从服务器发送到网页时使用。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>什么是 JSON？</h2>
+
+    <ul>
+      <li>JSON 指的是 <b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation</li>
+      <li>JSON 是轻量级的数据交换格式</li>
+      <li>JSON 独立于语言 <b>*</b></li>
+      <li>JSON 是“自描述的”且易于理解</li>
+    </ul>
+
+    <p>* JSON 的语法是来自 JavaScript 对象符号的语法，但 JSON 格式是纯文本。读取和生成 JSON 数据的代码可以在任何编程语言编写的。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 实例</h2>
+
+    <p>JSON 语法定义了一个雇员对象：包含三条员工记录的数组（对象）：</p>
+
+    <h3>JSON 实例</h3>
+
+    <pre>
+{
+&quot;employees&quot;:[
+    {&quot;firstName&quot;:&quot;Bill&quot;, &quot;lastName&quot;:&quot;Gates&quot;},
+    {&quot;firstName&quot;:&quot;Steve&quot;, &quot;lastName&quot;:&quot;Jobs&quot;},
+    {&quot;firstName&quot;:&quot;Alan&quot;, &quot;lastName&quot;:&quot;Turing&quot;}
+]
+}
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 格式评估为 JavaScript 对象</h2>
+
+    <p>JSON 格式在语法上与创建 JavaScript 对象的代码相同。</p>
+
+    <p>由于这种相似性，JavaScript 程序可以很容易地将 JSON 数据转换成本地的 JavaScript 对象。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 语法规则</h2>
+
+    <ul>
+      <li>数据是名称/值对</li>
+      <li>数据由逗号分隔</li>
+      <li>花括号保存对象</li>
+      <li>方括号保存数组</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 数据 - 名称和值</h2>
+    <p>JSON 数据的书写方式是名称/值对，类似 JavaScript 对象属性。</p>
+    <p>名称/值对由（双引号中的）字段名构成，其后是冒号，再其后是值：</p>
+    <pre>&quot;firstName&quot;:&quot;Bill&quot;</pre>
+    <p class="important">JSON 名称需要双引号。JavaScript 名称不需要。</pc>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 对象</h2>
+    <p>JSON 对象是在花括号内书写的。</p>
+    <p>类似 JavaScript，对象能够包含多个名称/值对：</p>
+    <pre>{&quot;firstName&quot;:&quot;Bill&quot;, &quot;lastName&quot;:&quot;Gates&quot;} </pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 数组</h2>
+    <p>JSON 数组在方括号中书写。</p>
+    <p>类似 JavaScript，数组能够包含对象：</p>
+    <pre>
+&quot;employees&quot;:[
+    {&quot;firstName&quot;:&quot;Bill&quot;, &quot;lastName&quot;:&quot;Gates&quot;},
+    {&quot;firstName&quot;:&quot;Steve&quot;, &quot;lastName&quot;:&quot;Jobs&quot;},
+    {&quot;firstName&quot;:&quot;Alan&quot;, &quot;lastName&quot;:&quot;Turing&quot;}
+]
+</pre>
+    <p>在上面的例子中，对象 &quot;employees&quot; 是一个数组。它包含了三个对象。</p>
+    <p>每个对象代表一个人的一条记录（带有名和姓）。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>把 JSON 文本转换为 JavaScript 对象</h2>
+    <p>JSON 的通常用法是从 web 服务器读取数据，然后在网页中显示数据。</p>
+    <p>为了简单起见，可以使用字符串作为输入演示。</p>
+    <p>首先，创建包含 JSON 语法的 JavaScript 字符串：</p>
+    <pre>
+var text = '{ &quot;employees&quot; : [' +
+'{ &quot;firstName&quot;:&quot;Bill&quot; , &quot;lastName&quot;:&quot;Gates&quot; },' +
+'{ &quot;firstName&quot;:&quot;Steve&quot; , &quot;lastName&quot;:&quot;Jobs&quot; },' +
+'{ &quot;firstName&quot;:&quot;Alan&quot; , &quot;lastName&quot;:&quot;Turing&quot; } ]}';
+</pre>
+    <p>然后，使用 JavaScript 的内建函数 JSON.parse() 来把这个字符串转换为 JavaScript 对象：</p>
+    <pre>var obj = JSON.parse(text);</pre>
+    <p>最后，请在您的页面中使用这个新的 JavaScript 对象：</p>
+
+    <h3>实例</h3>
+    <p id="demo"></p>
+    <script>
+      var text = '{"employees":[' +
+        '{"firstName":"Bill","lastName":"Gates" },' +
+        '{"firstName":"Steve","lastName":"Jobs" },' +
+        '{"firstName":"Elon","lastName":"Musk" }]}';
+
+      obj = JSON.parse(text);
+      document.getElementById("demo").innerHTML =
+        obj.employees[1].firstName + " " + obj.employees[1].lastName;
+    </script>
+  </div>
+  <hr/>
+
+  <p>您可以在我们的 <a href="https://www.w3school.com.cn/js/js_json_intro.asp" title="JSON 教程">JSON 教程</a> 中阅读更多有关 JSON 的内容。
+  </p>
+</body>
+</html>

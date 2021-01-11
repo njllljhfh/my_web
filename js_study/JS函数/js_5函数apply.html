@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 函数 Apply</title>
+  <style type="text/css">
+    .marked, .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_function_apply.asp">JavaScript 函数 Apply</a>
+  <hr/>
+
+
+  <div>
+    <h2>方法重用</h2>
+    <p>通过 <span class="code_marked">apply()</span> 方法，您能够编写用于不同对象的方法。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript apply() 方法</h2>
+    <p><span class="code_marked">apply()</span> 方法与 <span class="code_marked">call()</span> 方法非常相似：</p>
+    <p>在本例中，<span class="marked">persona</span> 的 <span class="marked">fullName</span> 方法被<em>应用</em>到 <span
+            class="marked">persona1</span>：</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      var persona = {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      var persona1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+      var x1 = persona.fullName.apply(persona1);
+      document.getElementById("demo1").innerHTML = x1;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>call() 和 apply() 之间的区别</h2>
+    <p>不同之处是：</p>
+    <p><span class="code_marked">call()</span> 方法分别接受参数。</p>
+    <p><span class="code_marked">apply()</span> 方法接受数组形式的参数。</p>
+    <p>如果要使用数组而不是参数列表，则 <span class="code_marked">apply()</span> 方法非常方便。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>带参数的 apply() 方法</h2>
+    <p><span class="code_marked">apply()</span> 方法接受数组中的参数：</p>
+    <h3>实例</h3>
+    <p>在此示例中，personb 的 fulllName 方法在 personb1 上<b>应用</b>：</p>
+    <p id="demo2"></p>
+    <script>
+      var personb = {
+        fullName: function (city, country) {
+          return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+      };
+      var personb1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+      var x2 = personb.fullName.apply(personb1, ["Seatle", "USA"]);
+      document.getElementById("demo2").innerHTML = x2;
+    </script>
+    <br>
+
+
+    <p>与 <span class="code_marked">call()</span> 方法对比：</p>
+    <h3>实例</h3>
+    <p>此例调用 personc 的 fullName 方法，在 personc1 上使用它：</p>
+    <p id="demo3"></p>
+    <script>
+      var personc = {
+        fullName: function (city, country) {
+          return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+      };
+      var personc1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+      var personc2 = {
+        firstName: "Steve",
+        lastName: "Jobs"
+      };
+      var x3 = personc.fullName.call(personc1, "Seatle", "USA");
+      document.getElementById("demo3").innerHTML = x3;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>在数组上模拟 max 方法</h2>
+    <p>您可以使用 <span class="code_marked">Math.max()</span> 方法找到（数字列表中的）最大数字：</p>
+    <h3>实例</h3>
+    <p>此例返回数字参数列表中的最大数字：</p>
+    <p id="demo4"></p>
+    <script>
+      document.getElementById("demo4").innerHTML = Math.max(1, 2, 3);
+    </script>
+    <br>
+
+
+    <p>由于 JavaScript 数组没有 max() 方法，因此您可以应用 <span class="code_marked">Math.max()</span> 方法。</p>
+    <h3>实例</h3>
+    <p>此例返回数字数组中的最大数：</p>
+    <p id="demo5"></p>
+    <script>
+      document.getElementById("demo5").innerHTML = Math.max.apply(null, [1, 2, 3]);
+    </script>
+    <p>第一个参数（null）无关紧要。在本例中未使用它。</p>
+    <br>
+
+
+    <p>这些例子会给出相同的结果：</p>
+    <h3>实例</h3>
+    <p id="demo6"></p>
+    <script>
+      document.getElementById("demo6").innerHTML = Math.max.apply(Math, [1, 2, 3]);
+    </script>
+    <br>
+
+    <h3>实例</h3>
+    <p id="demo7"></p>
+    <script>
+      document.getElementById("demo7").innerHTML = Math.max.apply(" ", [1, 2, 3]);
+    </script>
+    <br>
+
+    <h3>实例</h3>
+    <p id="demo8"></p>
+    <script>
+      document.getElementById("demo8").innerHTML = Math.max.apply(0, [1, 2, 3]);
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript 严格模式</h2>
+    <p>在 JavaScript 严格模式下，如果 <span class="code_marked">apply()</span> 方法的第一个参数不是对象，则它将成为被调用函数的所有者（对象）。在“非严格”模式下，它成为全局对象。
+    </p>
+    <h1 class="marked">没看懂!!!</h1>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 对象方法</title>
+  <style type="text/css">
+    .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_object_methods.asp">JavaScript 对象方法</a>
+  <hr/>
+
+
+  <div>
+    <h2>实例</h2>
+    <p>在本例中，<b>this</b> 代表 <b>person</b> 对象。</p>
+    <p>因为 person 对象“拥有” fullName 方法。</p>
+    <p id="demo1"></p>
+    <script>
+      // 创建对象：
+      var person1 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 678,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+
+      // 显示来自对象的数据：
+      document.getElementById("demo").innerHTML = person1.fullName();
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript 方法</h2>
+    <p>JavaScript 方法是能够在对象上执行的动作。</p>
+    <p>JavaScript <em>方法</em>是包含<em>函数定义</em>的属性。</p>
+    <table class="dataintable">
+      <tr>
+        <th style="width:30%;">属性</th>
+        <th>值</th>
+      </tr>
+
+      <tr>
+        <td>firstName</td>
+        <td>Bill</td>
+      </tr>
+
+      <tr>
+        <td>lastName</td>
+        <td>Gates</td>
+      </tr>
+
+      <tr>
+        <td>age</td>
+        <td>62</td>
+      </tr>
+
+      <tr>
+        <td>eyeColor</td>
+        <td>blue</td>
+      </tr>
+
+      <tr>
+        <td>fullName</td>
+        <td>function() {return this.firstName + &quot; &quot; + this.lastName;}</td>
+      </tr>
+    </table>
+
+    <p>方法是存储为对象属性的函数。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2><em>this</em> 关键词</h2>
+    <p>在 JavaScript 中，被称为 <span class="code_marked">this</span> 的事物，指的是拥有该 JavaScript 代码的对象。</p>
+    <p><span class="code_marked">this</span> 的值，在函数中使用时，是“拥有”该函数的对象。</p>
+    <p>请注意 <span class="code_marked">this</span> 并非变量。它是关键词。您无法改变 <span class="code_marked">this</span> 的值。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>访问对象方法</h2>
+    <p>请使用如下语法创建对象方法：</p>
+    <pre><i>methodName</i> : function() { <i>代码行</i> }</pre>
+    <p>请通过如下语法来访问对象方法：</p>
+    <pre><i>objectName</i>.<i>methodName</i>()</pre>
+    <p>您通常会把 fullName() 描述为 person 对象的方法，把 fullName 描述为属性。</p>
+    <p>fullName 属性在被通过 () 调用后会以函数形式执行。</p>
+    <p>此例访问 person 对象的 fullName() <em>方法</em>：</p>
+
+    <h3>实例</h3>
+    <p>对象方法是一种函数定义，存储为属性值。</p>
+    <p id="demo2"></p>
+    <script>
+      // 创建对象：
+      var person2 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 12345,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+
+      // 显示对象中的数据：
+      document.getElementById("demo2").innerHTML = person2.fullName();
+    </script>
+    <br>
+
+
+    <p>如果您访问 fullName <em>属性</em>时没有使用 ()，则将返回<em>函数定义</em>：</p>
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      // 创建对象：
+      var person3 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 12345,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+
+      // 显示对象中的数据：
+      document.getElementById("demo3").innerHTML = person3.fullName;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>使用内建方法</h2>
+    <p>此例使用 String 对象的 <span class="code_marked">toUpperCase()</span> 方法，把文本转换为大写：</p>
+    <pre>
+var message = &quot;Hello world!&quot;;
+var x = message.toUpperCase();
+</pre>
+    <p>x 的值，在以上代码执行后将是：</p>
+    <pre>HELLO WORLD!</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>添加新的方法</h2>
+    <p>向对象添加方法是在构造器函数内部完成的：</p>
+    <h3>实例</h3>
+    <pre>
+function person(firstName, lastName, age, eyeColor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.eyeColor = eyeColor;
+    this.changeName = function (name) {
+        this.lastName = name;
+    };
+}
+</pre>
+    <p>changeName() 函数 name 的值赋给了 person 的 lastName 属性。</p>
+
+    <p id="demo4"></p>
+    <script>
+      var person4 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 678,
+      };
+      person4.name = function () {
+        return this.firstName + " " + this.lastName;
+      };
+
+      document.getElementById("demo4").innerHTML =
+        "My friend is " + person4.name();
+    </script>
+    <p>通过用 person4 “替代” this，JavaScript 清楚您指的是哪个 person。</p>
+  </div>
+  <hr/>
+
+</body>
+</html>

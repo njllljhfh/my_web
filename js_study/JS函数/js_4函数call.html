@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 函数 Call</title>
+  <style type="text/css">
+    .marked, .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_function_call.asp">JavaScript 函数 Call</a>
+  <hr/>
+
+
+  <div>
+    <h2>方法重用</h2>
+    <p>使用 <span class="code_marked">call()</span> 方法，您可以编写能够在不同对象上使用的方法。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>函数是对象方法</h2>
+    <p>在 JavaScript 中，函数是对象的方法。</p>
+    <p>如果一个函数不是 JavaScript 对象的方法，那么它就是全局对象的函数（参见前一章）。</p>
+    <p>下面的例子创建了带有三个属性的对象（<span class="marked">firstName</span>、<span class="marked">lastName</span>、<span
+            class="marked">fullName</span>）。</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      var myObject1 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      var x1 = myObject1.fullName();
+      document.getElementById("demo1").innerHTML = x1;
+    </script>
+    <p>fullName 属性是一个<em>方法</em>。person 对象是该方法的<em>拥有者</em>。</p>
+    <p>fullName 属性属于 <em>person 对象的方法</em>。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript call() 方法</h2>
+    <p><span class="code_marked">call()</span> 方法是预定义的 JavaScript 方法。</p>
+    <p>它可以用来调用所有者对象作为参数的方法。</p>
+    <p>通过 <span class="code_marked">call()</span>，您能够使用属于另一个对象的方法。</p>
+    <p>本例调用 dragon 的 fullName 方法，并用于 dragon1：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      var dragon = {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      var dragon1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+
+      var x2 = dragon.fullName.call(dragon1);
+      document.getElementById("demo2").innerHTML = x2;
+    </script>
+    <br>
+
+
+    <p>本例调用 dragona 的 fullName 方法，并用于 dragona2：</p>
+    <p id="demo3"></p>
+    <script>
+      var dragona = {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      var dragona1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+      var dragona2 = {
+        firstName: "Steve",
+        lastName: "Jobs"
+      };
+      var x3 = dragona.fullName.call(dragona2);
+      document.getElementById("demo3").innerHTML = x3;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>带参数的 call() 方法</h2>
+    <p>call() 方法可接受参数：</p>
+    <h3>实例</h3>
+    <p>此例调用 person 的 fullName 方法，在 person1 上使用它：</p>
+    <p id="demo4"></p>
+    <script>
+      var person = {
+        fullName: function (city, country) {
+          return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+      };
+      var person1 = {
+        firstName: "Bill",
+        lastName: "Gates"
+      };
+      var person2 = {
+        firstName: "Steve",
+        lastName: "Jobs"
+      };
+      var x4 = person.fullName.call(person1, "Seatle", "USA");
+      document.getElementById("demo4").innerHTML = x4;
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>

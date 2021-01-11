@@ -45,7 +45,7 @@
 
 
   <div>
-    <h2>函数作用域</h2>
+    <h2>2.函数作用域</h2>
     <p><em>局部</em>（函数内）声明的变量拥有<em>函数作用域</em>。</p>
 
     <p>myFunction() 之外的 carName2 未定义。</p>
@@ -69,6 +69,294 @@
   </div>
   <hr/>
 
+
+  <div>
+    <h2>3.块作用域</h2>
+    <p>通过 <span class="code_marked">var</span> 关键词声明的变量没有块<em>作用域</em>。</p>
+    <p>在块 <em>{}</em> 内声明的变量可以从块之外进行访问。</p>
+    <h3>实例</h3>
+    <pre>
+{
+  var x = 10;
+}
+<span class="code_comment">// 此处可以使用 x</span>
+</pre>
+    <br>
+
+    <p>在 ES2015 之前，JavaScript 是没有块作用域的。</p>
+    <p>可以使用 <span class="code_marked">let</span> 关键词声明拥有块作用域的变量。</p>
+    <p>在块 <em>{}</em> 内声明的变量无法从块外访问：</p>
+    <h3>实例</h3>
+    <pre>
+{
+  let x = 10;
+}
+<span class="code_comment">// 此处不可以使用 x</span>
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>重新声明变量</h2>
+    <p>使用 <span class="code_marked">var</span> 关键字重新声明变量会带来问题。</p>
+    <p>在块中重新声明变量也将重新声明块外的变量：</p>
+
+    <p id="demo4"></p>
+    <script>
+      var x4 = 10;
+      // Here x is 10
+      {
+        var x4 = 2;
+        // Here x is 2
+      }
+      // Here x is 2
+      document.getElementById("demo4").innerHTML = x4;
+    </script>
+    <br><br>
+
+
+    <p>使用 <span class="code_marked">let</span> 关键字重新声明变量可以解决这个问题。</p>
+    <p>在块中重新声明变量不会重新声明块外的变量：</p>
+    <p id="demo5"></p>
+    <script>
+      var x5 = 10;
+      // Here x is 10
+      {
+        let x5 = 2;
+        // Here x is 2
+      }
+      // Here x is 10
+      document.getElementById("demo5").innerHTML = x5;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <p>Internet Explorer 11 或更早的版本不完全支持 <span class="code_marked">let</span> 关键词。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>循环作用域</h2>
+    <p>在循环中使用 <span class="code_marked">var</span>：</p>
+
+    <p id="demo6"></p>
+
+    <script>
+      var i6 = 5;
+      for (var i6 = 0; i6 < 10; i6++) {
+        // 一些语句
+      }
+      // 此处，i 为 10
+      document.getElementById("demo6").innerHTML = i6;
+    </script>
+    <br><br>
+
+
+    <p>在循环中使用 <span class="code_marked">let</span>：</p>
+    <p id="demo7"></p>
+    <script>
+      let i7 = 5;
+      for (let i7 = 0; i7 < 10; i7++) {
+        // 一些语句
+      }
+      // 此处 i 为 5
+      document.getElementById("demo7").innerHTML = i7;
+    </script>
+    <br>
+
+    <p>在第一个例子中，在循环中使用的变量使用 <span class="code_marked">var</span> 重新声明了循环之外的变量。</p>
+    <p>在第二个例子中，在循环中使用的变量使用 <span class="code_marked">let</span> 并没有重新声明循环外的变量。</p>
+    <p>如果在循环中用 <span class="code_marked">let</span> 声明了变量 i，那么只有在循环内，变量 i 才是可见的。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>函数作用域</h2>
+    <p>在函数内声明变量时，使用 <span class="code_marked">var</span> 和 <span class="code_marked">let</span> 很相似。</p>
+    <p>它们都有<em>函数作用域</em>：</p>
+    <pre>
+function myFunction() {
+  var carName = &quot;porsche&quot;;   <span class="code_comment">// 函数作用域</span>
+}
+function myFunction() {
+  let carName = &quot;porsche&quot;;   <span class="code_comment">// 函数作用域</span>
+}
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>全局作用域</h2>
+    <p>如果在块外声明声明，那么 <span class="code_marked">var</span> 和 <span class="code_marked">let</span> 也很相似。</p>
+    <p>它们都拥有<em>全局作用域</em>：</p>
+    <pre>
+var x = 10;       <span class="code_comment">// 全局作用域</span>
+let y = 6;       <span class="code_comment">// 全局作用域</span>
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTML 中的全局变量</h2>
+    <p>使用 JavaScript 的情况下，全局作用域是 JavaScript 环境。</p>
+    <p>在 HTML 中，全局作用域是 window 对象。</p>
+    <p>通过 <span class="code_marked">var</span> 关键词定义的全局变量属于 window 对象：</p>
+    <h3>实例</h3>
+    <p id="demo8"></p>
+    <script>
+      var carName8 = "Audi8";
+
+      // 此处的代码能够使用 window.carName
+      document.getElementById("demo8").innerHTML = "我可以显示 " + window.carName8;
+    </script>
+    <br><br>
+
+    <p>通过 <span class="code_marked">let</span> 关键词定义的全局变量不属于 window 对象：</p>
+    <h3>实例</h3>
+    <p id="demo9"></p>
+    <script>
+      let carName9 = "Audi9";
+
+      // 此处的代码能够使用 window.carName
+      document.getElementById("demo9").innerHTML = "我不能显示 " + window.carName9;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>重新声明</h2>
+    <p>允许在程序的任何位置使用 <span class="code_marked">var</span> 重新声明 JavaScript 变量：</p>
+    <h3>实例</h3>
+    <p id="demo10"></p>
+    <script>
+      var x10 = 2;
+      // 此时 x 是 2
+      var x10 = 3;
+      // 此时 x 是 3
+      document.getElementById("demo10").innerHTML = x10;
+    </script>
+    <br><br>
+  </div>
+  <hr/>
+
+
+  <div>
+    <p>在相同的作用域，或在相同的块中，通过 <span class="code_marked">let</span> 重新声明一个 <span class="code_marked">var</span> 变量是不允许的：</p>
+    <h3>实例</h3>
+    <pre>
+var x = 10;       <span class="code_comment">// 允许</span>
+let x = 6;       <span class="code_comment">// 不允许</span>
+
+{
+  var x = 10;   <span class="code_comment">// 允许</span>
+  let x = 6;   <span class="code_comment">// 不允许</span>
+}
+</pre>
+    <br>
+
+
+    <p>在相同的作用域，或在相同的块中，通过 <span class="code_marked">let</span> 重新声明一个 <span class="code_marked">let</span> 变量是不允许的：</p>
+    <h3>实例</h3>
+    <pre>
+let x = 10;       <span class="code_comment">// 允许</span>
+let x = 6;       <span class="code_comment">// 不允许</span>
+
+{
+  let x = 10;   <span class="code_comment">// 允许</span>
+  let x = 6;   <span class="code_comment">// 不允许</span>
+}
+</pre>
+    <br>
+
+
+    <p>在相同的作用域，或在相同的块中，通过 <span class="code_marked">var</span> 重新声明一个 <span class="code_marked">let</span> 变量是不允许的：</p>
+    <h3>实例</h3>
+    <pre>
+let x = 10;       <span class="code_comment">// 允许</span>
+var x = 6;       <span class="code_comment">// 不允许</span>
+
+{
+  let x = 10;   <span class="code_comment">// 允许</span>
+  var x = 6;   <span class="code_comment">// 不允许</span>
+}
+</pre>
+    <br>
+
+
+    <p>在不同的作用域或块中，通过 <span class="code_marked">let</span> 重新声明变量是允许的：</p>
+    <h3>实例</h3>
+    <pre>
+let x = 6;       <span class="code_comment">// 允许</span>
+
+{
+  let x = 7;   <span class="code_comment">// 允许</span>
+}
+
+{
+  let x = 8;   <span class="code_comment">// 允许</span>
+}
+</pre>
+    <br>
+
+
+    <p>使用 <b>let</b>，在另一个作用域或另一个块中重新声明变量是允许的：</p>
+    <p id="demo11"></p>
+    <script>
+      let x11 = 2;   // 允许
+
+      {
+        let x11 = 3;   // 允许
+      }
+
+      {
+        let x11 = 4;   // 允许
+      }
+      document.getElementById("demo11").innerHTML = x11;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>提升</h2>
+    <p>通过 <span class="code_marked">var</span> 声明的变量会<em>提升</em>到顶端。如果您不了解什么是提升（Hoisting），请学习我们的提升这一章。</p>
+    <p>您可以在声明变量之前就使用它：</p>
+    <h3>实例</h3>
+    <p id="demo12"></p>
+    <script>
+      carName12 = "Audi12";
+      document.getElementById("demo12").innerHTML = carName12;
+      var carName12;
+    </script>
+    <br><br>
+
+
+    <p>通过 <span class="code_marked">let</span> 定义的变量不会被提升到顶端。</p>
+    <p>在声明 <span class="code_marked">let</span> 变量之前就使用它会导致 ReferenceError。</p>
+    <p>变量从块的开头一直处于“暂时死区”，直到声明为止：</p>
+    <h3>实例</h3>
+    <p id="demo13"></p>
+    <script>
+      carName13 = "Audi13";
+      document.getElementById("demo13").innerHTML = carName13;
+      // 在此处，您不可以使用 carName13
+      let carName13;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <p>666</p>
+  </div>
 
 </body>
 </html>

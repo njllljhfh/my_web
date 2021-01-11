@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 对象原型</title>
+  <style type="text/css">
+    .marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_object_prototypes.asp">JavaScript 对象原型</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>所有 JavaScript 对象都从原型继承属性和方法。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>原型继承</h2>
+    <p>所有 JavaScript 对象都从原型继承属性和方法。</p>
+    <p>日期对象继承自 Date.prototype。数组对象继承自 Array.prototype。Person 对象继承自 Person.prototype。</p>
+    <p>Object.prototype 位于原型继承链的顶端：</p>
+    <p>日期对象、数组对象和 Person 对象都继承自 Object.prototype。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>向对象添加属性和方法</h2>
+    <p>有时，您希望向所有给定类型的已有对象添加新属性（或方法）。</p>
+    <p>有时，您希望向对象构造器添加新属性（或方法）。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>使用 <span class="marked">prototype</span> 属性</h2>
+    <p>JavaScript prototype 属性允许您为对象构造器添加新属性：</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      function Person1(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      Person1.prototype.nationality = "English";
+
+      var myFriend1 = new Person1("Bill", "Gates", 62, "blue");
+      document.getElementById("demo1").innerHTML =
+        "The nationality of my friend is " + myFriend1.nationality;
+    </script>
+    <br>
+
+
+    <p>JavaScript prototype 属性也允许您为对象构造器添加新方法：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      function Person2(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      Person2.prototype.name = function () {
+        return this.firstName + " " + this.lastName
+      };
+
+      var myFriend2 = new Person2("Bill", "Gates", 62, "blue");
+      document.getElementById("demo2").innerHTML =
+        "My friend is " + myFriend2.name();
+    </script>
+    <p class="marked">请只修改您自己的原型。绝不要修改标准 JavaScript 对象的原型。</p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

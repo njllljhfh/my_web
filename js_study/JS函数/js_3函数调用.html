@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 函数调用</title>
+  <style type="text/css">
+    .marked, .code_marked {
+      color: #d04e5c;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_function_invocation.asp">JavaScript 函数调用</a>
+  <hr>
+
+
+  <div id="intro">
+    <p><strong>JavaScript 函数内部的代码会在“某物”调用它时执行。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>调用 JavaScript 函数</h2>
+    <p>在函数被<em>定义</em>时，函数内部的代码不会执行。</p>
+    <p>在函数被<em>调用</em>时，函数内部的代码会被执行。</p>
+    <p>调用函数通常也可以说“启动函数”或“执行函数”。</p>
+    <p>在本教程中，我们使用“<em>调用</em>”。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>以函数形式调用函数</h2>
+    <h3>实例</h3>
+    <p>全局函数（myFunction）返回参数（a，b）的乘积：</p>
+    <p id="demo1"></p>
+    <script>
+      function myFunction1(a, b) {
+        return a * b;
+      }
+
+      document.getElementById("demo1").innerHTML = myFunction1(10, 2);
+    </script>
+    <br>
+
+
+    <p>以上函数不属于任何对象。但是在 JavaScript 中，始终存在一种默认的全局对象。</p>
+    <p>在 HTML 中，默认全局对象是 HTML 页面本身，所有上面的函数“属于”HTML 页面。</p>
+    <p>在浏览器中，这个页面对象就是浏览器窗口。上面的函数自动成为一个窗口函数。</p>
+    <p>myFunction() 和 window.myFunction() 是同一个函数：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      function myFunction2(a, b) {
+        return a * b;
+      }
+
+      document.getElementById("demo2").innerHTML = window.myFunction2(10, 2);
+    </script>
+    <p>这是调用函数的常见方法，但并不是一个好习惯。</p>
+    <p>全局变量、方法或函数很容易在全局对象中产生命名冲突和漏洞。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2><span class="marked">this</span> 关键词</h2>
+    <p>在 JavaScript 中，被称为 <span class="code_marked">this</span> 的事物，指的是“拥有”当前代码的对象。</p>
+    <p><span class="code_marked">this</span> 的值，在函数中使用时，是“拥有”该函数的对象。</p>
+    <p>请注意 <span class="code_marked">this</span> 并不是变量。它属于关键词。您无法改变 <span class="code_marked">this</span> 的值。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>全局对象</h2>
+    <p>当不带拥有者对象调用对象时，<span class="code_marked">this</span> 的值成为全局对象。</p>
+    <p>在 web 浏览器中，全局对象就是浏览器对象。</p>
+    <p>本例以 <span class="code_marked">this</span> 的值返回这个 window 对象：</p>
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      var x3 = myFunction3();
+
+      function myFunction3() {
+        return this;
+      }
+
+      document.getElementById("demo3").innerHTML = x3;  // x 将成为 window 对象
+    </script>
+    <p>调用一个函数作为一个全局函数，会导致 <span class="code_marked">this</span> 的值成为全局对象。</p>
+    <p>作为变量来使用 window 对象很容易使程序崩溃。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>作为方法来调用函数</h2>
+    <p>在 JavaScript 中，您可以把函数定义为对象方法。</p>
+    <p>下面的例子创建了一个对象（myObject），带有两个属性（firstName 和 lastName），以及一个方法（fullName）：</p>
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      var myObject4 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      document.getElementById("demo4").innerHTML = myObject4.fullName();
+    </script>
+    <br>
+
+
+    <p>fullName 方法是一个函数。该函数属于对象。myObject 是函数的拥有者。</p>
+    <p>被称为 <span class="code_marked">this</span> 的事物，是“拥有”这段 JavaScript 代码的对象。在此例中，<span class="code_marked">this</span>
+      的值是 myObject。</p>
+    <p>测试一下！修改这个 fullName 方法来返回 <span class="code_marked">this</span> 的值：</p>
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      var myObject5 = {
+        firstName: "Bill",
+        lastName: "Gates",
+        fullName: function () {
+          return this;
+        }
+      };
+      document.getElementById("demo5").innerHTML = myObject5.fullName();  // 将返回 [object Object]（拥有者对象）
+    </script>
+    <p>以对象方法来调用函数，会导致 <span class="code_marked">this</span> 的值成为对象本身。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>通过函数构造器来调用函数</h2>
+    <p>如果函数调用的前面是 <span class="code_marked">new</span> 关键字，那么这是一个构造函数调用。</p>
+    <p>它看起来像你创建一个新的函数，但由于 JavaScript 函数是对象，你实际上创建一个新对象：</p>
+    <h3>实例</h3>
+    <p id="demo6"></p>
+    <script>
+      // 这是函数构造器：
+      function MyFunction6(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName = arg2;
+      }
+
+      // 创建了一个新对象：
+      var x6 = new MyFunction6("Bill", "Gates");
+      document.getElementById("demo6").innerHTML = x6.firstName;
+    </script>
+    <p>构造器调用会创建新对象。新对象会从其构造器继承属性和方法。</p>
+    <p>构造器内的 <span class="code_marked">this</span> 关键词没有值。</p>
+    <p><span class="code_marked">this</span> 的值会成为调用函数时创建的新对象。</p>
+  </div>
+  <hr>
+
+
+</body>
+</html>
