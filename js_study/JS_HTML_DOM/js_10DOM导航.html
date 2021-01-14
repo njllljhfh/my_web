@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_navigation.asp">JavaScript HTML DOM 导航</a>
+  <hr/>
+
+  <div id="intro">
+    <p><strong>通过 HTML DOM，您能够使用节点关系来导航节点树。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>DOM 节点</h2>
+    <p>根据 W3C HTML DOM 标准，HTML 文档中的所有事物都是节点：</p>
+    <ul>
+      <li>整个文档是文档节点</li>
+      <li>每个 HTML 元素是元素节点</li>
+      <li>HTML 元素内的文本是文本节点</li>
+      <li>每个 HTML 属性是属性节点</li>
+      <li>所有注释是注释节点</li>
+    </ul>
+    <img src="images/ct_htmltree.gif" alt="DOM HTML 树">
+    <p>有了 HTML DOM，节点树中的所有节点都能通过 JavaScript 访问。</p>
+    <p>能够创建新节点，还可以修改和删除所有节点。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>节点关系</h2>
+    <p>节点树中的节点彼此之间有一定的等级关系。</p>
+    <ul>
+      <li>术语（父、子和同胞，parent、child 以及 sibling）用于描述这些关系。</li>
+      <li>在节点树中，顶端节点被称为根（根节点）。</li>
+      <li>每个节点都有父节点，除了根（根节点没有父节点）。</li>
+      <li>节点能够拥有一定数量的子</li>
+      <li>同胞（兄弟或姐妹）指的是拥有相同父的节点。</li>
+    </ul>
+
+    <pre>
+&lt;html&gt;
+
+   &lt;head&gt;
+       &lt;title&gt;DOM 教程&lt;/title&gt;
+   &lt;/head&gt;
+
+  &lt;body&gt;
+       &lt;h1&gt;DOM 第一课&lt;/h1&gt;
+       &lt;p&gt;Hello world!&lt;/p&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+    <img src="images/dom_navigate.gif" alt="DOM HTML 树">
+    <p>从以上的 HTML 中您能读到以下信息：</p>
+    <ul>
+      <li>&lt;html&gt; 是根节点</li>
+      <li>&lt;html&gt; 没有父</li>
+      <li>&lt;html&gt; 是 &lt;head&gt; 和 &lt;body&gt; 的父</li>
+      <li>&lt;head&gt; 是 &lt;html&gt; 的第一个子</li>
+      <li>&lt;body&gt; 是 &lt;html&gt; 的最后一个子</li>
+    </ul>
+
+    <p>同时：</p>
+    <ul>
+      <li>&lt;head&gt; 有一个子：&lt;title&gt;</li>
+      <li>&lt;title&gt; 有一个子（文本节点）：&quot;DOM 教程&quot;</li>
+      <li>&lt;body&gt; 有两个子：&lt;h1&gt; 和 &lt;p&gt;</li>
+      <li>&lt;h1&gt; 有一个子：&quot;DOM 第一课&quot;</li>
+      <li>&lt;p&gt; 有一个子：&quot;Hello world!&quot;</li>
+      <li>&lt;h1&gt; 和 &lt;p&gt; 是同胞</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>在节点之间导航</h2>
+    <p>通过 JavaScript，您可以使用以下节点属性在节点之间导航：</p>
+    <ul>
+      <li>parentNode</li>
+      <li>childNodes[<i>nodenumber</i>]</li>
+      <li>firstChild</li>
+      <li>lastChild</li>
+      <li>nextSibling</li>
+      <li>previousSibling</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>子节点和节点值</h2>
+    <p>DOM 处理中的一种常见错误是认为元素节点中包含文本。</p>
+    <h3>实例：</h3>
+    <pre>&lt;title id=&quot;demo&quot;&gt;DOM 教程&lt;/title&gt; </pre>
+    <p>（上面例子中的）元素节点 &lt;title&gt; <span class="marked">不包含</span>文本。</p>
+    <p>它包含了值为 &quot;DOM 教程&quot; 的<em>文本节点</em>。</p>
+    <p>文本节点的值能够通过节点的 <span class="code_marked">innerHTML</span> 属性进行访问：</p>
+    <pre>var myTitle = document.getElementById(&quot;demo&quot;).innerHTML;</pre>
+    <p>访问 innerHTML 属性等同于访问首个子节点的 <span class="code_marked">nodeValue</span>：</p>
+    <pre>var myTitle = document.getElementById(&quot;demo&quot;).firstChild.nodeValue;</pre>
+    <p>也可以这样访问第一个子节点：</p>
+    <pre>var myTitle = document.getElementById(&quot;demo&quot;).childNodes[0].nodeValue;</pre>
+    <br>
+
+    <p>
+      以下三个例子取回 <span class="code_marked">&lt;h1&gt;</span> 元素的文本并复制到 <span class="code_marked">&lt;p&gt;</span> 元素中：
+    </p>
+    <h3>实例 1</h3>
+    <h1 id="id01a">我的第一张网页</h1>
+    <p id="id02a"></p>
+    <script>
+      document.getElementById("id02a").innerHTML = document.getElementById("id01a").innerHTML;
+    </script>
+    <br>
+
+
+    <h3>实例 2</h3>
+    <h1 id="id01b">我的第一张网页</h1>
+    <p id="id02b"></p>
+    <script>
+      document.getElementById("id02b").innerHTML = document.getElementById("id01b").firstChild.nodeValue;
+    </script>
+    <br>
+
+
+    <h3>实例 3</h3>
+    <h1 id="id01c">我的第一张网页</h1>
+    <p id="id02c"></p>
+    <script>
+      document.getElementById("id02c").innerHTML = document.getElementById("id01c").childNodes[0].nodeValue;
+    </script>
+    <br>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>InnerHTML</h2>
+    <p>在本教程中，我们使用 <span class="code_marked">innerHTML</span> 取回 HTML 元素的内容。</p>
+    <p>不过，学习以上其他的方法有助于理解 DOM 的树结构和导航。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>DOM 根节点</h2>
+    <p>有两个特殊属性允许访问完整文档：</p>
+    <ul>
+      <li>document.body - 文档的 body</li>
+      <li>document.documentElement - 完整文档</li>
+    </ul>
+    <br>
+
+    <h3>实例</h3>
+    <p>Hello World!</p>
+    <div>
+      <p>DOM 很有用！</p>
+      <p>本例演示 <b>document.body</b> 属性。</p>
+      <button onclick="myFunction1()">点击试试</button>
+    </div>
+    <script>
+      function myFunction1() {
+        alert(document.body.innerHTML);
+      }
+    </script>
+    <br>
+
+
+    <h3>实例</h3>
+    <p>Hello World!</p>
+    <div>
+      <p>DOM 很有用！</p>
+      <p>本例演示 <b>document.documentElement</b> 属性。</p>
+      <button onclick="myFunction2()">点击试试</button>
+    </div>
+    <script>
+      function myFunction2() {
+        alert(document.documentElement.innerHTML);
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>nodeName 属性</h2>
+    <p><span class="code_marked">nodeName</span> 属性规定节点的名称。</p>
+    <ul>
+      <li>nodeName 是只读的</li>
+      <li>元素节点的 nodeName 等同于标签名</li>
+      <li>属性节点的 nodeName 是属性名称</li>
+      <li>文本节点的 nodeName 总是 #text</li>
+      <li>文档节点的 nodeName 总是 #document</li>
+    </ul>
+
+    <h3>实例</h3>
+    <h1 id="id01d">我的第一张网页</h1>
+    <p id="id02d"></p>
+    <script>
+      document.getElementById("id02d").innerHTML = document.getElementById("id01d").nodeName;
+      // document.getElementById("id02d").innerHTML = document.getElementById("id01d").firstChild.nodeName;
+      // document.getElementById("id02d").innerHTML = document.body.nodeName;
+      // document.getElementById("id02d").innerHTML = document.documentElement.nodeName;
+      // document.getElementById("id02d").innerHTML = document.nodeName;
+    </script>
+    <p class="note"><span>注释：</span>nodeName 总是包含 HTML 元素的大写标签名。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>nodeValue 属性</h2>
+    <p><span class="code_marked">nodeValue</span> 属性规定节点的值。</p>
+    <ul>
+      <li>元素节点的 nodeValue 是 undefined</li>
+      <li>文本节点的 nodeValue 是文本文本</li>
+      <li>属性节点的 nodeValue 是属性值</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>nodeType 属性</h2>
+    <p><span class="code_marked">nodeType</span> 属性返回节点的类型。<span class="code_marked">nodeType</span> 是只读的。</p>
+    <h3>实例</h3>
+    <h1 id="id01e">我的第一张网页</h1>
+    <p id="id02e"></p>
+    <script>
+      document.getElementById("id02e").innerHTML = document.getElementById("id01e").nodeType;
+    </script>
+    <br><br>
+
+    <p>最重要的 nodeType 属性是：</p>
+    <table class="dataintable">
+      <tr>
+        <th>节点</th>
+        <th>类型</th>
+        <th>例子</th>
+      </tr>
+
+      <tr>
+        <td>ELEMENT_NODE</td>
+        <td>1</td>
+        <td>&lt;h1 class=&quot;heading&quot;&gt;W3School&lt;/h1&gt;</td>
+      </tr>
+
+      <tr>
+        <td>ATTRIBUTE_NODE</td>
+        <td>2</td>
+        <td>class = &quot;heading&quot; （弃用）</td>
+      </tr>
+
+      <tr>
+        <td>TEXT_NODE</td>
+        <td>3</td>
+        <td>W3School</td>
+      </tr>
+
+      <tr>
+        <td>COMMENT_NODE</td>
+        <td>8</td>
+        <td>&lt;!-- 这是注释 --&gt;</td>
+      </tr>
+
+      <tr>
+        <td>DOCUMENT_NODE</td>
+        <td>9</td>
+        <td>HTML 文档本身（&lt;html&gt; 的父）</td>
+      </tr>
+
+      <tr>
+        <td>DOCUMENT_TYPE_NODE</td>
+        <td>10</td>
+        <td>&lt;!Doctype html&gt;</td>
+      </tr>
+    </table>
+    <br>
+
+    <p>Type 2 在 HTML DOM 中已弃用。XML DOM 中未弃用。</p>
+  </div>
+
+</body>
+</html>

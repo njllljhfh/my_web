@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript HTML DOM 动画</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+  <style>
+    #container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: yellow;
+    }
+
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_animate.asp">JavaScript HTML DOM 动画</a>
+  <hr>
+
+
+  <div id="intro">
+    <p><strong>学习使用 JavaScript 来创建 HTML 动画。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>基础页面</h2>
+    <p>为了演示如何通过 JavaScript 来创建 HTML 动画，我们将使用一张简单的网页：</p>
+    <h3>实例</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;我的第一部 JavaScript 动画&lt;/h1&gt;
+
+&lt;div id=&quot;animation&quot;&gt;我的动画在这里。&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>创建动画容器</h2>
+    <p>所有动画都应该与容器元素关联。</p>
+    <h3>实例</h3>
+    <pre>
+&lt;div id =&quot;container&quot;&gt;
+    &lt;div id =&quot;animate&quot;&gt;我的动画在这里。&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>为元素添加样式</h2>
+    <p>应该通过 style = &quot;<span class="code_marked">position: relative</span>&quot; 创建容器元素。</p>
+    <p>应该通过 style = &quot;<span class="code_marked">position: absolute</span>&quot; 创建动画元素。</p>
+    <h3>实例</h3>
+
+    <h2>我的第一个 JavaScript 动画</h2>
+    <p>
+      <button onclick="myMove()">单击我</button>
+    </p>
+    <div id="container">
+      <div id="animate"></div>
+    </div>
+    <script>
+      function myMove() {
+        var elem = document.getElementById("animate");
+        var pos = 0;
+        var id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          }
+          else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>动画代码</h2>
+    <p>JavaScript 动画是通过对元素样式进行渐进式变化编程完成的。</p>
+    <p>这种变化通过一个计数器来调用。当计数器间隔很小时，动画看上去就是连贯的。</p>
+    <p>基础代码是：</p>
+    <h3>实例</h3>
+    <pre>
+var id = setInterval(frame, 5);
+
+function frame() {
+    if (<span class="code_comment">/* 测试是否完成 */</span>) {
+        clearInterval(id);
+    } else {
+         <span class="code_comment">/* 改变元素样式的代码 */</span>
+    }
+}
+</pre>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

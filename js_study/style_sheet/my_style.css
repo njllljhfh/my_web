@@ -1,0 +1,18 @@
+.important, .marked, .code_marked {
+    color: #d04e5c;
+}
+
+h2, h3, h4, h5, h6, em {
+    font-weight: bold;
+}
+
+pre	{
+    width:765px;
+    margin: 15px 0 15px 0;
+    padding: 20px;
+    border: 0;
+    border: 1px dotted #785;
+    background: #f5f5f5;
+    line-height:1.4;
+    font-family:Consolas;
+}

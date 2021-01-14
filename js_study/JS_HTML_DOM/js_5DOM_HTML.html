@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript HTML DOM - 改变 HTML</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_html.asp">JavaScript HTML DOM - 改变 HTML</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>HTML DOM 允许 JavaScript 改变 HTML 元素的内容。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>改变 HTML 输出流</h2>
+    <p>JavaScript 能够创建动态 HTML 内容：</p>
+    <pre id=demo1>
+<script>
+document.getElementById("demo1").innerHTML = Date();
+</script>
+</pre>
+    <br>
+
+
+    <p>在 JavaScript 中，<span class="code_marked">document.write()</span> 可用于直接写入 HTML 输出流：</p>
+    <h3>实例</h3>
+    <script>
+      document.write(Date());
+    </script>
+    <br><br>
+
+
+    <p>千万不要在文档加载后使用 <span class="code_marked">document.write()</span>。这么做会覆盖文档。</p>
+    <h3>实例</h3>
+    <button onclick="myTest()">点击将覆盖文档</button>
+    <script>
+      myTest = function () {
+        document.write("点击将覆盖文档");
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>改变 HTML 内容</h2>
+    <p>修改 HTML 文档内容最简单的方法是，使用 <span class="code_marked">innerHTML</span> 属性。</p>
+    <p>如需修改 HTML 元素的内容，请使用此语法：</p>
+    <pre>document.getElementById(id).innerHTML = <i>new text</i></pre>
+    <p>本例修改了 <span class="code_marked">&lt;p&gt;</span> 元素的内容：</p>
+
+    <h3>实例</h3>
+    <p id="p1">Hello World!</p>
+    <script>
+      document.getElementById("p1").innerHTML = "Hello Kitty！";
+    </script>
+    <h3>例子解释：</h3>
+    <ul>
+      <li>上面的 HTML 文档包含 id=&quot;p1&quot; 的 &lt;p&gt; 元素</li>
+      <li>我们使用 HTML DOM 来获取 id=&quot;p1&quot; 的这个元素</li>
+      <li>JavaScript 把该元素的内容（innerHTML）更改为 &quot;Hello Kitty!&quot;</li>
+    </ul>
+    <br><br>
+
+
+    <p>本例修改了 <span class="code_marked">&lt;h1&gt;</span> 元素的内容：</p>
+    <h3>实例</h3>
+    <h1 id="header">旧标题</h1>
+    <script>
+      var element3 = document.getElementById("header");
+      element3.innerHTML = "新标题";
+    </script>
+    <h3>例子解释：</h3>
+    <ul>
+      <li>上面的 HTML 含有 id=&quot;header&quot; 的一个 &lt;h1&gt; 元素</li>
+      <li>我们使用了 HTML DOM 来获取 id=&quot;header&quot; 的元素</li>
+      <li>JavaScript 更改此元素的内容（innerHTML）</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>改变属性的值</h2>
+    <p>如需修改 HTML 属性的值，请使用如下语法：</p>
+    <pre>document.getElementById(id).<i>attribute</i> = <i>new value</i></pre>
+    <p>本例修改了 <span class="code_marked">&lt;img&gt;</span> 元素的 <span class="code_marked">src</span> 属性的值：</p>
+    <h3>实例</h3>
+    <img id="image1" src="images/ct_htmltree.gif">
+    <script>
+      document.getElementById("image1").src = "images/porsche.jpg";
+    </script>
+    <h3>例子解释：</h3>
+    <ul>
+      <li>上面的 HTML 文档含有一个 id=&quot;myImage&quot; 的 &lt;img&gt; 元素</li>
+      <li>我们使用 HTML DOM 来获取 id=&quot;myImage&quot; 的元素</li>
+      <li>JavaScript 把此元素的 src 属性从 &quot;ct_htmltree.gif&quot; 更改为 &quot;porsche.jpg&quot;</li>
+    </ul>
+  </div>
+  <hr/>
+
+</body>
+</html>

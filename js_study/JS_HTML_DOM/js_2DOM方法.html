@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript - HTML DOM 方法</title>
+  <style type="text/css">
+    .marked, .code_marked {
+      color: #d04e5c;
+    }
+
+    h2, h3, h4, h5, h6, em {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_methods.asp">JavaScript - HTML DOM 方法</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>HTML DOM 方法是您能够（在 HTML 元素上）执行的<span class="marked">动作</span>。</strong></p>
+    <p><strong>HTML DOM 属性是您能够设置或改变的 HTML 元素的<span class="marked">值</span>。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>DOM 编程界面</h2>
+    <p>HTML DOM 能够通过 JavaScript 进行访问（也可以通过其他编程语言）。</p>
+    <p>在 DOM 中，所有 HTML 元素都被定义为<em>对象</em>。</p>
+    <p>编程界面是每个对象的属性和方法。</p>
+    <p><em>属性</em>是您能够获取或设置的值（就比如改变 HTML 元素的内容）。</p>
+    <p><em>方法</em>是您能够完成的动作（比如添加或删除 HTML 元素）。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>实例</h2>
+    <p>下面的例子改变了 id=&quot;demo&quot; 的 &lt;p&gt; 元素的内容：</p>
+    <p id="demo">dragon</p>
+    <script>
+      // alert(document.getElementById("demo").innerHTML);
+      document.getElementById("demo").innerHTML = "Hello World!";
+    </script>
+    <p>在上面的例子中，<span class="code_marked">getElementById</span> 是<em>方法</em>，而 <span class="code_marked">innerHTML</span>
+      是<em>属性</em>。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>getElementById 方法</h2>
+    <p>访问 HTML 元素最常用的方法是使用元素的 id。</p>
+    <p>在上面的例子中，<span class="code_marked">getElementById</span> 方法使用 id=&quot;demo&quot; 来查找元素。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>innerHTML 属性</h2>
+    <p>获取元素内容最简单的方法是使用 <span class="code_marked">innerHTML</span> 属性。</p>
+    <p><span class="code_marked">innerHTML</span> 属性可用于获取或替换 HTML 元素的内容。</p>
+    <p><span class="code_marked">innerHTML</span> 属性可用于获取或改变任何 HTML 元素，包括 <span class="code_marked">&lt;html&gt;</span>
+      和 <span class="code_marked">&lt;body&gt;</span>。</p>
+  </div>
+  <hr/>
+
+</body>
+</html>
