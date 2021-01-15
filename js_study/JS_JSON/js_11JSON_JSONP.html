@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSONP</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_jsonp.asp">JSONP</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JSONP 是一种无需考虑跨域问题即可传送 JSON 数据的方法。</strong></p>
+    <p><strong>JSONP 不使用 XMLHttpRequest 对象。</strong></p>
+    <p><strong>JSONP 使用 <span class="marked">&lt;script&gt;</span> 标签取而代之。</strong></p>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>JSONP 简介</h2>
+    <p>JSONP 指的是 JSON with Padding。</p>
+    <p>从另一个域请求文件会引起问题，由于跨域政策。</p>
+    <p>从另一个域请求外部脚本没有这个问题。</p>
+    <p>JSONP 利用了这个优势，并使用 script 标签替代 XMLHttpRequest 对象。</p>
+    <pre>&lt;script src=&quot;demo_jsonp.php&quot;&gt;</pre>
+
+    <h3>Server 文件</h3>
+    <p>服务器上的文件在函数调用中封装结果：</p>
+    <h4>实例</h4>
+    <pre>
+&lt;?php
+$myJSON = '{ &quot;name&quot;:&quot;Bill Gates&quot;, &quot;age&quot;:62, &quot;city&quot;:&quot;Seattle&quot; }';
+
+echo &quot;myFunc(&quot;.$myJSON.&quot;);&quot;;
+?&gt;
+</pre>
+    <p>结果返回对名为 &quot;myFunc&quot; 的函数的调用，其中的 JSON 数据为参数。</p>
+    <p>请确保客户端存在该函数。</p>
+    <br><br>
+
+
+    <h3>JavaScript 函数</h3>
+    <p>函数 &quot;myFunc&quot; 位于客户端，用于处理 JSON 数据：</p>
+    <pre>
+function myFunc(myObj)  {
+    document.getElementById(&quot;demo&quot;).innerHTML =  myObj.name;
+}
+</pre>
+    <h4>实例</h4>
+    <p>使用 script 标签请求 JSON</p>
+    <p>PHP 文件所返回的函数调用处理的是 JSON 数据。</p>
+    <p id="demo1"></p>
+    <script>
+      function myFunc(myObj) {
+        document.getElementById("demo1").innerHTML = myObj.name;
+      }
+    </script>
+    <!--不会有跨域问题-->
+    <script src="https://www.w3school.com.cn/demo/demo_php_jsonp.php"></script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>创建动态脚本标签</h2>
+    <p>上例会在页面加载时执行 &quot;myFunc&quot; 函数，根据您放置脚本标签的位置，这样不很令人满意。</p>
+    <p>Script 只应该在需要时创建：</p>
+    <p>在按钮被点击时创建和插入 &lt;script&gt; 标签：</p>
+    <pre>
+function clickButton() {
+    var s = document.createElement(&quot;script&quot;);
+    s.src = &quot;demo_jsonp.php&quot;;
+    document.body.appendChild(s);
+}
+</pre>
+
+    <h3>实例</h3>
+    <h1>点击按钮</h1>
+    <p>将创建一个带有 src 属性的 script 标签并将其放在文档中。</p>
+    <p>PHP 文件以 JSON 对象作为参数返回对函数的调用。</p>
+    <button onclick="clickButton2()">单击我！</button>
+    <p id="demo2"></p>
+    <script>
+      function clickButton2() {
+        var s = document.createElement("script");
+        s.src = "https://www.w3school.com.cn/demo/demo_php_jsonp.php";
+        document.body.appendChild(s);
+      }
+
+      function myFunc(myObj) {
+        document.getElementById("demo2").innerHTML = myObj.name;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>动态 JSONP 结果</h2>
+    <p>上例仍然是静态的。</p>
+    <p>可通过向 PHP 文件发送 JSON 来创建动态的例子，然后根据这个 php 文件获得的信息让它返回一个 JSON 对象。</p>
+
+    <h3>PHP 文件</h3>
+    <pre>
+&lt;?php
+header(&quot;Content-Type: application/json; charset=UTF-8&quot;);
+$obj =  json_decode($_GET[&quot;x&quot;], false);
+
+$conn = new mysqli(&quot;myServer&quot;, &quot;myUser&quot;, &quot;myPassword&quot;, &quot;Northwind&quot;);
+$result = $conn-&gt;query(&quot;SELECT name FROM &quot;.$obj-&gt;$table.&quot; LIMIT &quot;.$obj-&gt;$limit);
+$outp = array();
+$outp = $result-&gt;fetch_all(MYSQLI_ASSOC);
+
+echo &quot;myFunc(&quot;.json_encode($outp).&quot;)&quot;;
+?&gt;
+</pre>
+    <h3>PHP 文件解释：</h3>
+    <ul>
+      <li>把请求转换为对象，使用 PHP 函数 <span class="code_marked">json_decode()</span>。</li>
+      <li>访问数据库，并用被请求的数据填充数组。</li>
+      <li>向对象添加数组。</li>
+      <li>使用 <span class="code_marked">json_decode()</span> 函数把该数组转换为 JSON。</li>
+      <li>用 &quot;myFunc()&quot; 封装返回对象。</li>
+    </ul>
+    <br>
+
+    <h3>JavaScript 实例</h3>
+    <p>将从 php 文件调用 &quot;myFunc&quot; 函数：</p>
+    <pre>
+function clickButton() {
+    var obj, s
+    obj = { &quot;table&quot;:&quot;products&quot;, &quot;limit&quot;:10 };
+    s =  document.createElement(&quot;script&quot;);
+    s.src = &quot;jsonp_demo_db.php?x=&quot;  + JSON.stringify(obj);
+    document.body.appendChild(s);
+ }
+function myFunc(myObj)  {
+    var x, txt = &quot;&quot;;
+    for (x in myObj)  {
+        txt += myObj[x].name + &quot;&lt;br&gt;&quot;;
+     }
+    document.getElementById(&quot;demo&quot;).innerHTML = txt;
+}
+</pre>
+    <br>
+
+    <h1>点击按钮</h1>
+    <p>将创建一个带有 src 属性的 script 标签并将其放在文档中。</p>
+    <p>PHP 文件以 JSON 对象作为参数返回对函数的调用。</p>
+    <button onclick="clickButton3()">单击我！</button>
+    <p id="demo3"></p>
+    <p>请尝试将 table 属性从“customers”更改为“products”。</p>
+    <script>
+      function clickButton3() {
+        var obj, s;
+        obj = {table: "customers", limit: 10};
+        s = document.createElement("script");
+        s.src = "https://www.w3school.com.cn/demo/demo_php_jsonp_db.php?x=" + JSON.stringify(obj);
+        document.body.appendChild(s);
+      }
+
+      function myFunc(myObj) {
+        var x, txt = "";
+        for (x in myObj) {
+          txt += myObj[x].name + "<br>";
+        }
+        document.getElementById("demo3").innerHTML = txt;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>回调函数</h2>
+    <p>如果您无法控制服务器文件，那么如何使服务器文件调用正确的函数呢？</p>
+    <p class="marked">有时服务器文件提供回调函数作为参数：</p>
+    <h3>实例</h3>
+    <p>PHP 文件会调用您作为回调参数传递的函数：</p>
+    <pre>
+function clickButton() {
+    var s = document.createElement(&quot;script&quot;);
+    s.src = &quot;jsonp_demo_db.php?callback=myDisplayFunction&quot;;
+    document.body.appendChild(s);
+}
+</pre>
+    <br>
+
+    <h1>请求调用函数</h1>
+    <p>PHP 文件返回对您作为回调发送的函数的调用。</p>
+    <button onclick="clickButton4()">单击我！</button>
+    <p id="demo4"></p>
+    <script>
+      function clickButton4() {
+        var s = document.createElement("script");
+        s.src = "https://www.w3school.com.cn/demo_jsonp2.php?callback=myDisplayFunction";  // 404
+        document.body.appendChild(s);
+      }
+
+      function myDisplayFunction(myObj) {
+        document.getElementById("demo4").innerHTML = myObj.name;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX 简介</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_ajax_intro.asp">AJAX 简介</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p>AJAX 是开发者的梦想，因为您能够：</p>
+    <ul>
+      <li>不刷新页面更新网页</li>
+      <li>在页面加载后从服务器请求数据</li>
+      <li>在页面加载后从服务器接收数据</li>
+      <li>在后台向服务器发送数据</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <div id="demo1">
+      <h1>XMLHttpRequest 对象</h1>
+      <button type="button" onclick="loadDoc1()">修改内容</button>
+    </div>
+
+    <script>
+      function loadDoc1() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo1").innerHTML =
+              this.responseText;
+          }
+        };
+        xhttp.open("GET", "https://www.w3school.com.cn/example/js/ajax_info.txt", true);  //跨域请求报错
+        xhttp.send();
+      }
+    </script>
+  </div>
+
+
+  <div>
+    <h2>AJAX 实例解释</h2>
+    <h3>HTML 页面</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;demo&quot;&gt;
+  &lt;h2&gt;让 AJAX 更改这段文本&lt;/h2&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;loadDoc()&quot;&gt;更改文本&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+    <p>这张 HTML 页面包含一个 &lt;div&gt; 和一个 &lt;button&gt;。</p>
+
+    <p>&lt;div&gt; 用于显示来自服务器的信息。</p>
+
+    <p>&lt;button&gt; 调用函数（当它被点击）。</p>
+
+    <p>该函数从 web 服务器请求数据并显示它：</p>
+
+    <pre>
+Function loadDoc()
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById(&quot;demo&quot;).innerHTML = this.responseText;
+    }
+  };
+  xhttp.open(&quot;GET&quot;, &quot;ajax_info.txt&quot;, true);
+  xhttp.send();
+}
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>什么是 AJAX？</h2>
+    <p>AJAX = <em>A</em>synchronous <em>J</em>avaScript <em>A</em>nd <em>X</em>ML.</p>
+    <p>AJAX 并非编程语言。</p>
+    <p>AJAX 仅仅组合了：</p>
+    <ul>
+      <li>浏览器内建的 XMLHttpRequest 对象（从 web 服务器请求数据）</li>
+      <li>JavaScript 和 HTML DOM（显示或使用数据）</li>
+    </ul>
+    <p>Ajax 是一个令人误导的名称。Ajax 应用程序可能使用 XML 来传输数据，但将数据作为纯文本或 JSON 文本传输也同样常见。</p>
+    <p>Ajax 允许通过与场景后面的 Web 服务器交换数据来异步更新网页。这意味着可以更新网页的部分，而不需要重新加载整个页面。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>AJAX 如何工作</h2>
+    <img src="images/ajax.gif" alt="AJAX">
+    <ol>
+      <li>网页中发生一个事件（页面加载、按钮点击）</li>
+      <li>由 JavaScript 创建 XMLHttpRequest 对象</li>
+      <li>XMLHttpRequest 对象向 web 服务器发送请求</li>
+      <li>服务器处理该请求</li>
+      <li>服务器将响应发送回网页</li>
+      <li>由 JavaScript 读取响应</li>
+      <li>由 JavaScript 执行正确的动作（比如更新页面）</li>
+    </ol>
+  </div>
+
+
+</body>
+</html>

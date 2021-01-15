@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 弹出框</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_popup.asp">JavaScript 弹出框</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JavaScript 有三种类型的弹出框：警告框、确认框和提示框。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>1.警告框</h2>
+    <p>如果要确保信息传递给用户，通常会使用警告框。</p>
+    <p>当警告框弹出时，用户将需要单击“确定”来继续。</p>
+    <h3>语法</h3>
+    <pre>window.alert(&quot;<i>sometext</i>&quot;);</pre>
+    <p><span class="code_marked">window.alert()</span> 方法可以不带 <span class="code_marked">window</span> 前缀来写。</p>
+
+    <h3>实例</h3>
+    <button onclick="myFunction1()">试一试</button>
+    <script>
+      function myFunction1() {
+        alert("我是一个警告框！");
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>2.确认框</h2>
+    <p>如果您希望用户验证或接受某个东西，则通常使用“确认”框。</p>
+    <p>当确认框弹出时，用户将不得不单击“确定”或“取消”来继续进行。</p>
+    <p>如果用户单击“确定”，该框返回 <span class="marked">true</span>。如果用户单击“取消”，该框返回 <span class="marked">false</span>。</p>
+    <h3>语法</h3>
+    <pre>window.confirm(&quot;<i>sometext</i>&quot;);</pre>
+    <p><span class="code_marked">window.confirm()</span> 方法可以不带 <span class="code_marked">window</span> 前缀来编写。</p>
+
+    <h3>实例</h3>
+    <button onclick="myFunction2()">试一试</button>
+    <p id="demo2"></p>
+    <script>
+      function myFunction2() {
+        var txt;
+        if (confirm("Press a button!")) {
+          txt = "您按了确定";
+        }
+        else {
+          txt = "您按了取消";
+        }
+        document.getElementById("demo2").innerHTML = txt;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>3.提示框</h2>
+    <p>如果您希望用户在进入页面前输入值，通常会使用提示框。</p>
+    <p>当提示框弹出时，用户将不得不输入值后单击“确定”或点击“取消”来继续进行。</p>
+    <p>如果用户单击“确定”，该框返回输入值。如果用户单击“取消”，该框返回 <span class="code_marked">NULL</span>。</p>
+    <h3>语法</h3>
+    <pre>window.prompt(&quot;<i>sometext</i>&quot;,&quot;<i>defaultText</i>&quot;);</pre>
+
+    <p><span class="code_marked">window.prompt()</span> 方法可以不带 <span class="code_marked">window</span> 前缀来编写。</p>
+    <h3>实例</h3>
+    <button onclick="myFunction3()">试一试</button>
+    <p id="demo3"></p>
+    <script>
+      function myFunction3() {
+        var txt;
+        var person3 = prompt("请输入您的名字：", "哈利波特");
+        if (person3 == null || person3 == "") {
+          txt = "用户取消输入";
+        }
+        else {
+          txt = "你好，" + person3 + "！今天过得好吗？";
+        }
+        document.getElementById("demo3").innerHTML = txt;
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>4.折行</h2>
+    <p>如需在弹出框中显示折行，请在反斜杠后面加一个字符 <span class="code_marked">n</span>。</p>
+    <pre>alert(&quot;Hello\nHow are you?&quot;);</pre>
+
+    <h3>实例</h3>
+    <button onclick="alert('Hello\nHow are you?')">试一试</button>
+  </div>
+  <hr/>
+
+</body>
+</html>

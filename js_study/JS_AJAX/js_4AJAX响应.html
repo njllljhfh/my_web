@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX - 服务器响应</title>
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_ajax_http_response.asp">AJAX - 服务器响应</a>
+  <hr/>
+
+  <div>
+    <h2>onreadystatechange 属性</h2>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>使用回调函数</h2>
+    <p>实例</p>
+    <div id="demo">
+      <h1>XMLHttpRequest 对象</h1>
+      <button type="button" onclick="loadDoc('/example/js/ajax_info.txt', myFunction)">更改内容
+      </button>
+    </div>
+    <script>
+      function loadDoc(url, cFunction) {
+        var xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            cFunction(this);
+          }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+      }
+
+      function myFunction(xhttp) {
+        document.getElementById("demo").innerHTML =
+          xhttp.responseText;
+      }
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>服务器响应属性</h2>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>服务器响应方法</h2>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>responseText 属性</h2>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>responseXML 属性</h2>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>getAllResponseHeaders() 方法</h2>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>getResponseHeader() 方法</h2>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

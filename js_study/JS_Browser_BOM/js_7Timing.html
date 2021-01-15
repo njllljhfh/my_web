@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Timing 事件</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_timing.asp">JavaScript Timing 事件</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JavaScript 可以在时间间隔内执行。</strong></p>
+    <p><strong>这就是所谓的定时事件（ Timing Events）。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Timing 事件</h2>
+    <p>window 对象允许以指定的时间间隔执行代码。</p>
+    <p>这些时间间隔称为定时事件。</p>
+    <p>通过 JavaScript 使用的有两个关键的方法：</p>
+
+    <dl class="define">
+      <dt>setTimeout(<i>function</i>, <i>milliseconds</i>)</dt>
+      <dd>在等待指定的毫秒数后执行函数。</dd>
+
+      <dt>setInterval(<i>function</i>, <i>milliseconds</i>)</dt>
+      <dd>等同于 setTimeout()，但持续重复执行该函数。</dd>
+    </dl>
+
+    <p><span class="code_marked">setTimeout()</span> 和 <span class="code_marked">setInterval()</span> 都属于 HTML DOM
+      Window 对象的方法。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>setTimeout() 方法</h2>
+    <pre>window.setTimeout(<i>function</i>, <i>milliseconds</i>);</pre>
+    <p><span class="code_marked">window.setTimeout()</span> 方法可以不带 <span class="code_marked">window</span> 前缀来编写。</p>
+    <p>第一个参数是要执行的函数。</p>
+    <p>第二个参数指示执行之前的毫秒数。</p>
+
+    <h3>实例</h3>
+    <p>单击按钮。等待 3 秒，然后页面会提示 &quot;Hello&quot;：</p>
+    <button onclick="setTimeout(myFunction1, 3000);">试一试</button>
+    <script>
+      function myFunction1() {
+        alert('Hello');
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>如何停止执行？</h2>
+    <p><span class="code_marked">clearTimeout()</span> 方法停止执行 <span class="code_marked">setTimeout()</span> 中规定的函数。</p>
+    <pre>window.clearTimeout(<i>timeoutVariable</i>)</pre>
+    <p><span class="code_marked">window.clearTimeout()</span> 方法可以不带 <span class="code_marked">window</span> 前缀来写。</p>
+    <p><span class="code_marked">clearTimeout()</span> 使用从 <span class="code_marked">setTimeout()</span> 返回的变量：</p>
+    <pre>
+myVar = setTimeout(<i>function</i>, <i>milliseconds</i>);
+clearTimeout(myVar);
+</pre>
+
+    <h3>实例</h3>
+    <p>类似上例，但是添加了“停止”按钮：</p>
+    <p>点击“试一试”。等 3 秒。该页面将提醒“Hello”。</p>
+    <p>单击“停止”以阻止第一个函数执行。</p>
+    <p>（在 3 秒钟之前，您必须单击“停止”。）</p>
+    <button onclick="myVar = setTimeout(myFunction2, 3000)">试一试</button>
+    <button onclick="clearTimeout(myVar)">停止</button>
+    <script>
+      function myFunction2() {
+        alert("Hello2");
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>setInterval() 方法</h2>
+    <p><span class="code_marked">setInterval()</span> 方法在每个给定的时间间隔重复给定的函数。</p>
+    <pre>window.setInterval(<i>function</i>, <i>milliseconds</i>);</pre>
+    <p><span class="code_marked">window.setInterval()</span> 方法可以不带 <span class="code_marked">window</span> 前缀来写。</p>
+    <p>第一个参数是要执行的函数。</p>
+    <p>第二个参数每个执行之间的时间间隔的长度。</p>
+    <p>本例每秒执行一次函数 &quot;myTimer&quot;（就像数字手表）。</p>
+
+    <h3>实例</h3>
+    <p>一秒有 1000 毫秒。</p>
+    <p>显示当前时间：</p>
+    <p id="demo3"></p>
+    <script>
+      var myVar3 = setInterval(myTimer3, 1000);
+
+      function myTimer3() {
+        var d = new Date();
+        document.getElementById("demo3").innerHTML = d.toLocaleTimeString();
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>如何停止执行？</h2>
+    <p><span class="code_marked">clearInterval()</span> 方法停止 <span class="code_marked">setInterval()</span> 方法中指定的函数的执行。
+    </p>
+    <pre>window.clearInterval(<i>timerVariable</i>)</pre>
+    <p><span class="code_marked">window.clearInterval()</span> 方法可以不带 window 前缀来写。</p>
+    <p><span class="code_marked">clearInterval()</span> 方法使用从 <span class="code_marked">setInterval()</span> 返回的变量：</p>
+    <pre>
+myVar = setInterval(<i>function</i>, <i>milliseconds</i>);
+clearInterval(myVar);
+</pre>
+
+    <h3>实例</h3>
+    <p>类似上例，但是我们添加了一个“停止时间”按钮：</p>
+    <p id="demo4"></p>
+    <button onclick="clearInterval(myVar4)">停止时间</button>
+
+    <script>
+      var myVar4 = setInterval(myTimer4, 1000);
+
+      function myTimer4() {
+        var d = new Date();
+        document.getElementById("demo4").innerHTML = d.toLocaleTimeString();
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>更多实例</h2>
+    <p>另一个简单的计时</p>
+    <button onclick="timedText()">试一试</button>
+    <p id="demo5">点击“试一试”。我将在两秒，四秒和六秒过后显示。</p>
+    <script>
+      function timedText() {
+        setTimeout(myTimeout1, 2000);
+        setTimeout(myTimeout2, 4000);
+        setTimeout(myTimeout3, 6000);
+      }
+
+      function myTimeout1() {
+        document.getElementById("demo5").innerHTML = "2 秒";
+      }
+
+      function myTimeout2() {
+        document.getElementById("demo5").innerHTML = "4 秒";
+      }
+
+      function myTimeout3() {
+        document.getElementById("demo5").innerHTML = "6 秒";
+      }
+    </script>
+    <br>
+
+    <p>由计时时间创建的时钟</p>
+    <button onclick="startTime()">由计时时间创建的时钟</button>
+    <script>
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+          h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+      }
+
+      function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i
+        }  // 在数字 < 10 之前加零
+        return i;
+      }
+    </script>
+    <div id="txt"></div>
+  </div>
+  <hr/>
+
+</body>
+</html>

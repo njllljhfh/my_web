@@ -1,0 +1,21 @@
+// 20210115150501
+// https://www.w3school.com.cn/example/json/json_demo.txt
+
+{
+  "name": "Bill Gates",
+  "age": 62,
+  "Cars": [
+    {
+      "car": "porsche",
+      "model": "911"
+    },
+    {
+      "car": "BMW",
+      "model": "M5"
+    },
+    {
+      "car": "Volvo",
+      "model": "XC90"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript HTML DOM 元素（节点）</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_nodes.asp">JavaScript HTML DOM 元素（节点）</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>添加和删除节点（HTML 元素）</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>创建新 HTML 元素（节点）</h2>
+    <p>如需向 HTML DOM 添加新元素，您必须首先创建这个元素（元素节点），然后将其追加到已有元素。</p>
+    <h3>实例</h3>
+    <div id="div1a">
+      <p id="p1a">这是一段文字。</p>
+      <p id="p2a">这是另一段文字。</p>
+    </div>
+    <script>
+      var newElement1 = document.createElement("p");
+      var newText1 = document.createTextNode("这是新的文本。");
+      newElement1.appendChild(newText1);
+      // newElement1.id = "p3a";
+      var parentElement1 = document.getElementById("div1a");
+      parentElement1.appendChild(newElement1);
+    </script>
+    <br>
+
+
+    <h3>例子解释</h3>
+    <p>这段代码创建了一个新的 &lt;p&gt; 元素：</p>
+    <pre>var para = document.createElement(&quot;p&quot;);</pre>
+    <p>如需向 &lt;p&gt; 元素添加文本，则必须首先创建文本节点。这段代码创建了一个文本节点：</p>
+    <pre>var node = document.createTextNode(&quot;这是一个新段落。&quot;);</pre>
+    <p>然后您需要向 &lt;p&gt; 元素追加这个文本节点：</p>
+    <pre>para.appendChild(node);</pre>
+    <p>最后您需要向已有元素追加这个新元素。</p>
+    <p>这段代码查找一个已有的元素：</p>
+    <pre>var element = document.getElementById(&quot;div1&quot;);</pre>
+    <p>这段代码向这个已有的元素追加新元素：</p>
+    <pre>element.appendChild(para);</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>创建新 HTML 元素 - insertBefore()</h2>
+    <p>前面例子中的 <span class="code_marked">appendChild()</span> 方法，追加新元素作为父的最后一个子。</p>
+    <p>除此之外您还可以使用 <span class="code_marked">insertBefore()</span> 方法：</p>
+    <h3>实例</h3>
+    <div id="div1b">
+      <p id="p1b">这是一段文字。</p>
+      <p id="p2b">这是另一段文字。</p>
+    </div>
+    <script>
+      var newElement2 = document.createElement("p");
+      var newText2 = document.createTextNode("这是新的文本。");
+      newElement2.appendChild(newText2);
+
+      var parentElement2 = document.getElementById("div1b");
+      var siblingElement2 = document.getElementById("p1b");
+      parentElement2.insertBefore(newElement2, siblingElement2);
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>删除已有 HTML 元素</h2>
+    <p>如需删除某个 HTML 元素，您需要知晓该元素的父：</p>
+    <h3>实例</h3>
+    <div id="div1c">
+      <p id="p1c">这是一段文字。</p>
+      <p id="p2c">这是另一段文字。</p>
+    </div>
+    <script>
+      // var parentElement = document.getElementById("div1c");
+      // var childElement = document.getElementById("p1c");
+      // parentElement.removeChild(childElement);
+      // - - -
+      var childElement = document.getElementById("p1c");
+      childElement.parentNode.removeChild(childElement);
+    </script>
+    <br>
+
+    <p>方法 <span class="code_marked">node.remove()</span> 是在 DOM 4 规范中实现的。</p>
+    <p>但是由于糟糕的浏览器支持，不应该使用该方法。</p>
+    <br>
+
+    <h3>例子解释</h3>
+    <p>这个 HTML 文档包含了一个带有两个子节点（两个 &lt;p&gt; 元素）的 &lt;div&gt; 元素：</p>
+    <pre>
+&lt;div id=&quot;div1&quot;&gt;
+&lt;p id=&quot;p1&quot;&gt;这是一个段落。&lt;/p&gt;
+&lt;p id=&quot;p2&quot;&gt;这是另一个段落。&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+    <p>查找 id=&quot;div1&quot; 的元素：</p>
+    <pre>var parent = document.getElementById(&quot;div1&quot;);</pre>
+    <p>查找 id=&quot;p1&quot; 的 &lt;p&gt; 元素：</p>
+    <pre>var child = document.getElementById(&quot;p1&quot;);</pre>
+    <p>从父删除子：</p>
+    <pre>parent.removeChild(child);</pre>
+    <p>能够在不引用父的情况下删除某个元素是极好的。</p>
+    <p>但是很遗憾。DOM 需要同时了解您需要删除的元素及其父。</p>
+    <p>这是一种常见的解决方法：找到你想要删除的子，并利用其 <span class="code_marked">parentNode</span> 属性找到父：</p>
+    <pre>
+var child = document.getElementById(&quot;p1&quot;);
+child.<span class="marked">parentNode</span>.removeChild(child);
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>替换 HTML 元素</h2>
+    <p>如需替换元素的，请使用 <span class="code_marked">replaceChild()</span> 方法：</p>
+    <h3>实例</h3>
+    <div id="div1d">
+      <p id="p1d">这是一段文字。</p>
+      <p id="p2d">这是另一段文字。</p>
+    </div>
+    <script>
+      var childElement = document.getElementById("p1d");
+      var newElement = document.createElement("p");
+      var newText = document.createTextNode("这是新的文本。");
+      newElement.appendChild(newText);
+      // var parentElement = document.getElementById("div1d");
+      // parentElement.replaceChild(newElement, childElement);
+      childElement.parentNode.replaceChild(newElement, childElement);
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>

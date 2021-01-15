@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Window Location</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_window_location.asp">JavaScript Window Location</a>
+  <hr/>
+
+
+  <div id="intro" style="font-size: 20px;">
+    <p><strong>window.location 对象可用于获取当前页面地址（URL）并把浏览器重定向到新页面。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location</h2>
+    <p><em>window.location</em> 对象可不带 window 前缀书写。</p>
+    <p>一些例子：</p>
+    <ul>
+      <li>window.location.href 返回当前页面的 href (URL)</li>
+      <li>window.location.hostname 返回 web 主机的域名</li>
+      <li>window.location.pathname 返回当前页面的路径或文件名</li>
+      <li>window.location.protocol 返回使用的 web 协议（http: 或 https:）</li>
+      <li>window.location.assign 加载新文档</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location Href</h2>
+    <p><span class="code_marked">window.location.href</span> 属性返回当前页面的 URL。</p>
+    <p>显示当前页面的 href (URL)：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;页面位置是 &quot; + <code>window.location.href</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      document.getElementById("demo1").innerHTML =
+        "本页面的完整 URL 是：<br>" + window.location.href;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location 主机名</h2>
+    <p><span class="code_marked">window.location.hostname</span> 属性返回（当前页面的）因特网主机的名称。</p>
+    <p>显示主机的名称：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;页面主机名是 &quot; + <code>window.location.hostname</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      document.getElementById("demo2").innerHTML =
+        "页面主机名是：" + window.location.hostname;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location 路径名</h2>
+    <p><span class="code_marked">window.location.pathname</span> 属性返回当前页面的路径名。</p>
+    <p>显示当前 URL 的路径名：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;页面路径是 &quot; + <code>window.location.pathname</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      document.getElementById("demo3").innerHTML =
+        "页面路径是：" + window.location.pathname;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location 协议</h2>
+    <p><span class="code_marked">window.location.protocol</span> 属性返回页面的 web 协议。</p>
+    <p>显示 web 协议：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;页面协议是 &quot; + <code>window.location.protocol</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      document.getElementById("demo4").innerHTML =
+        "页面协议是：" + window.location.protocol;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location 端口</h2>
+    <p><span class="code_marked">window.location.port</span> 属性返回（当前页面的）互联网主机端口的编号。</p>
+    <p>显示主机的端口号：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;端口号是： &quot; + window.location.port;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      document.getElementById("demo5").innerHTML =
+        "当前页面的 URL 端口号是：" + window.location.port;
+    </script>
+    <p>大多数浏览器不会显示默认端口号（http 为 80，https 为 443）。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Location Assign</h2>
+    <p><span class="code_marked">window.location.assign()</span> 方法加载新文档。</p>
+    <h3>实例</h3>
+    <p>加载新文档：</p>
+    <input type="button" value="加载新的文档" onclick="newDoc6()">
+    <script>
+      function newDoc6() {
+        window.location.assign("http://www.w3school.com.cn")
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

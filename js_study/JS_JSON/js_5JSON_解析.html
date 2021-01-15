@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON.parse()</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_parse.asp">JSON.parse()</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JSON 的常规用途是同 web 服务器进行数据传输。</strong></p>
+    <p><strong class="marked">在从 web 服务器接收数据时，数据永远是字符串。</strong></p>
+    <p><strong>通过 <span class="code-marked">JSON.parse()</span> 解析数据，这些数据会成为 JavaScript 对象。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>实例 – 解析 JSON</h2>
+    <p>请想象一下我们从 web 服务器接收到这段文本：</p>
+    <pre>'{ &quot;name&quot;:&quot;Bill Gates&quot;, &quot;age&quot;:62, &quot;city&quot;:&quot;Seattle&quot;}'</pre>
+    <p>请使用 JavaScript 函数 <span class="code_marked">JSON.parse()</span> 把文本转换为 JavaScript 对象：</p>
+    <pre>var obj = JSON.parse('{ &quot;name&quot;:&quot;Bill Gates&quot;, &quot;age&quot;:62, &quot;city&quot;:&quot;Seattle&quot;}');</pre>
+    <p>请确保这段文本以 JSON 格式书写，否则会出现语法错误。</p>
+    <p>请在您的页面中使用 JavaScript 对象：</p>
+
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      var text1 = '{"employees":[' +
+        '{"firstName":"Bill","lastName":"Gates" },' +
+        '{"firstName":"Steve","lastName":"Jobs" },' +
+        '{"firstName":"Elon","lastName":"Musk" }]}';
+
+      var obj1 = JSON.parse(text1);
+      document.getElementById("demo1").innerHTML =
+        obj1.employees[1].firstName + " " + obj1.employees[1].lastName;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>来自服务器的 JSON</h2>
+    <p>您能够通过使用 AJAX 请求从服务器请求 JSON。</p>
+    <p>只要服务器的响应是用 JSON 格式编写的，你可以将字符串解析成 JavaScript 对象。</p>
+
+    <h3>实例</h3>
+    <p>请使用 XMLHttpRequest 从服务器获取数据：</p>
+    <p id="demo2"></p>
+    <script>
+      var xmlhttp1 = new XMLHttpRequest();
+      xmlhttp1.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText);
+          document.getElementById("demo2").innerHTML = myObj.name;
+        }
+      };
+      xmlhttp1.open("GET", "https://www.w3school.com.cn/example/json/json_demo.txt", true);
+      xmlhttp1.send();
+    </script>
+
+    <p>查看 <a href="json_demo.json" target="_blank">json_demo.txt</a></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>作为 JSON 的数组</h2>
+    <p>在对衍生自数组的 JSON 使用 <span class="code_marked">JSON.parse()</span> 后，此方法将返回 JavaScript 数组，而不是 JavaScript 对象。</p>
+
+    <h3>实例</h3>
+    <p>从服务器返回的 JSON 是数组：</p>
+    <p id="demo3"></p>
+    <script>
+      let arr = '["porsche","BMW","Volvo","Audi"]';
+      let obj = JSON.parse(arr);
+      document.getElementById("demo3").innerHTML = obj[1];
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>例外</h2>
+    <h3>解析日期</h3>
+    <p class="marked">JSON 中不允许日期对象。</p>
+    <p>如果您需要包含日期，请写为字符串。</p>
+    <p>之后您可以将其转换回日期对象：</p>
+    <h3>实例</h3>
+    <p>把字符串转换为日期：</p>
+    <p id="demo4"></p>
+    <script>
+      var text4 = '{"name":"Bill Gates", "birth":"1955-10-28", "city":"Seattle"}';
+      var obj4 = JSON.parse(text4);
+      obj4.birth = new Date(obj4.birth);
+      document.getElementById("demo4").innerHTML = obj4.name + ", " + obj4.birth;
+    </script>
+    <br>
+
+
+    <p>或者您可以已使用 <span class="code_marked">JSON.parse()</span> 函数的第二个参数，被称为 <i>reviver</i>。</p>
+    <p>这个 <i>reviver</i> 参数是函数，在返回值之前，它会检查每个属性。</p>
+    <h3>实例</h3>
+    <p>将字符串转换为日期，使用 reviver 函数：</p>
+    <p id="demo5"></p>
+    <script>
+      var text5 = '{"name":"Bill Gates", "birth":"1955-10-28", "city":"Seattle"}';
+      var obj5 = JSON.parse(text5, function (key, value) {
+        if (key == "birth") {
+          return new Date(value);
+        }
+        else {
+          return value;
+        }
+      });
+      document.getElementById("demo5").innerHTML = obj5.name + ", " + obj5.birth;
+    </script>
+    <br>
+
+
+    <h3>解析函数</h3>
+    <p>JSON 中不允许函数。</p>
+    <p>如果您需要包含函数，请把它写作字符串。</p>
+    <p>稍后您可以把它转换回函数：</p>
+    <h3>实例</h3>
+    <p>把字符串转换为函数：</p>
+    <p id="demo6"></p>
+    <script>
+      var text6 = '{"name":"Bill Gates", "age":"function() {return 62;}", "city":"Seattle"}';
+      var obj6 = JSON.parse(text6);
+      obj6.age = eval("(" + obj6.age + ")");
+      document.getElementById("demo6").innerHTML = obj6.name + ", " + obj6.age();
+    </script>
+    <p>您应该避免在 JSON 中使用函数，函数会丢失它们的作用域，而且您还需要使用 <span class="code_marked">eval()</span> 把它们转换回函数。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器支持</h2>
+    <p>所有主流浏览器以及最新的 ECMAScript (JavaScript) 标准均包含 <span class="code_marked">JSON.parse()</span> 函数：</p>
+
+    <p>对于更老的浏览器，以下地址中的 JavaScript 库是可用的：</p>
+    <p><a href="https://github.com/douglascrockford/JSON-js" title="douglascrockford/JSON-js" target="_blank">https://github.com/douglascrockford/JSON-js</a>
+    </p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

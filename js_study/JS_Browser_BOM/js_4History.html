@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Window History</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_window_history.asp">JavaScript Window History</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>window.history 对象包含浏览器历史。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window History</h2>
+    <p><span class="code_marked">window.history</span> 对象可不带 window 书写。</p>
+    <p>为了保护用户的隐私，JavaScript 访问此对象存在限制。</p>
+    <h3>一些方法：</h3>
+    <ul>
+      <li>history.back() - 等同于在浏览器点击后退按钮</li>
+      <li>history.forward() - 等同于在浏览器中点击前进按钮</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window History Back</h2>
+    <p><span class="code_marked">history.back()</span> 方法加载历史列表中前一个 URL。</p>
+    <p>这等同于在浏览器中点击后退按钮。</p>
+    <p>在页面中创建后退按钮：</p>
+    <pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function goBack() {
+    window.history.back()
+ }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input type=&quot;button&quot; value=&quot;Back&quot; onclick=&quot;goBack()&quot;&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+    <h3>实例</h3>
+    <input type="button" value="Back" onclick="goBack()" style="padding: 15px; font-size: 20px;">
+    <script>
+      function goBack() {
+        window.history.back()
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window History Forward</h2>
+    <p><span class="code_marked">history forward()</span> 方法加载历史列表中下一个 URL。</p>
+    <p>这等同于在浏览器中点击前进按钮。</p>
+    <p>在页面中创建前进按钮：</p>
+    <pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function goForward() {
+    window.history.forward()
+ }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input type=&quot;button&quot; value=&quot;Forward&quot; onclick=&quot;goForward()&quot;&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+    <h3>实例</h3>
+    <input type="button" value="Forward" onclick="goForward()" style="padding: 15px; font-size: 20px;">
+    <script>
+      function goForward() {
+        window.history.forward()
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

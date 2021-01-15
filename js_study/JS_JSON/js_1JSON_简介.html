@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON 简介</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_intro.asp">JSON 简介</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JSON: <span class="marked">J</span>ava<span class="marked">S</span>cript <span class="marked">O</span>bject
+      <span class="marked">N</span>otation（JavaScript 对象标记法）。</strong>
+    </p>
+    <p><strong>JSON 是一种存储和交换数据的语法。</strong></p>
+    <p><strong>JSON 是通过 JavaScript 对象标记法书写的文本。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>交换数据</h2>
+    <p>当数据在浏览器与服务器之间进行交换时，这些数据只能是文本。</p>
+    <p>JSON 属于文本，并且我们能够把任何 JavaScript 对象转换为 JSON，然后将 JSON 发送到服务器。</p>
+    <p>我们也能把从服务器接收到的任何 JSON 转换为 JavaScript 对象。</p>
+    <p>以这样的方式，我们能够把数据作为 JavaScript 对象来处理，无需复杂的解析和转译。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>发送数据</h2>
+    <p>如果您的数据存储在 JavaScript 对象中，您可以把该对象转换为 JSON，然后将其发送到服务器。</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <button onclick="myFunction1()">点击试一试</button>
+    <script>
+      var myObj = {"name": "Bill Gates", "age": 62, "city": "Seattle"};
+      var myJSON = JSON.stringify(myObj);
+      document.getElementById("demo1").innerHTML = myJSON;
+      myFunction1 = function () {
+        window.location = "https://www.w3school.com.cn/demo/demo_json.php?x=" + myJSON;
+      };
+    </script>
+  </div>
+  <hr/>
+
+  <div>
+    <h2>接收数据</h2>
+    <p>如果您以 JSON 格式接收到数据，您能够将其转换为 JavaScript 对象：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      var myJSON = '{ "name":"Bill Gates",  "age":62, "city":"Seattle" }';
+      var myObj = JSON.parse(myJSON);
+      document.getElementById("demo2").innerHTML = myObj.name;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>存储数据</h2>
+    <p>在存储数据时，数据必须是某种具体的格式，并且无论您选择在何处存储它，文本永远是合法格式之一。</p>
+    <p>JSON 让 JavaScript 对象存储为文本成为可能。</p>
+    <h3>实例</h3>
+    <p>把数据存储在本地存储中</p>
+    <p id="demo3"></p>
+    <script>
+      var myObj, myJSON, text, obj;
+
+      // 存储数据：
+      myObj = {"name": "Bill Gates", "age": 62, "city": "Seattle"};
+      myJSON = JSON.stringify(myObj);
+      localStorage.setItem("testJSON", myJSON);
+
+      // 取回数据：
+      text = localStorage.getItem("testJSON");
+      obj = JSON.parse(text);
+      document.getElementById("demo3").innerHTML = obj.name;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>什么是 JSON？</h2>
+    <ul>
+      <li>JSON 指的是 JavaScript 对象标记法（<em>J</em>ava<em>S</em>cript <em>O</em>bject <em>N</em>otation）</li>
+      <li>JSON 是一种轻量级的数据交换格式</li>
+      <li>JSON 具有自我描述性且易于理解</li>
+      <li>JSON 独立于语言*</li>
+    </ul>
+    <p>*</p>
+    <p>JSON 使用 JavaScript 语法，但是 JSON 格式是纯文本的。</p>
+    <p>文本可被任何编程语言作为数据来读取和使用。</p>
+    <p>JSON 格式最初由 Douglas Crockford 提出。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>为什么使用 JSON？</h2>
+    <p>因为 JSON 格式仅仅是文本，它能够轻松地在服务器浏览器之间传输，并用作任何编程语言的数据格式。</p>
+    <p>JavaScript 提供內建函数把以 JSON 格式写的字符串转换为原生 JavaScript 对象：</p>
+    <pre>JSON.parse()</pre>
+    <p>因此，如果您以 JSON 格式从服务器接收数据，那么您可以像任何其他 JavaScript 对象那样使用它。</p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

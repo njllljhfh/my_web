@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON.stringify()</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_stringify.asp">JSON.stringify()</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JSON 的常规用途是同 web 服务器进行数据交换。</strong></p>
+
+    <p><strong>在向 web 服务器发送数据时，数据必须是字符串。</strong></p>
+
+    <p><strong>通过 <span class="code_marked">JSON.stringify()</span> 把 JavaScript 对象转换为字符串。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>对 JavaScript 对象进行字符串化</h2>
+    <p>想象一下我们在 JavaScript 中有这个对象：</p>
+    <pre>
+var obj = { name:&quot;Bill Gates&quot;, age:62, city:&quot;Seattle&quot;};
+</pre>
+    <p>请使用 JavaScript 函数 <span class="code_marked">JSON.stringify()</span> 将它转换为字符串。</p>
+    <pre>var myJSON = JSON.stringify(obj);</pre>
+    <p>结果将是遵守 JSON 标记法的一段字符串。</p>
+    <p>myJSON 目前是一段字符串，并准备好送往服务器：</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      var obj1 = {name: "Bill", age: 62, city: "Seatle"};
+      var myJSON1 = JSON.stringify(obj1);
+      document.getElementById("demo1").innerHTML = myJSON1;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Stringify JavaScript 数组</h2>
+    <p>也可以对 JavaScript 数组进行字符串化：</p>
+    <p>想象一下我们在 JavaScript中有这个数组：</p>
+    <pre>var arr = [ &quot;Bill Gates&quot;, &quot;Steve Jobs&quot;, &quot;Elon Musk&quot; ];</pre>
+    <p>请使用 JavaScript 函数 <span class="code_marked">JSON.stringify()</span> 将其转换为字符串。</p>
+    <pre>var myJSON = JSON.stringify(arr);</pre>
+    <p>结果将是遵守 JSON 标记法的字符串。</p>
+    <p>myJSON 目前是一段字符串，并准备好送往服务器：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      var arr2 = ["Bill Gates", "Steve Jobs", "Elon Musk"];
+      var myJSON2 = JSON.stringify(arr2);
+      document.getElementById("demo2").innerHTML = myJSON2;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>例外</h2>
+    <h3>日期字符串化</h3>
+    <p>在 JSON 中，不允许日期对象。<span class="code_marked">JSON.stringify()</span> 函数将把任何日期转换为字符串。</p>
+    <h4>实例</h4>
+    <p id="demo3"></p>
+    <script>
+      var obj3 = {name: "Bill Gates", date: new Date(), city: "Seattle"};
+      var myJSON3 = JSON.stringify(obj3);
+      document.getElementById("demo3").innerHTML = myJSON3;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>函数字符串化</h2>
+    <p>在 JSON 中，不允许函数作为对象值。</p>
+    <p><span class="code_marked">JSON.stringify()</span> 函数将从 JavaScript 对象删除任何函数，包括键和值：</p>
+    <h3>实例</h3>
+    <h1>JSON.stringify 会删除对象中的任何函数</h1>
+    <p id="demo4"></p>
+    <script>
+      var obj4 = {
+        name: "Bill Gates",
+        age: function () {
+          return 62;
+        },
+        city: "Seattle"
+      };
+      var myJSON4 = JSON.stringify(obj4);
+      document.getElementById("demo4").innerHTML = myJSON4;
+    </script>
+    <br><br>
+
+
+    <p>如果您在运行 <span class="code_marked">JSON.stringify()</span> 函数前已将函数转换为字符串，这个环节可以省略。</p>
+    <h3>实例</h3>
+    <p>把函数转换为字符串，就可以在 JSON 对象中保留该函数。</p>
+    <p id="demo5"></p>
+    <script>
+      var obj5 = {
+        name: "Bill Gates",
+        age: function () {
+          return 62;
+        },
+        city: "Seattle"
+      };
+      obj5.age = obj5.age.toString();
+      var myJSON5 = JSON.stringify(obj5);
+      document.getElementById("demo5").innerHTML = myJSON5;
+    </script>
+    <p>您应该避免在 JSON 中使用函数，函数会失去其作用域，而且您还需要使用 <span class="code_marked">eval()</span> 将它们转换回函数。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器支持</h2>
+    <p>所有主流浏览器和最新的 ECMAScript (JavaScript) 标准都包含 <span class="code_marked">JSON.stringify()</span> 函数：</p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

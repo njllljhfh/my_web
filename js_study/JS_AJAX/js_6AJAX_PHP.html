@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX PHP 实例</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_ajax_php.asp">AJAX PHP 实例</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>AJAX 用于创建更具交互性的应用程序。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>AJAX PHP 实例</h2>
+    <p>下面的例子演示：当用户在输入字段中键入字符时，网页如何与 web 服务器进行通信：</p>
+    <h3>实例</h3>
+    <h2>请在下面的输入字段中键入字母 A-Z：</h2>
+    <p>搜索建议：<span id="txtHint"></span></p>
+    <p>姓名：<input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+    <script>
+      function showHint(str) {
+        var xhttp;
+        if (str.length == 0) {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+        }
+
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "https://www.w3school.com.cn/demo/gethint.php?q=" + str, true);
+        xhttp.send();
+      }
+    </script>
+    <br>
+
+    <h3>代码解释：</h3>
+    <p>首先，检查输入字段是否为空（<span class="code_marked">str.length == 0</span>），如果是，清空 txtHint 占位符的内容并退出函数。</p>
+    <p>不过，如果输入字段不为空，则进行如下：</p>
+    <ul>
+      <li>创建 XMLHttpRequest 对象</li>
+      <li>创建当服务器响应就绪时执行的函数</li>
+      <li>发送请求到服务器上的 PHP 文件（gethint.php）</li>
+      <li>请注意添加到 gethint.php 的 q 参数</li>
+      <li>str 变量保存了输入字段的内容</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>PHP 文件 - &quot;gethint.php&quot;</h2>
+    <p>这个 PHP 文件检查姓名数组，然后向浏览器返回对应的姓名：</p>
+    <pre>
+&lt;?php
+<span class="code_comment">// 姓名数组</span>
+ $a[] = &quot;Ava&quot;;
+ $a[] = &quot;Brielle&quot;;
+ $a[] = &quot;Caroline&quot;;
+ $a[] = &quot;Diana&quot;;
+ $a[] = &quot;Elise&quot;;
+ $a[] = &quot;Fiona&quot;;
+ $a[] = &quot;Grace&quot;;
+ $a[] = &quot;Hannah&quot;;
+ $a[] = &quot;Ileana&quot;;
+ $a[] = &quot;Jane&quot;;
+ $a[] = &quot;Kathryn&quot;;
+ $a[] = &quot;Laura&quot;;
+ $a[] = &quot;Millie&quot;;
+ $a[] = &quot;Nancy&quot;;
+ $a[] = &quot;Opal&quot;;
+ $a[] = &quot;Petty&quot;;
+ $a[] = &quot;Queenie&quot;;
+ $a[] = &quot;Rose&quot;;
+ $a[] = &quot;Shirley&quot;;
+ $a[] = &quot;Tiffany&quot;;
+ $a[] = &quot;Ursula&quot;;
+ $a[] = &quot;Victoria&quot;;
+ $a[] = &quot;Wendy&quot;;
+ $a[] = &quot;Xenia&quot;;
+ $a[] = &quot;Yvette&quot;;
+ $a[] = &quot;Zoe&quot;;
+ $a[] = &quot;Angell&quot;;
+ $a[] = &quot;Adele&quot;;
+ $a[] = &quot;Beatty&quot;;
+ $a[] = &quot;Carlton&quot;;
+ $a[] = &quot;Elisabeth&quot;;
+ $a[] = &quot;Violet&quot;;
+
+<span class="code_comment">// 从 URL 获取 q 参数</span>
+$q = $_REQUEST[&quot;q&quot;];
+
+$hint = &quot;&quot;;
+
+<span class="code_comment">// 查看数组中所有 hint，$q 是否与 &quot;&quot; 相同</span>
+if ($q !== &quot;&quot;) {
+    $q = strtolower($q);
+    $len=strlen($q);
+    foreach($a as $name) {
+        if (stristr($q, substr($name, 0, $len))) {
+            if ($hint === &quot;&quot;) {
+                $hint = $name;
+            } else {
+                $hint .= &quot;, $name&quot;;
+            }
+         }
+    }
+}
+
+<span class="code_comment">// 输出 &quot;no suggestion&quot;，如果未找到 hint 或输出正确的值</span>
+  echo $hint === &quot;&quot; ? &quot;no suggestion&quot; : $hint;
+?&gt;
+</pre>
+  </div>
+  <hr/>
+
+</body>
+</html>

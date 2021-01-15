@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Window Screen</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_window_screen.asp"></a>
+  <hr/>
+
+
+  <div>
+    <div id="intro">
+      <p><strong>window.screen 对象包含用户屏幕的信息。</strong></p>
+    </div>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen</h2>
+    <p><em>window.screen</em> 对象不带 window 前缀也可以写：</p>
+    <h3>属性：</h3>
+    <ul>
+      <li>screen.width</li>
+      <li>screen.height</li>
+      <li>screen.availWidth</li>
+      <li>screen.availHeight</li>
+      <li>screen.colorDepth</li>
+      <li>screen.pixelDepth</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen 宽度</h2>
+    <p><span class="code_marked">screen.width</span> 属性返回以像素计的访问者屏幕宽度。</p>
+    <p>显示以像素计的屏幕宽度：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Screen Width: &quot; + <code>screen.width</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      document.getElementById("demo1").innerHTML =
+        "屏幕宽度是：" + screen.width;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen 高度</h2>
+    <p><span class="code_marked">screen.height</span> 属性返回以像素计的访问者屏幕的高度。</p>
+    <p>显示以像素计的屏幕高度：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Screen Height: &quot; + <code>screen.height</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      document.getElementById("demo2").innerHTML =
+        "屏幕高度是：" + screen.height;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen 可用宽度</h2>
+    <p><span class="code_marked">screen.availWidth</span> 属性返回访问者屏幕的宽度，以像素计，减去诸如窗口工具条之类的界面特征。</p>
+    <p>显示以像素计的屏幕可用宽度：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Available Screen Width: &quot; + <code>screen.availWidth</code>;
+</pre>
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      document.getElementById("demo3").innerHTML =
+        "可用屏幕宽度是：" + screen.availWidth;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen 可用高度</h2>
+    <p><span class="code_marked">screen.availHeight</span> 属性返回访问者屏幕的高度，以像素计，减去诸如窗口工具条之类的界面特征。</p>
+    <p>显示以像素计的屏幕可用高度：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Available Screen Height: &quot; + <code>screen.availHeight</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      document.getElementById("demo4").innerHTML =
+        "可用屏幕高度是：" + screen.availHeight;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen 色深</h2>
+    <p><span class="code_marked">screen.colorDepth</span> 属性返回用于显示一种颜色的比特数。</p>
+    <p>所有现代计算机都使用 24 位或 32 位硬件的色彩分辨率：</p>
+    <ul>
+      <li>24 bits =16,777,216 种不同的 &quot;True Colors&quot;</li>
+      <li>32 bits = 4,294,967,296 中不同的 &quot;Deep Colors&quot;</li>
+    </ul>
+    <p>更老的计算机使用 14 位：65,536 种不同的 &quot;High Colors&quot; 分辨率。</p>
+    <p>异常古老的计算机，以及老式的手机使用 8 位：256 中不同的 &quot;VGA colors&quot;。</p>
+    <p>显示以位计的屏幕色彩深度：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Screen Color Depth: &quot; + <code>screen.colorDepth</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      document.getElementById("demo5").innerHTML =
+        "屏幕色深是：" + screen.colorDepth;
+    </script>
+    <p>HTML 中使用的 #rrggbb (rgb) 值代表 &quot;True Colors&quot; （16,777,216 中不同的颜色）。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Screen 像素深度</h2>
+    <p><span class="code_marked">screen.pixelDepth</span> 属性返回屏幕的像素深度。</p>
+    <p>显示以位计的屏幕像素深度：</p>
+    <pre>
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;Screen Pixel Depth: &quot; + <code>screen.pixelDepth</code>;
+</pre>
+
+    <h3>实例</h3>
+    <p id="demo6"></p>
+    <script>
+      document.getElementById("demo6").innerHTML =
+        "屏幕像素深度是：" + screen.pixelDepth;
+    </script>
+  </div>
+  <hr/>
+
+
+  <p>对于现代计算机，颜色深度和像素深度是相等的。</p>
+  <hr>
+
+</body>
+</html>

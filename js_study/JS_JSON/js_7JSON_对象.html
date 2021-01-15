@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON 对象</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_objects.asp">JSON 对象</a>
+  <hr/>
+
+
+  <div>
+    <h2>对象语法</h2>
+    <h3>实例</h3>
+    <pre>{ &quot;name&quot;:&quot;Bill Gates&quot;, &quot;age&quot;:62, &quot;car&quot;:null }</pre>
+    <p>JSON 对象被花括号 <span class="code_marked">{}</span> 包围。</p>
+    <p>JSON 对象以键/值对书写。</p>
+    <p>键必须是字符串，值必须是有效的 JSON 数据类型（字符串、数字、对象、数组、布尔或 null）。</p>
+    <p>键和值由冒号分隔。</p>
+    <p>每个键/值对由逗号分隔。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>访问对象值</h2>
+    <p>您可以通过使用点号（<span class="code_marked">.</span>）来访问对象值：</p>
+    <h3>实例</h3>
+    <pre>
+myObj =  { &quot;name&quot;:&quot;Bill Gates&quot;, &quot;age&quot;:62, &quot;car&quot;:null };
+x = myObj.name;
+</pre>
+    <br>
+
+    <p>您也可以使用方括号（<span class="code_marked">[]</span>）来访问对象值：</p>
+    <h3>实例</h3>
+    <pre>
+myObj =  { &quot;name&quot;:&quot;Bill Gates&quot;, &quot;age&quot;:62, &quot;car&quot;:null };
+x = myObj[&quot;name&quot;];
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>遍历对象</h2>
+    <p>您能够通过使用 <span class="code_marked">for-in</span> 遍历对象属性：</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      var myObj1, x1;
+      myObj1 = {"name": "Bill Gates", "age": 62, "car": null};
+      for (x1 in myObj1) {
+        document.getElementById("demo1").innerHTML += x1 + "<br>";
+      }
+    </script>
+    <br><br>
+
+    <p>在 for-in 循环中，请使用<em>括号标记法</em>来访问属性值：</p>
+    <h3>实例</h3>
+    <p id="demo2"></p>
+    <script>
+      var myObj2, x2;
+      myObj2 = {"name": "Bill Gates", "age": 62, "car": null};
+      for (x2 in myObj2) {
+        document.getElementById("demo2").innerHTML += myObj2[x2] + "<br>";
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>嵌套的 JSON 对象</h2>
+    <p>一个 JSON 对象中的值可以是另一个 JSON 对象。</p>
+    <h3>实例</h3>
+    <pre>
+myObj =  {
+   &quot;name&quot;:&quot;Bill Gates&quot;,
+   &quot;age&quot;:62,
+   &quot;cars&quot;: {
+	  &quot;car1&quot;:&quot;Porsche&quot;,
+	  &quot;car2&quot;:&quot;BMW&quot;,
+	  &quot;car3&quot;:&quot;Volvo&quot;
+   }
+}
+</pre>
+    <br>
+
+    <p>您能够通过使用点号和括号访问嵌套的 JSON 对象：</p>
+    <p id="demo3"></p>
+    <script>
+      var myObj3 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": {
+          "car1": "Porsche",
+          "car2": "BMW",
+          "car3": "Volvo"
+        }
+      };
+      document.getElementById("demo3").innerHTML += myObj3.cars.car2 + "<br>";
+      //or:
+      document.getElementById("demo3").innerHTML += myObj3.cars["car2"];
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>修改值</h2>
+    <p>您能够使用点号来修改 JSON 对象中的任何值：</p>
+    <h3>实例</h3>
+    <pre>myObj.cars.car3 = &quot;Mercedes Benz&quot;;</pre>
+    <p id="demo4"></p>
+    <script>
+      var myObj4, i4, x4 = "";
+      myObj4 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": {
+          "car1": "Porsche",
+          "car2": "BMW",
+          "car3": "Volvo"
+        }
+      };
+      myObj4.cars.car2 = "Mercedes Benz";
+
+      for (i4 in myObj4.cars) {
+        x4 += myObj4.cars[i4] + "<br>";
+      }
+
+      document.getElementById("demo4").innerHTML = x4;
+    </script>
+    <br><br>
+
+
+    <p>您也可以使用括号来修改 JSON 对象中的值：</p>
+    <h3>实例</h3>
+    <pre>myObj.cars[&quot;car3&quot;] = &quot;Mercedes Benz&quot;;</pre>
+    <p id="demo5"></p>
+    <script>
+      var myObj5, i5, x5 = "";
+      myObj5 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": {
+          "car1": "Porsche",
+          "car2": "BMW",
+          "car3": "Volvo"
+        }
+      };
+      myObj5.cars["car2"] = "Mercedes Benz";
+
+      for (i5 in myObj5.cars) {
+        x5 += myObj5.cars[i5] + "<br>";
+      }
+
+      document.getElementById("demo5").innerHTML = x5;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>删除对象属性</h2>
+    <p>使用 <span class="code_marked">delete</span> 关键词来删除 JSON 对象的属性：</p>
+    <h3>实例</h3>
+    <pre>delete myObj.cars.car1;</pre>
+    <p id="demo6"></p>
+    <script>
+      var myObj6, i6, x6 = "";
+      myObj6 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": {
+          "car1": "Porsche",
+          "car2": "BMW",
+          "car3": "Volvo"
+        }
+      };
+      delete myObj6.cars.car3;
+      // delete myObj6.cars["car3"];
+
+      for (i6 in myObj6.cars) {
+        x6 += myObj6.cars[i6] + "<br>";
+      }
+
+      document.getElementById("demo6").innerHTML = x6;
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>

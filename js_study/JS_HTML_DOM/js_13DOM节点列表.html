@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript HTML DOM 节点列表</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_nodelist.asp">JavaScript HTML DOM 节点列表</a>
+  <hr/>
+
+
+  <div>
+    <h2>HTML DOM NodeList 对象</h2>
+    <p><em>NodeList</em> 对象是从文档中提取的节点列表（集合）。</p>
+    <p>NodeList 对象与 HTMLCollection 对象几乎相同。</p>
+    <p>如使用 <span class="code_marked">getElementsByClassName()</span> 方法，某些（老的）浏览器会返回 NodeList 对象而不是 HTMLCollection。</p>
+    <p>所有浏览器都会为 <span class="code_marked">childNodes</span> 属性返回 NodeList 对象。</p>
+    <p>大多数浏览器会为 <span class="code_marked">querySelectorAll()</span> 方法返回 NodeList 对象。</p>
+    <p>下面的代码选取文档中的所有 &lt;p&gt; 节点：</p>
+    <pre>var myNodeList = document.querySelectorAll(&quot;p&quot;);</pre>
+    <br>
+
+    <h3>实例</h3>
+    <p>Hello World!</p>
+    <p>Hello China!</p>
+    <p id="demo1"></p>
+    <script>
+      var myNodeList1 = document.querySelectorAll("p");
+      document.getElementById("demo1").innerHTML =
+        "第二段的 innerHTML 是：" +
+        myNodeList1[1].innerHTML;
+    </script>
+    <br>
+
+    <p>NodeList 中的元素可通过索引号进行访问。</p>
+    <p>如需访问第二个 &lt;p&gt; 节点，您可以这样写：</p>
+    <pre>y = myNodeList[1];</pre>
+    <p class="note"><span>注释：</span>索引从 0 开始。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTML DOM Node List 长度</h2>
+    <p><span class="code_marked">length</span> 属性定义节点列表中的节点数：</p>
+    <pre>
+var myNodelist = document.querySelectorAll(&quot;p&quot;);
+document.getElementById(&quot;demo&quot;).innerHTML = myNodelist.length;
+</pre>
+
+    <h3>实例</h3>
+    <p>Hello World!</p>
+    <p>Hello China!</p>
+    <p id="demo2"></p>
+    <script>
+      var myNodeList2 = document.querySelectorAll("p"); // [object NodeList]
+      // var myNodeList2 = document.getElementsByClassName("code_marked"); // [object HTMLCollection]
+      document.getElementById("demo2").innerHTML =
+        "此文档包含 " + myNodeList2.length + " 段文字。";
+    </script>
+    <h3>例子解释：</h3>
+    <ul>
+      <li>创建所有 &lt;p&gt; 元素的列表</li>
+      <li>显示该列表的长度</li>
+    </ul>
+    <br>
+
+    <h3>实例</h3>
+    <p><span class="code_marked">length</span> 属性在您希望遍历节点列表中的节点时很有用：</p>
+    <p>Hello World!</p>
+    <p>Hello China!</p>
+    <p>单击按钮可更改所有 p 元素的颜色。</p>
+    <button onclick="myFunction1()">试一试</button>
+    <script>
+      function myFunction1() {
+        var myNodeList = document.querySelectorAll("p");
+        var i;
+        for (i = 0; i < myNodeList.length; i++) {
+          myNodeList[i].style.color = "red";
+        }
+      }
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTMLCollection 与 NodeList 的区别</h2>
+    <p>HTMLCollection（前一章）是 HTML 元素的集合。</p>
+    <p>NodeList 是文档节点的集合。</p>
+    <p>NodeList 和 HTML 集合几乎完全相同。</p>
+    <p>HTMLCollection 和 NodeList 对象都是类数组的对象列表（集合）。</p>
+    <p>它们都有定义列表（集合）中项目数的 <span class="code_marked">length</span> 属性。</p>
+    <p>它们都可以通过索引 (0, 1, 2, 3, 4, ...) 像数组那样访问每个项目。</p>
+    <p>访问 HTMLCollection 项目，可以通过它们的名称、id 或索引号。</p>
+    <p>访问 NodeList 项目，只能通过它们的索引号。</p>
+    <p>只有 NodeList 对象能包含属性节点和文本节点。</p>
+    <p>节点列表不是数组！</p>
+    <p>节点数组看起来像数组，但并不是。</p>
+    <p>您能够遍历节点列表并像数组那样引用其节点。</p>
+    <p>不过，您无法对节点列表使用数组方法，比如
+      <span class="code_marked">valueOf()</span>、
+      <span class="code_marked">push()</span>、
+      <span class="code_marked">pop()</span> 或
+      <span class="code_marked">join()</span>。</p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

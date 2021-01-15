@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON 数组</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_arrays.asp">JSON 数组</a>
+  <hr/>
+
+
+  <div>
+    <h2>作为 JSON 对象的数组</h2>
+    <h3>实例</h3>
+    <pre>[  &quot;Porsche&quot;, &quot;BMW&quot;, &quot;Volvo&quot; ]</pre>
+    <p>JSON 中的数组几乎与 JavaScript 中的数组相同。</p>
+    <p>在 JSON 中，数组值的类型必须属于字符串、数字、对象、数组、布尔或 null。</p>
+    <p>在 JavaScript 中，数组值可以是以上所有类型，外加任何其他有效的 JavaScript 表达式，包括函数、日期和 undefined。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 对象中的数组</h2>
+    <p>数组可以是对象属性的值：</p>
+    <h3>实例</h3>
+    <pre>
+{
+&quot;name&quot;:&quot;Bill Gates&quot;,
+&quot;age&quot;:62,
+&quot;cars&quot;:[ &quot;Porsche&quot;, &quot;BMW&quot;, &quot;Volvo&quot; ]
+}
+</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>访问数组值</h2>
+    <p>您可以通过使用索引号来访问数组值：</p>
+    <h3>实例</h3>
+    <pre>x = myObj.cars[0];</pre>
+    <p id="demo1"></p>
+    <script>
+      var myObj1, x1;
+      myObj1 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": ["Porsche", "BMW", "Volvo"]
+      };
+      x1 = myObj1.cars[0];
+      document.getElementById("demo1").innerHTML = x1;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>遍历数组</h2>
+    <p>您可以通过使用 <span class="code_marked">for-in</span> 循环来访问数组值：</p>
+    <h3>实例</h3>
+    <pre>
+for (i in myObj.cars) {
+     x  += myObj.cars[i];
+}
+</pre>
+    <p id="demo2"></p>
+    <script>
+      var myObj2, i2, x2 = "";
+      myObj2 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": ["Porsche", "BMW", "Volvo"]
+      };
+
+      for (i2 in myObj2.cars) {
+        x2 += myObj2.cars[i2] + "<br>";
+      }
+      document.getElementById("demo2").innerHTML = x2;
+    </script>
+    <br>
+
+
+    <p>或者您可以使用 <span class="code_marked">for</span> 循环：</p>
+    <h3>实例</h3>
+    <pre>
+for (i  = 0; i &lt; myObj.cars.length; i++) {
+    x  += myObj.cars[i];
+}
+</pre>
+    <p id="demo3"></p>
+    <script>
+      var myObj3, i3, x3 = "";
+      myObj3 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": ["Porsche", "BMW", "Volvo"]
+      };
+
+      for (i3 = 0; i3 < myObj3.cars.length; i3++) {
+        x3 += myObj3.cars[i3] + "<br>";
+      }
+      document.getElementById("demo3").innerHTML = x3;
+    </script>
+  </div>
+  <hr>
+
+
+  <div>
+    <h2>JSON 对象中的嵌套数组</h2>
+    <p>数组中的值也可以另一个数组，或者甚至另一个 JSON 对象：</p>
+    <h3>实例</h3>
+    <pre>
+myObj =  {
+   &quot;name&quot;:&quot;Bill Gates&quot;,
+   &quot;age&quot;:62,
+   &quot;cars&quot;: [
+	  { &quot;name&quot;:&quot;Porsche&quot;,  &quot;models&quot;:[ &quot;911&quot;, &quot;Taycan&quot; ] },
+	  { &quot;name&quot;:&quot;BMW&quot;, &quot;models&quot;:[ &quot;M5&quot;, &quot;M3&quot;, &quot;X5&quot; ] },
+	  { &quot;name&quot;:&quot;Volvo&quot;, &quot;models&quot;:[ &quot;XC60&quot;, &quot;V60&quot; ] }
+   ]
+}
+</pre>
+    <br>
+
+    <p>如需访问数组内部的数组，请对每个数组使用 for-in 循环：</p>
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      var myObj4, i4, j4, x4 = "";
+      myObj4 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": [
+          {"name": "Porsche", "models": ["911", "Taycan"]},
+          {"name": "BMW", "models": ["M5", "M3", "X5"]},
+          {"name": "Volvo", "models": ["XC90", "V60"]}
+        ]
+      };
+      for (i4 in myObj4.cars) {
+        x4 += "<h2>" + myObj4.cars[i4].name + "</h2>";
+        for (j4 in myObj4.cars[i4].models) {
+          x4 += myObj4.cars[i4].models[j4] + "<br>";
+        }
+      }
+      document.getElementById("demo4").innerHTML = x4;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>修改数组值</h2>
+    <p>请使用索引号来修改数组：</p>
+    <h3>实例</h3>
+    <pre>myObj.cars[1] = &quot;Mercedes Benz&quot;;</pre>
+    <p id="demo5"></p>
+    <script>
+      var myObj5, i5, x5 = "";
+      myObj5 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": ["Porsche", "BMW", "Volvo"]
+      };
+      myObj5.cars[2] = "Mercedes Benz";
+
+      for (i5 in myObj5.cars) {
+        x5 += myObj5.cars[i5] + "<br>";
+      }
+      document.getElementById("demo5").innerHTML = x5;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>删除数组项目</h2>
+    <p>请使用 <span class="code_marked">delete</span> 关键词来删除数组中的项目：</p>
+    <h3>实例</h3>
+    <pre>delete myObj.cars[1];</pre>
+    <p id="demo6"></p>
+
+    <script>
+      var myObj6, i6, x6 = "";
+      myObj6 = {
+        "name": "Bill Gates",
+        "age": 62,
+        "cars": ["Porsche", "BMW", "Volvo"]
+      };
+      delete myObj6.cars[2];
+
+      for (i6 in myObj6.cars) {
+        x6 += myObj6.cars[i6] + "<br>";
+      }
+      document.getElementById("demo6").innerHTML = x6;
+    </script>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

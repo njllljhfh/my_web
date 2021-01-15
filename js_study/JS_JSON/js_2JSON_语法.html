@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON 语法</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_json_syntax.asp">JSON 语法</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>JSON 语法是 JavaScript 语法的子集。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 语法规则</h2>
+    <p>JSON 语法衍生于 JavaScript 对象标记法语法：</p>
+    <ul>
+      <li>数据在名称/值对中</li>
+      <li>数据由逗号分隔</li>
+      <li>花括号容纳对象</li>
+      <li>方括号容纳数组</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 数据- 名称和值</h2>
+    <p>JSON 数据写为名称/值对。</p>
+    <p>名称/值由字段名称构成，后跟冒号和值：</p>
+    <h3>实例</h3>
+    <pre>&quot;name&quot;:&quot;Bill Gates&quot;</pre>
+
+    <p>JSON 名称需要<span class="marked">双引号</span>。而 JavaScript 名称不需要。</p>
+    <p>JSON – 求值为 JavaScript 对象</p>
+    <p>JSON 格式几乎等同于 JavaScript 对象。</p>
+    <p>在 JSON 中，键必须是字符串，由双引号包围：</p>
+
+    <h3>JSON</h3>
+    <pre>{ <span class="marked">&quot;name&quot;</span>:&quot;Bill Gates&quot; }</pre>
+    <p>在 JavaScript 中，键可以是字符串、数字或标识符名称：</p>
+
+    <h3>JavaScript</h3>
+    <pre>{ <span class="marked">name:</span>&quot;Bill Gates&quot; }</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 值</h2>
+    <p>在 JSON 中，值必须是以下数据类型之一：</p>
+    <ul>
+      <li>字符串</li>
+      <li>数字</li>
+      <li>对象（JSON 对象）</li>
+      <li>数组</li>
+      <li>布尔</li>
+      <li>null</li>
+    </ul>
+
+    <p>在 JavaScript 中，以上所列均可为值，外加其他有效的 JavaScript 表达式，包括：</p>
+    <ul>
+      <li>函数</li>
+      <li>日期</li>
+      <li>undefined</li>
+    </ul>
+
+    <p>在 JSON 中，字符串值必须由<span class="marked">双引号</span>编写：</p>
+    <h3>JSON</h3>
+    <pre>{ &quot;name&quot;:<span class="marked">&quot;Bill Gates&quot;</span> }</pre>
+
+    <p>在 JavaScript 中，您可以书写使用双引号或单引号的字符串值： </p>
+    <h3>JavaScript</h3>
+    <pre>{ name:<span class="marked">'Bill Gates'</span> }</pre>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 使用 JavaScript 语法</h2>
+    <p>因为 JSON 语法由 JavaScript 对象标记法衍生而来，所以很少需要其他额外的软件来处理 JavaScript 中的 JSON。</p>
+    <p>通过 JavaScript，您能够创建对象并向其分配数据，就像这样：</p>
+
+    <h3>实例</h3>
+    <pre>var person =  { name : &quot;Bill Gates&quot;, age : 62, city : &quot;Seattle&quot; };</pre>
+
+    <p>您能够像这样访问 JavaScript 对象：</p>
+    <h3>实例</h3>
+    <pre>
+<span class="code_comment">// 返回 Bill Gates</span>
+person.name;
+</pre>
+    <p id="demo1"></p>
+    <script>
+      var myObj1, x1;
+      myObj1 = {name: "Bill Gates", age: 62, city: "Seattle"};
+      x1 = myObj1.name;
+      document.getElementById("demo1").innerHTML = x1;
+    </script>
+    <br>
+
+    <p>也可以像这样访问它：</p>
+    <h3>实例</h3>
+    <pre>
+<span class="code_comment">// 返回 Bill Gates</span>
+person[&quot;name&quot;];
+</pre>
+    <p id="demo2"></p>
+    <script>
+      var my2Obj2, x2;
+      myObj2 = {name: "Bill Gates", age: 62, city: "Seattle"};
+      x2 = myObj2["name"];
+      document.getElementById("demo2").innerHTML = x2;
+    </script>
+    <br>
+
+    <p>可以像这样修改数据：</p>
+    <h3>实例</h3>
+    <pre>person.name = &quot;Steve Jobs&quot;;</pre>
+    <p id="demo3"></p>
+    <script>
+      var myObj3, x3;
+      myObj3 = {name: "Bill Gates", age: 62, city: "Seattle"};
+      myObj3.name = "Steve Jobs";
+      document.getElementById("demo3").innerHTML = myObj3.name;
+    </script>
+    <br>
+
+    <p>也可以像这样修改它：</p>
+    <h3>实例</h3>
+    <pre>person[&quot;name&quot;] = &quot;Steve Jobs&quot;;</pre>
+    <p id="demo4"></p>
+    <script>
+      var myObj4, x4;
+      myObj4 = {name: "Bill Gates", age: 62, city: "Seattle"};
+      myObj4["name"] = "Steve Jobs";
+      document.getElementById("demo4").innerHTML = myObj4.name;
+    </script>
+    <br>
+
+    <p>稍后，您将在本教程学到如何把 JavaScript 对象转换为 JSON。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JavaScript 数组用作 JSON</h2>
+    <p>与将 JavaScript 对象用作 JSON 相同，JavaScript 数组也可以用作 JSON。</p>
+    <p>您将在本教程稍后学到更多有关 JSON 数组的知识。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>JSON 文件</h2>
+    <ul>
+      <li>JSON 文件的文件类型是 &quot;.json&quot;</li>
+      <li>JSON 文本的 MIME 类型是 &quot;application/json&quot;</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Window Navigator</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_window_navigator.asp">JavaScript Window Navigator</a>
+  <hr/>
+
+
+  <div id="intro">
+    <p><strong>window.navigator 对象包含有关访问者的信息。</strong></p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Window Navigator</h2>
+    <p><em>window.navigator</em> 对象可以不带 window 前缀来写。</p>
+    <p>一些例子：</p>
+    <ul>
+      <li>navigator.appName</li>
+      <li>navigator.appCodeName</li>
+      <li>navigator.platform</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器 Cookie</h2>
+    <p><span class="code_marked">cookieEnabled</span> 属性返回 true，如果 cookie 已启用，否则返回 false：</p>
+    <h3>实例</h3>
+    <p id="demo1"></p>
+    <script>
+      document.getElementById("demo1").innerHTML =
+        "navigator.cookieEnabled 是：" + navigator.cookieEnabled;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器应用程序名称</h2>
+    <p><span class="code_marked">appName</span> 属性返回浏览器的应用程序名称：</p>
+    <h3>实例</h3>
+    <p>appName 属性返回浏览器的应用程序名称：</p>
+    <p id="demo2"></p>
+    <script>
+      document.getElementById("demo2").innerHTML =
+        "navigator.appName 是：" + navigator.appName;
+    </script>
+    <p>很陌生吧，&quot;Netscape&quot; 是 IE11、Chrome、Firefox 以及 Safari 的应用程序名称的统称。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器应用程序代码名称</h2>
+    <p><span class="code_marked">appCodeName</span> 属性返回浏览器的应用程序代码名称：</p>
+    <h3>实例</h3>
+    <p id="demo3"></p>
+    <script>
+      document.getElementById("demo3").innerHTML =
+        "navigator.appCodeName is: " + navigator.appCodeName;
+    </script>
+    <p>不要依赖它！ &quot;Mozilla&quot; 是 Chrome、Firefox、IE、Safari 以及 Opera 的应用程序代码名称。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器引擎</h2>
+    <p><span class="code_marked">product</span> 属性返回浏览器引擎的产品名称：</p>
+    <h3>实例</h3>
+    <p id="demo4"></p>
+    <script>
+      document.getElementById("demo4").innerHTML =
+        "navigator.product 是：" + navigator.product;
+    </script>
+    <p>不要依赖它！大多数浏览器都将 “Gecko” 作为产品名称返回！</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器版本</h2>
+    <p><span class="code_marked">appVersion</span> 属性返回有关浏览器的版本信息：</p>
+    <h3>实例</h3>
+    <p id="demo5"></p>
+    <script>
+      document.getElementById("demo5").innerHTML = navigator.appVersion;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器代理</h2>
+    <p><span class="code_marked">userAgent</span> 属性返回由浏览器发送到服务器的用户代理报头（user-agent header）：</p>
+    <h3>实例</h3>
+    <p id="demo6"></p>
+    <script>
+      document.getElementById("demo6").innerHTML =
+        navigator.userAgent;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2 class="important">警告！！！</h2>
+    <p>来自 navigator 对象的信息通常是误导性的，不应该用于检测浏览器版本，因为：</p>
+    <ul>
+      <li>不同浏览器能够使用相同名称</li>
+      <li>导航数据可被浏览器拥有者更改</li>
+      <li>某些浏览器会错误标识自身以绕过站点测试</li>
+      <li>浏览器无法报告发布晚于浏览器的新操作系统</li>
+    </ul>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器平台</h2>
+    <p><span class="code_marked">platform</span> 属性返回浏览器平台（操作系统）：</p>
+    <h3>实例</h3>
+    <p id="demo7"></p>
+    <script>
+      document.getElementById("demo7").innerHTML =
+        "navigator.platform 是：" + navigator.platform;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器语言</h2>
+    <p><span class="code_marked">language</span> 属性返回浏览器语言：</p>
+    <h3>实例</h3>
+    <p id="demo8"></p>
+    <script>
+      document.getElementById("demo8").innerHTML =
+        "navigator.language 是：" + navigator.language;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>浏览器是否在线？</h2>
+    <p><span class="code_marked">onLine</span> 属性返回 true，假如浏览器在线：</p>
+    <h3>实例</h3>
+    <p id="demo9"></p>
+    <script>
+      document.getElementById("demo9").innerHTML =
+        "navigator.onLine 是：" + navigator.onLine;
+    </script>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>Java 是否启用？</h2>
+    <p><span class="code_marked">javaEnabled()</span> 方法返回 true，如果 Java 已启用：</p>
+    <h3>实例</h3>
+    <p id="demo10"></p>
+    <script>
+      document.getElementById("demo10").innerHTML =
+        "javaEnabled 是：" + navigator.javaEnabled();
+    </script>
+  </div>
+  <hr/>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript HTML DOM 集合</title>
+  <link rel="stylesheet" href="../style_sheet/my_style.css">
+</head>
+<body>
+  <a href="https://www.w3school.com.cn/js/js_htmldom_collections.asp">JavaScript HTML DOM 集合</a>
+  <hr/>
+
+
+  <div>
+    <h2>HTMLCollection 对象</h2>
+    <p id="x1"><span class="code_marked">getElementsByTagName()</span> 方法返回 <em>HTMLCollection</em> 对象。</p>
+    <p>HTMLCollection 对象是类数组的 HTML 元素列表（集合）。</p>
+    <p>下面的代码选取文档中的所有 &lt;p&gt; 元素：</p>
+    <pre>var x = document.getElementsByTagName(&quot;p&quot;);</pre>
+    <p>该集合中的元素可通过索引号进行访问。</p>
+    <p>如需访问第二个 &lt;p&gt; 元素，您可以这样写：</p>
+    <pre>y = x[1];</pre>
+    <br>
+
+    <h3>实例</h3>
+    <p>Hello World!</p>
+    <p>Hello China!</p>
+    <p id="demo1"></p>
+    <script>
+      var myCollection1 = document.getElementsByTagName("p");
+      document.getElementById("demo1").innerHTML =
+        "第1段的 innerHTML 是：" +
+        // myCollection1[0].innerHTML;
+        myCollection1["x1"].innerHTML;  // 访问 HTMLCollection 项目，可以通过它们的名称、id 或索引号。
+    </script>
+
+    <p class="note"><span>注释：</span>索引从 0 开始。</p>
+  </div>
+  <hr/>
+
+
+  <div>
+    <h2>HTML HTMLCollection 长度</h2>
+    <p><span class="code_marked">length</span> 属性定义了 HTMLCollection 中元素的数量：</p>
+    <h3>实例</h3>
+    <p>Hello World!</p>
+    <p>Hello China!</p>
+    <p id="demo2"></p>
+    <script>
+      var myCollection2 = document.getElementsByTagName("p");
+      document.getElementById("demo2").innerHTML =
+        "此文档包含 " + myCollection2.length + " 段文字。";
+    </script>
+    <h3>实例解释：</h3>
+    <ul>
+      <li>创建所有 &lt;p&gt; 元素的集合</li>
+      <li>显示集合的长度</li>
+    </ul>
+    <br>
+
+
+    <h3>实例</h3>
+    <p>改变所有 &lt;p&gt; 元素的背景色：</p>
+    <p><span class="code_marked">length</span> 属性在您需要遍历集合中元素时是有用的：</p>
+    <p>Hello World!</p>
+    <p>Hello China!</p>
+    <p>单击按钮可更改所有 p 元素的颜色。</p>
+    <button onclick="myFunction3()">试一试</button>
+    <script>
+      function myFunction3() {
+        var myCollection = document.getElementsByTagName("p");
+        var i;
+        for (i = 0; i < myCollection.length; i++) {
+          myCollection[i].style.color = "red";
+        }
+      }
+    </script>
+    <br><br>
+
+
+    <h3><span class="marked">HTMLCollection 并非数组！</span></h3>
+    <p>HTMLCollection 也许看起来像数组，但并非数组。</p>
+    <p>您能够遍历列表并通过数字引用元素（就像数组那样）。</p>
+    <p>不过，您无法对 HTMLCollection 使用数组方法，比如
+      <span class="code_marked">valueOf()</span>、
+      <span class="code_marked">pop()</span>、
+      <span class="code_marked">push()</span> 或
+      <span class="code_marked">join()</span>。
+    </p>
+  </div>
+  <hr/>
+
+
+</body>
+</html>

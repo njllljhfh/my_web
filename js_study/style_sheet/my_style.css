@@ -6,13 +6,29 @@ h2, h3, h4, h5, h6, em {
     font-weight: bold;
 }
 
-pre	{
-    width:765px;
+pre {
+    width: 765px;
     margin: 15px 0 15px 0;
     padding: 20px;
     border: 0;
     border: 1px dotted #785;
     background: #f5f5f5;
-    line-height:1.4;
-    font-family:Consolas;
+    line-height: 1.4;
+    font-family: Consolas;
+}
+
+
+dl.define {
+    margin: 10px 0 0 0;
+}
+
+dl.define dt {
+    margin: 15px 0 3px 0;
+    font-weight: bold;
+    color: #0479A7;
+}
+
+dl.define dd {
+    margin: 10px 0 0 10px;
+    line-height: 150%;
 }
